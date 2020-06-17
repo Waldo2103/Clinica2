@@ -74,9 +74,16 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-image"></i></span>
                     </div>
+                    <input class="form-control btn btn-secondary" formControlName="foto" (change)="cambioArchivo($event)" type="file" (focus)="focus7=true" (blur)="focus7=false">
+                    <button class="form-control btn btn-primary" (click)="subirArchivo()" disabled id="subirOK">Subir</button>
+                  </div>
+                  <!--div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-image"></i></span>
+                    </div>
                     <input class="form-control" formControlName="foto" (change)="cambioArchivo($event)" placeholder="Fotos" type="file" (focus)="focus7=true" (blur)="focus7=false">
                   </div>
-                  <button (click)="subirArchivo()" id="subirOK">Subir</button>
+                  <button (click)="subirArchivo()" id="subirOK">Subir</button-->
                 </div>
                 
                 <div class="text-center">

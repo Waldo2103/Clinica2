@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Location, PopStateEvent } from '@angular/common';
 import { AuthService } from 'src/app/servicios/auth/auth.service';
@@ -13,10 +13,13 @@ export class NavbarComponent implements OnInit {
     private lastPoppedUrl: string;
     private yScrollStack: number[] = [];
 
+    @Input() user;
+
     constructor(public location: Location, private router: Router, public auth: AuthService) {
     }
 
     ngOnInit() {
+        //this.logueadoOK();
       this.router.events.subscribe((event) => {
         this.isCollapsed = true;
         if (event instanceof NavigationStart) {
@@ -33,6 +36,12 @@ export class NavbarComponent implements OnInit {
      this.location.subscribe((ev:PopStateEvent) => {
          this.lastPoppedUrl = ev.url;
      });
+    }
+
+    logueado: boolean = false;
+    logueadoOK(){
+        this.logueado = this.auth.logueado();
+        
     }
 
     isHome() {

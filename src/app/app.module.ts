@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbCalendar, NgbCalendarHebrew, NgbDatepickerI18n, NgbDatepickerI18nHebrew, NgbCalendarGregorian } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 
@@ -36,6 +36,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { SacarTurnoComponent } from './componentes/paciente/sacar-turno/sacar-turno.component';
 import { RegistroProfComponent } from './componentes/profesional/registro-prof/registro-prof.component';
+import { NoHabComponent } from './componentes/no-hab/no-hab.component';
+import { HomePrComponent } from './componentes/profesional/home-pr/home-pr.component';
+import { HomePacComponent } from './componentes/paciente/home-pac/home-pac.component';
+import { CalendarComponent } from './extra/calendar/calendar.component';
+//import { NgbCalendar, NgbCalendarHebrew, NgbDatepickerI18n, NgbDatepickerI18nHebrew } from '_node_modules/@ng-bootstrap/ng-bootstrap';
 
 //, , , 
 @NgModule({
@@ -48,7 +53,11 @@ import { RegistroProfComponent } from './componentes/profesional/registro-prof/r
     FooterComponent,
     LoginComponent,
     SacarTurnoComponent,
-    RegistroProfComponent
+    RegistroProfComponent,
+    NoHabComponent,
+    HomePrComponent,
+    HomePacComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +83,8 @@ import { RegistroProfComponent } from './componentes/profesional/registro-prof/r
   ],
   providers: [
     AngularFireAuth,
+    {provide: NgbCalendar, useClass: NgbCalendarGregorian},
+    //{provide: NgbDatepickerI18n, useClass: NgbDatepickerI18nHebrew}
     //NologinGuard,
     //FormBuilder
     //AngularFirestore//

@@ -5,6 +5,9 @@ import { Paciente, PacienteAConfirmar } from "../../clases/paciente";
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Profesional, ProfesionalAConfirmar } from '../../clases/profesional';
 
+import {map}from "rxjs/operators";
+import {isNullOrUndefined} from "util";
+import { Router } from '@angular/router';
 
 //import 'rxjs/add/operator/map';
 
@@ -13,12 +16,30 @@ import { Profesional, ProfesionalAConfirmar } from '../../clases/profesional';
 })
 export class AuthService {
 
+  /*profesionales = [];
+  pacien = [];
+  admin = [];*/
+  //autenticado;
+
   constructor(public afAuth: AngularFireAuth,
     private db: AngularFirestore,
-    private storage: AngularFireStorage
+    private storage: AngularFireStorage,
+    private router: Router
     ) {
 
   }
+  /***************************USER LOGUEADO PARA NAVBAR******************************** */
+  logueado():boolean{
+    
+    //BUSCAMOS USER LOGUEADO
+    let usuario = this.afAuth.auth.currentUser.email.valueOf()
+    if (usuario !== "") {
+      return true
+    }
+     return true
+    
+  }
+  /**************************************************************************************** */
 /********************************TODO RELACIONADO A REGISTRO DE USUARIO*********************************************** */
   registeruser(email: string, pass: string){
     return new Promise((resolve,reject) => {
@@ -81,6 +102,7 @@ export class AuthService {
   logout() {
     return this.afAuth.auth.signOut();
   }
+
 
   //Obtiene los datos del usuario en caso de que esté logueado. 
   getAuth(){

@@ -154,6 +154,8 @@ public async RegistrarProfesional(){
         horarios: JSON.stringify(this.horariosObj),
         habilitado: false
         };
+    //AGREGO EL USUARIO AL LISTADO DE ESPECIALIDADES X USUARIO
+    this.addUserAEspecialidad();
     this.authService.RegistrarProfesionalDatos(this.usuario).then(auth => {
         console.log("dvolvio servicio a REGISTRAR Profesional")
         this.usuario = new Profesional();
@@ -162,6 +164,22 @@ public async RegistrarProfesional(){
         alert('Error en el registro.');
         console.log(err);
     });
+}
+//AGREGA UN USUARIO A LA LISTA DE ESPECIALIDADES QUE SELECCIONO
+addUserAEspecialidad(){
+  //this.especialidadesT
+  //this.especialidades
+  //console.log(this.especialidades)
+  let data = {
+    dni:this.form.get('dni').value,
+    nombre: this.form.get('nombre').value,
+    apellido: this.form.get('apellido').value
+  }
+  for(let esp of this.especialidades){
+    this.firebase.addProfAEspecialidadXUsu(esp.idEspecialidad,data).then(resul =>{
+
+    }); 
+  }
 }
 
 //PARA SUBIR FOTO
@@ -217,7 +235,7 @@ OnSubmitRegister(){
         localStorage.setItem("email", this.form.get('mail').value);
         //AGREGO EL CLIENTE A LA BASE
         this.RegistrarProfesional()
-      this.router.navigate(['/#/login']);
+      this.router.navigate(['/login']);
     }).catch(error => {
       //(<HTMLButtonElement>document.getElementById('btnModal')).click();
       if (error.code === 'auth/email-already-in-use') {
@@ -245,23 +263,37 @@ OnSubmitRegister(){
  * *******************************************************************************************
  */
 //Manejo de especialidades
-Data = [
-  { name: 'Pear', value: 'pear' },
-  { name: 'Plum', value: 'plum' },
-  { name: 'Kiwi', value: 'kiwi' },
-  { name: 'Apple', value: 'apple' },
-  { name: 'Lime', value: 'lime' }
-];
 
 //especialidadesForm: FormGroup;
 especialidadForm: FormGroup;
-
-onCheckboxChange(e) {
-  //const checkArray: FormArray = this.especialidadesForm.get('checkArray') as FormArray;
+ok: boolean[] = [] ;
+existe:boolean;
+check(e){
   let id = e.target.id;
-  //console.log(this.especialidadesT, "T")
-  //console.log(e.target.value, "value target")
-  let existe = false;
+  for(let es of this.especialidades){
+    //si alguna coincide con la que se "checkeo" le paso el valor de checked
+    if (id === es.idEspecialidad) {
+      for(let esp of this.especialidadesT){
+        if (esp.idEspecialidad === id) {
+          es.ok =  e.target.checked;
+          //this.existe = true;
+        }
+      }
+    }
+  }
+if (e.target.checked) {
+  this.ok[e.target.id] = true;
+  
+  
+}else{
+  this.ok[e.target.id] = false;
+}
+}
+onCheckboxChange(e) {
+  let idYdura = e.target.id.split(",") ;
+  let id = idYdura[0];
+  let duracion = idYdura[1];
+
   if (this.especialidades !== []) {
     console.log("entre porque NO esta []")
     //recorro especialidades ya agregadas al usuario
@@ -270,8 +302,8 @@ onCheckboxChange(e) {
     if (id === es.idEspecialidad) {
       for(let esp of this.especialidadesT){
         if (esp.idEspecialidad === id) {
-          es.ok =  e.target.checked;
-          existe = true;
+          //es.ok =  e.target.checked;
+          this.existe = true;
         }
       }
     }
@@ -279,14 +311,15 @@ onCheckboxChange(e) {
   }
   
   //sino existia ya lo agrego
-    if (!existe) {
+    if (!this.existe) {
       this.especialidades.push({
         idEspecialidad: id,
         nombre: e.target.value,
-        ok:  e.target.checked
+        ok:  e.target.checked,
+        duracion: duracion
       });
     }
-    console.log(this.especialidades, "especialidades que se agregaran al porf")
+    console.log(this.especialidades,e.target, "especialidades que se agregaran al porf")
   }
   /*if (e.target.checked) {
      this.especialidadesT.push(

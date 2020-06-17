@@ -19,7 +19,10 @@
           <div class="col-lg-5">
             <div class="card bg-secondary shadow border-0">
               <div class="card-header bg-white pb-5">
-               
+               <!--div>
+                 <button (click)="addUserAEspecialidad()">EspeXUSU</button>
+                 
+               </div-->
                 <form [formGroup]="form"> <!--(ngSubmit)="OnSubmitRegister()"-->
                   <div class="form-group" [ngClass]="{'focused':focus1===true}">
                     <div class="input-group input-group-alternative mb-3">
@@ -83,9 +86,16 @@
                     <label><strong> Especialidades</strong></label>
                     <div *ngFor="let data of especialidadesT; let i=index">
                         <label>
-                          <input type="checkbox" [id]="data.idEspecialidad" [value]="data.nombre" (change)="onCheckboxChange($event)" />
+                          <input type="checkbox" [id]="data.idEspecialidad" (change)="check($event)"/>
                           {{data.nombre}}
                         </label>
+                        <div *ngIf="ok[data.idEspecialidad]" class="row">
+                          <input type="radio"  [id]="data.idEspecialidad+','+30" [value]="data.nombre" [name]="data.nombre" (change)="onCheckboxChange($event)" />30 
+                          <input type="radio"  [id]="data.idEspecialidad+','+45" [value]="data.nombre" [name]="data.nombre" (change)="onCheckboxChange($event)" />45
+                          <input type="radio"  [id]="data.idEspecialidad+','+60" [value]="data.nombre" [name]="data.nombre" (change)="onCheckboxChange($event)" />60
+                          <input type="radio"  [id]="data.idEspecialidad+','+75" [value]="data.nombre" [name]="data.nombre" (change)="onCheckboxChange($event)" />75
+                        </div>
+                        
                       </div>
                     <!--input type="submit" value="Submit"-->
                 <!--/form-->

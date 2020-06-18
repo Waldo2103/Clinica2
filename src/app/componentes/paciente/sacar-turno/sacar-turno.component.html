@@ -21,7 +21,7 @@
             <div class="card bg-secondary shadow border-0">
               <div class="card-header bg-white pb-5">
                
-                <form [formGroup]="form" (ngSubmit)="OnSubmitRegister()">
+                <form [formGroup]="form">
                   <div class="form-group" [ngClass]="{'focused':focus1===true}">
                     <div class="input-group input-group-alternative mb-3">
                       <div class="input-group-prepend">
@@ -220,22 +220,20 @@
                         </div>
                       </div>
                     </div>
-                    <!--div class="card-footer">
-                      <p>Turno</p>
-                      <tr>
-                        <td>{{turno.id}}</td>
-                        <td>{{turno.especialidad}}</td>
-                        <td>{{turno.profesional}}</td>
-                        <td>{{turno.paciente}}</td>
-                        <td>{{turno.especialidad}}</td>
-                        <td>{{turno.profesional}}</td>
-                        <td>{{turno.paciente}}</td>
-                      </tr>
-                    </div-->
+                    <div *ngIf="mostrarTurno" class="card-footer">
+                      <p><strong>Turno</strong></p>
+                        <p><strong>id:</strong> {{turnoOK.id}}</p>
+                        <p><strong>Especialidad:</strong> {{turnoOK.especialidad}}</p>
+                        <p><strong>Profesional:</strong>{{turnoOK.profesional}}</p>
+                        <p><strong>Paciente:</strong>{{turnoOK.paciente}}</p>
+                        <p><strong>Fecha:</strong>{{turnoOK.fecha}}</p>
+                        <p><strong>Hora:</strong>{{turnoOK.hora}}</p>
+                        <p><strong>Estado:</strong>{{turnoOK.estado}}</p>
+                    </div>
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary my-4" type="submit" [disabled]="!form.valid">Sacar Turno</button>
+                  <button type="button" class="btn btn-primary my-4" id="sacar" type="submit"  (click)="sacarTurno()">Sacar Turno</button>
                 </div>
               </div>
             </div>

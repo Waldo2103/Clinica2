@@ -1,0 +1,189 @@
+<app-navbar [user]="user"></app-navbar>
+<main>
+
+    <section class="section section-shaped section-lg">
+      <div class="shape shape-style-1 bg-gradient-default">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+       
+      </div>
+      <div class="container pt-lg-md">
+        
+        <div class="row justify-content-center">
+          
+          <div class="col-lg-12">
+            <div class="card bg-secondary shadow border-0">
+              <!--div class="card-header bg-white pb-5">
+              </div-->
+              <mat-form-field>
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ingrese una palabra clave...">
+              </mat-form-field>
+              
+              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              
+                <!-- Position Column -->
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef> ID </th>
+                  <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                </ng-container>
+              
+                <!-- Name Column -->
+                <ng-container matColumnDef="paciente">
+                  <th mat-header-cell *matHeaderCellDef> Paciente </th>
+                  <td mat-cell *matCellDef="let element"> {{element.paciente}} </td>
+                </ng-container>
+              
+                <!-- Weight Column -->
+                <ng-container matColumnDef="especialidad">
+                  <th mat-header-cell *matHeaderCellDef> Especialidad </th>
+                  <td mat-cell *matCellDef="let element"> {{element.especialidad}} </td>
+                </ng-container>
+              
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="fecha">
+                  <th mat-header-cell *matHeaderCellDef> Fecha </th>
+                  <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+                </ng-container>
+                <!-- Position Column -->
+                <ng-container matColumnDef="hora">
+                    <th mat-header-cell *matHeaderCellDef> Hora </th>
+                    <td mat-cell *matCellDef="let element"> {{element.hora}} </td>
+                  </ng-container>
+                
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="atender">
+                    <th mat-header-cell *matHeaderCellDef> Atender </th>
+                    <td mat-cell *matCellDef="let element"> <button mat-raised-button color="primary" (click)="atender(element)"><mat-icon>favorite</mat-icon></button> </td>
+                  </ng-container>
+                
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+              &nbsp;
+              <div *ngIf="atendiendo">
+                <form [formGroup]="hClinicaForm" (ngSubmit)="mostrarEncuesta()" novalidate>
+                    <label>Historia Clínica de {{turno.paciente}}</label>
+                    <!-- Form elements goes here -->
+                    <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                        <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                            </div>
+                            <input class="form-control" formControlName="id" type="text" (focus)="focus1=true" (blur)="focus1=false" disabled [value]="turno.id">
+                        </div>
+                    </div>
+                    <div class="form-group" [ngClass]="{'focused':focus2===true}">
+                    <div class="input-group input-group-alternative mb-3">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                        </div>
+                        <input class="form-control" formControlName="edad" placeholder="Edad" type="number" (focus)="focus2=true" (blur)="focus2=false">
+                    </div>
+                    </div>
+                    <div class="form-group" [ngClass]="{'focused':focus3===true}">
+                        <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                            </div>
+                            <input class="form-control" formControlName="temperatura" placeholder="Temperatura" type="number" (focus)="focus3=true" (blur)="focus3=false">
+                        </div>
+                    </div>
+                    <div class="form-group" [ngClass]="{'focused':focus4===true}">
+                    <div class="input-group input-group-alternative mb-3">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                        </div>
+                        <input class="form-control" formControlName="presion" placeholder="Presión" type="text" (focus)="focus4=true" (blur)="focus4=false">
+                    </div>
+                    </div>
+                    <div class="form-group" [ngClass]="{'focused':focus5===true}">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                      </div>
+                      <input class="form-control" formControlName="addC" placeholder="Ingrese nombre de campo" type="text" (focus)="focus5=true" (blur)="focus5=false">
+                      <button class="form-control btn btn-primary" type="button" (click)="addCampo()">Agregar campo</button>
+                    </div>
+                    
+                  </div>
+                  <!--ACA VAN LOS 3 DINAMICOS-->
+                  <div *ngIf="din1!==''" class="form-group" [ngClass]="{'focused':focus6===true}">
+                    <div class="input-group input-group-alternative mb-3">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                        </div>
+                        <input class="form-control" formControlName="dina1" placeholder="{{din1}}" type="text" (focus)="focus6=true" (blur)="focus6=false">
+                    </div>
+                    </div>
+                    <div *ngIf="din2!==''" class="form-group" [ngClass]="{'focused':focus7===true}">
+                        <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                            </div>
+                            <input class="form-control" formControlName="dina2" placeholder="{{din2}}" type="text" (focus)="focus7=true" (blur)="focus7=false">
+                        </div>
+                    </div>
+                    <div *ngIf="din3!==''" class="form-group" [ngClass]="{'focused':focus8===true}">
+                    <div class="input-group input-group-alternative mb-3">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                        </div>
+                        <input class="form-control" formControlName="dina3" placeholder="{{din3}}" type="text" (focus)="focus8=true" (blur)="focus8=false">
+                    </div>
+                    </div>
+                    <div class="text-center">
+                        <input class="btn btn-primary my-4" [disabled]="!hClinicaForm.valid" type="submit" value="Guardar Historia">
+                    </div>
+                </form>
+            </div>
+              &nbsp;
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--ENCUESTA***************************************************************** -->
+      <div class="container" *ngIf="encuestar">
+        <div class="container h-100">
+            <div class="row justify-content-center align-items-center">
+              <div class="col-6">
+                <div class="card" [ngClass]="{'border-danger': error}">
+                  <div class="card-body">
+                    <h5 class="card-title">Encuesta</h5>
+                    <form [formGroup]="form">
+                      <div class="form-group">
+                          <label for="user" class="col-6">Califique al Paciente</label>
+                          <ngb-rating [(rate)]="selectedPaciente" class="col-6">
+                              <ng-template let-fill="fill" let-index="index">
+                                <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                              </ng-template>
+                            </ngb-rating>
+                      </div>
+                      <div class="form-group">
+                        <label for="coci" class="col-6">Por favor deje su comentario</label>
+                        <textarea formControlName="comentario" class="col-6 span6" rows="3" placeholder="Sugerencias?" required></textarea>
+                      </div>
+                     <button class="col-6 btn btn-primary" (click)="Submit()">Enviar</button>
+                     <button class="col-6 btn btn-secondary" (click)="Cancel()">Cancelar</button>
+                    </form>
+                    </div>
+                        <div *ngIf="error" class="card-footer">
+                          <small class="text-danger font-weight-bold"><i class="fa fa-times"></i> {{errorMessage}} </small>
+                        </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+    </section>
+    
+  </main>
+  
+  

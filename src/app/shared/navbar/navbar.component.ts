@@ -43,6 +43,7 @@ export class NavbarComponent implements OnInit {
         this.logueado = this.auth.logueado();
         
     }
+    
 
     isHome() {
         var titlee = this.location.prepareExternalUrl(this.location.path());

@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../../../servicios/firebase.service';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/servicios/auth/auth.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
 import { Profesional } from 'src/app/clases/profesional';
-import { delay } from 'rxjs/operators';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { turno } from 'src/app/clases/turno';
 
 @Component({
   selector: 'app-sacar-turno',
@@ -72,16 +71,20 @@ export class SacarTurnoComponent implements OnInit {
   //para traer HORARIOS
     
 
-  constructor(private firebase: FirebaseService, private formBuilder: FormBuilder, private auth: AuthService) { 
+  constructor(private afAuth: AngularFireAuth, private firebase: FirebaseService, private formBuilder: FormBuilder) { 
     this.form = this.formBuilder.group({
+      //id: new FormControl('', Validators.required),
       especialidad: new FormControl('', Validators.required),
       profesional: new FormControl('', Validators.required),
-      dia: new FormControl('', Validators.required),
-      horario: new FormControl('', Validators.required)
+      /*fecha: new FormControl('', Validators.required),
+      hora: new FormControl('', Validators.required),
+      paciente: new FormControl('', Validators.required),
+      estado: new FormControl('', Validators.required)*/
     });
   }
 
   ngOnInit(): void {
+    this.traerUser();
     this.traerProfesionales();
     this.traerEspecialidades();
     this.user = "paciente";
@@ -114,7 +117,7 @@ export class SacarTurnoComponent implements OnInit {
       })
     });
   }
-
+  
   capturarEspe(){
     this.espeSelec = this.espeSeleccionada;
     this.traerEspecialidadXUsuario(this.espeSelec);
@@ -126,13 +129,13 @@ export class SacarTurnoComponent implements OnInit {
     this.profSelec = this.profSeleccionada;
     this.horariosDisp('0');
   }
-
+  fecha
   capturarDia(e){
     //console.log(e)
     //recibo la fecha y la guardo en un formato asignable a date
-    let fecha = `${e.year}-${e.month}-${e.day}`;
+    this.fecha = `${e.year}-${e.month}-${e.day}`;
     
-    var Xmas95 = new Date(fecha);
+    var Xmas95 = new Date(this.fecha);
     //saco el dia de la semana
     var weekday = Xmas95.getDay();
     this.diaSeleccionada = weekday.toString();
@@ -186,22 +189,29 @@ export class SacarTurnoComponent implements OnInit {
   lu13;ma13;mi13;ju13;vi13;
   
   //horario de los turnos
-  tMañana
+  tManiana
   tTarde
+  //profesional que se asignara al turno(correo)
+  profe
   //asigno los dias disponibles
   horariosDisp(weekday){
-    console.log(weekday, "weekday"); 
+    //console.log(weekday, "weekday"); 
     //recorro todos los prof y lo matcheo con el que se selecciono en el combo
     for(let prof of this.profesT){
       //si son iguales extraigo datos
       if (prof.dni == this.profSeleccionada) {
-        console.log("this", JSON.parse(prof.horarios))
+        this.profe = prof.correo;
+        this.traerTurnos();
+        //console.log("this", JSON.parse(prof.horarios))
         let objHorarios = JSON.parse(prof.horarios);
         if (objHorarios.luok) {
           this.lu = 0;
           if (weekday == 1) {
             this.lu8 = objHorarios.lu8;
           this.lu13 = objHorarios.lu13;
+          } else {
+            this.lu8 = null;
+          this.lu13 = null;
           }
           
         }else{
@@ -212,6 +222,9 @@ export class SacarTurnoComponent implements OnInit {
           if (weekday == 2) {
           this.ma8 = objHorarios.ma8;
           this.ma13 = objHorarios.ma13;
+          } else {
+            this.ma8 = null;
+          this.ma13 = null;
           }
         }else{
           this.ma = 2;
@@ -221,6 +234,9 @@ export class SacarTurnoComponent implements OnInit {
           if (weekday == 3) {
           this.mi8 = objHorarios.mi8;
           this.mi13 = objHorarios.mi13;
+          } else {
+            this.mi8 = null;
+          this.mi13 = null;
           }
         }else{
           this.mi = 3;
@@ -230,6 +246,9 @@ export class SacarTurnoComponent implements OnInit {
           if (weekday == 4) {
           this.ju8 = objHorarios.ju8;
           this.ju13 = objHorarios.ju13;
+          } else {
+            this.ju8 = null;
+          this.ju13 = null;
           }
         }else{
           this.ju = 4;
@@ -239,14 +258,19 @@ export class SacarTurnoComponent implements OnInit {
           if (weekday == 5) {
           this.vi8 = objHorarios.vi8;
           this.vi13 = objHorarios.vi13;
+          } else {
+            this.vi8 = null;
+          this.vi13 = null;
           }
         }else{
           this.vi = 5;
         }
         if (objHorarios.saok) {
           this.sa = 0;
-          if (weekday == 1) {
+          if (weekday == 6) {
           this.sa8 = objHorarios.sa8;
+          } else {
+            this.sa8 = null;
           }
         }else{
           this.sa = 6;
@@ -258,46 +282,135 @@ export class SacarTurnoComponent implements OnInit {
         for(let espe of objEspecialidades){
           if (espe.idEspecialidad === this.espeSeleccionada) {
             let duracion = espe.duracion;
-            console.log("duracion", duracion)
+            //console.log("duracion", duracion)
             this.i;
             
             if (duracion == 30) {
               this.i = 11;
-              this.tMañana = ["8:00", "8:30","9:00", "9:30", "10:00", "10:30","11:00",
+              this.tManiana = ["8:00", "8:30","9:00", "9:30", "10:00", "10:30","11:00",
               "11:30","12:00","12:30","13:00","13:30"];
+              this.tManiana = this.turnosLibres(this.tManiana);
+
+              
               this.tTarde = ["13:30","14:00","14:30","15:00","15:30",
               "16:00","16:30","17:00","17:30","18:00","18:30","19:00"];
+              this.tTarde = this.turnosLibres(this.tTarde)
             } if (duracion == 45) {
               this.i = 7;
-              this.tMañana = ["8:00", "8:45","9:30", "10:15", "11:00",
+              this.tManiana = ["8:00", "8:45","9:30", "10:15", "11:00",
               "11:45","12:30","13:15"];
+              this.tManiana = this.turnosLibres(this.tManiana);
+              
               this.tTarde = ["13:30","14:15","15:00","15:45",
               "16:30","17:15","18:00","18:45"];
+              this.tTarde = this.turnosLibres(this.tTarde)
             } if (duracion == 60) {
               this.i = 5;
-              this.tMañana = ["8:00", "9:00", "10:00","11:00","12:00","13:00"];
+              this.tManiana = ["8:00", "9:00", "10:00","11:00","12:00","13:00"];
+              this.tManiana = this.turnosLibres(this.tManiana);
+
               this.tTarde = ["13:30","14:30","15:30",
               "16:30","17:30","18:30"];
+              this.tTarde = this.turnosLibres(this.tTarde)
             } if (duracion == 75) {
               this.i = 4;
-              this.tMañana = ["8:00", "9:15","10:30","11:45","13:00"];
+              this.tManiana = ["8:00", "9:15","10:30","11:45","13:00"];
+              this.tManiana = this.turnosLibres(this.tManiana);
+
               this.tTarde = ["13:30","14:45","16:00","17:15","18:30"];
+              this.tTarde = this.turnosLibres(this.tTarde)
             }
 
             for (let j = 0; j < this.i; j++) {
-              this.turnosM[j] = this.tMañana[j];
+              this.turnosM[j] = this.tManiana[j];
               this.turnosT[j] = this.tTarde[j];
             }
-            console.log(this.turnosM, this.turnosT)
+            //console.log(this.turnosM, this.turnosT)
 
           }//fin if
         }//fin for
       }
     }
   }
+  turnoOK:turno = new turno;
+  mostrarTurno = false;
   tomarRadio(e){
-    console.log("e",e.target.id)
+    this.traerEspe();
+    this.mostrarTurno = true;
+    //console.log("e",e.target.id)
+    this.turnoOK.id = `${this.usuario}-${this.profe}-${this.fecha}`; 
+    this.turnoOK.fecha = this.fecha;
+    this.turnoOK.hora = e.target.id
+    this.turnoOK.especialidad = this.especialidadU;
+    this.turnoOK.paciente = this.usuario;
+    this.turnoOK.profesional = this.profe;
+    this.turnoOK.atendido = false;
+    this.turnoOK.estado = 'pendiente'; // pendiente - confirmado - cancelado - rechazado
+    this.turnoOK.observaciones = "";
+    //console.log(this.turnoOK)
   }
 
+  //TRAIGO PACIENTE
+  usuario
+  traerUser(){
+    this.usuario = this.afAuth.auth.currentUser.email.valueOf();
+  }
+  //TRAIGO ESPECIALIDAD DE COMBO(NOMBRE)
+  especialidadU;
+  traerEspe(){
+    for(let espe of this.especialidadesT){
+      if(espe.idEspecialidad == this.espeSeleccionada){
+        this.especialidadU = espe.nombre;
+      }
+    }
+
+  }
+  //TRAIGO TODOS LOS TURNOS
+  turnosTodos = [];
+  traerTurnos(){
+    this.firebase.getTurnosXProf(this.profe).subscribe(resul => {
+      resul.forEach(data =>{
+        this.turnosTodos.push(
+          {
+            id: data.payload.doc.data().id,
+            fecha: data.payload.doc.data().fecha,
+            hora: data.payload.doc.data().hora
+          }
+        );
+      });
+    });
+  }
+
+  //ESTO NO SE SI LO VOY A HACER --->VALIDO QUE DIA Y HORARIO TURNO NO ESTEN OCUPADOS PARA ESE PROF trayendo todos los turnos y verificando que no exista
+  //ELIMINO LOS TURNOS YA OTORGADOS
+  turnosLibres(tMoT: turno[]){
+    //lo comparo con el turno actual
+    for(let turno of this.turnosTodos){
+      for (let i = 0; i <= tMoT.length; i++) {
+        if (turno.hora === tMoT[i] && turno.fecha === this.fecha) {
+          tMoT.splice(i, 1);
+        }
+      }
+    }
+    return tMoT;
+  }
+  
+  sacarTurno(){
+    console.log(this.turnoOK)
+    let turnoFire = {id: this.turnoOK.id, fecha: this.turnoOK.fecha, hora:this.turnoOK.hora,
+       especialidad: this.turnoOK.especialidad, paciente: this.turnoOK.paciente, profesional: this.turnoOK.profesional,
+        atendido:this.turnoOK.atendido, estado:this.turnoOK.estado, observaciones:this.turnoOK.observaciones}
+    this.firebase.createTurnoXProf(turnoFire.id,turnoFire).then(resul=>{
+      alert("Turno Creado!")
+      this.firebase.createTurno(turnoFire.id,turnoFire).then(resul2=>{
+        console.log("turno creado en ambas tablas")
+      }).catch(error=>{
+        console.log(error)
+      })
+      //mandar a listado
+    }).catch(error=>{
+      console.log("TURNOS POR PROF",error)
+    })
+  }
 
 }

@@ -13,6 +13,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/encuesta/encuesta.component.html":
+/*!****************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/encuesta/encuesta.component.html ***!
+  \****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container h-100\">\n    <div class=\"row justify-content-center align-items-center\">\n      <div class=\"col-6\">\n        <div class=\"card\" [ngClass]=\"{'border-danger': error}\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Encuesta</h5>\n            <form [formGroup]=\"form\">\n              <div class=\"form-group\">\n                  <label for=\"user\" class=\"col-6\">Califique al Paciente</label>\n                  <ngb-rating [(rate)]=\"selectedMesa\" class=\"col-6\">\n                      <ng-template let-fill=\"fill\" let-index=\"index\">\n                        <span class=\"star\" [class.filled]=\"fill === 100\">&#9733;</span>\n                      </ng-template>\n                    </ngb-rating>\n              </div>\n              <!--div class=\"form-group\">\n                <label for=\"rest\" class=\"col-6\">Califique el Restaurante</label>\n                <ngb-rating [(rate)]=\"selectedResto\" class=\"col-6\">\n                  <ng-template let-fill=\"fill\" let-index=\"index\">\n                    <span class=\"star\" [class.filled]=\"fill === 100\">&#9733;</span>\n                  </ng-template>\n                </ngb-rating>\n              </div>\n              <div class=\"form-group\">\n                <label for=\"moz\" class=\"col-6\">Califique el Mozo</label>\n                <ngb-rating [(rate)]=\"selectedMozo\" class=\"col-6\">\n                    <ng-template let-fill=\"fill\" let-index=\"index\">\n                        <span class=\"star\" [class.filled]=\"fill === 100\">&#9733;</span>\n                      </ng-template>\n                    </ngb-rating>\n  \n              </div>\n              <div class=\"form-group\">\n                <label for=\"coci\" class=\"col-6\">Califique el Cocinero</label>\n                <ngb-rating [(rate)]=\"selectedCoci\" class=\"col-6\" >\n                    <ng-template let-fill=\"fill\" let-index=\"index\">\n                        <span class=\"star\" [class.filled]=\"fill === 100\">&#9733;</span>\n                      </ng-template>\n                    </ngb-rating>\n              </div-->\n              <div class=\"form-group\">\n                <label for=\"coci\" class=\"col-6\">Por favor deje su comentario</label>\n                <textarea formControlName=\"comentario\" class=\"col-6 span6\" rows=\"3\" placeholder=\"Sugerencias?\" required></textarea>\n              </div>\n             <button class=\"col-6 btn btn-primary\" (click)=\"Submit()\">Enviar</button>\n             <button class=\"col-6 btn btn-secondary\" (click)=\"Cancel()\">Cancelar</button>\n            </form>\n            </div>\n                <div *ngIf=\"error\" class=\"card-footer\">\n                  <small class=\"text-danger font-weight-bold\"><i class=\"fa fa-times\"></i> {{errorMessage}} </small>\n                </div>\n        </div>\n      </div>\n    </div>\n  </div>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/home/home.component.html":
 /*!********************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/home/home.component.html ***!
@@ -61,7 +74,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-calendar></app-calendar>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-navbar [user]=\"'paciente'\"></app-navbar>\n<main>\n    <div class=\"position-relative\">\n      <!-- Hero for FREE version -->\n      <section class=\"section section-lg section-hero section-shaped\">\n        <!-- Background circles -->\n        <div class=\"shape shape-style-1 shape-primary\">\n          <span class=\"span-150\"></span>\n          <span class=\"span-50\"></span>\n          <span class=\"span-50\"></span>\n          <span class=\"span-75\"></span>\n          <span class=\"span-100\"></span>\n          <span class=\"span-75\"></span>\n          <span class=\"span-50\"></span>\n          <span class=\"span-100\"></span>\n          <span class=\"span-50\"></span>\n          <span class=\"span-100\"></span>\n        </div>\n        <div class=\"container shape-container d-flex align-items-center py-lg\">\n          <div class=\"col px-0\">\n            <div class=\"row align-items-center justify-content-center\">\n              <div class=\"col-lg-12 text-center\">\n                <img src=\"./assets/img/brand/argon-white.png\" style=\"width: 200px;\" class=\"img-fluid\">\n                <p class=\"lead text-white\">Bienvenido a Clínica Lab 4 TP.</p>\n                <!--************************************************************-->\n                <mat-form-field>\n                  <mat-label>Filter</mat-label>\n                  <input matInput (keyup)=\"applyFilter($event)\" placeholder=\"Ex. ium\">\n                </mat-form-field>\n                \n                <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n                \n                  <!-- Position Column -->\n                  <ng-container matColumnDef=\"id\">\n                    <th mat-header-cell *matHeaderCellDef> ID </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.id}} </td>\n                  </ng-container>\n                \n                  <!-- Name Column -->\n                  <ng-container matColumnDef=\"profesional\">\n                    <th mat-header-cell *matHeaderCellDef> Profesional </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.profesional}} </td>\n                  </ng-container>\n                \n                  <!-- Weight Column -->\n                  <ng-container matColumnDef=\"especialidad\">\n                    <th mat-header-cell *matHeaderCellDef> Especialidad </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.especialidad}} </td>\n                  </ng-container>\n                \n                  <!-- Symbol Column -->\n                  <ng-container matColumnDef=\"fecha\">\n                    <th mat-header-cell *matHeaderCellDef> Fecha </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.fecha}} </td>\n                  </ng-container>\n                  <!-- Position Column -->\n                  <ng-container matColumnDef=\"hora\">\n                      <th mat-header-cell *matHeaderCellDef> Hora </th>\n                      <td mat-cell *matCellDef=\"let element\"> {{element.hora}} </td>\n                    </ng-container>\n                  \n                    <!-- Name Column -->\n                    <ng-container matColumnDef=\"atendido\">\n                      <th mat-header-cell *matHeaderCellDef> Atendido </th>\n                      <td mat-cell *matCellDef=\"let element\"> {{element.atendido}} </td>\n                    </ng-container>\n                  \n                    <!-- Weight Column -->\n                    <ng-container matColumnDef=\"estado\">\n                      <th mat-header-cell *matHeaderCellDef> Estado </th>\n                      <td mat-cell *matCellDef=\"let element\"> {{element.estado}} </td>\n                    </ng-container>   \n  \n                    <!-- Weight Column -->\n                    <ng-container matColumnDef=\"rechazar\">\n                      <th mat-header-cell *matHeaderCellDef> Rechazar </th>\n                      <td mat-cell *matCellDef=\"let element\"> <button mat-raised-button color=\"warn\" (click)=\"rechazar(element)\"><mat-icon>delete</mat-icon></button> </td>\n                    </ng-container>\n  \n                  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n                  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                </table>\n                &nbsp;\n              </div>\n            </div>\n          </div>\n        </div>\n        <!-- SVG separator -->\n        <div class=\"separator separator-bottom separator-skew zindex-100\">\n          <svg x=\"0\" y=\"0\" viewBox=\"0 0 2560 100\" preserveAspectRatio=\"none\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">\n            <polygon class=\"fill-white\" points=\"2560 0 2560 100 0 100\"></polygon>\n          </svg>\n        </div>\n      </section>\n    </div>\n  </main>\n  ");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/paciente/lista-turnos/lista-turnos.component.html":
+/*!*********************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/paciente/lista-turnos/lista-turnos.component.html ***!
+  \*********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<app-navbar [user]=\"user\"></app-navbar>\n<main>\n\n    <section class=\"section section-shaped section-lg\">\n      <div class=\"shape shape-style-1 bg-gradient-default\">\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n       \n      </div>\n      <div class=\"container pt-lg-md\">\n        \n        <div class=\"row justify-content-center\">\n          \n          <div class=\"col-lg-12\">\n            <div class=\"card bg-secondary shadow border-0\">\n              <!--div class=\"card-header bg-white pb-5\">\n              </div-->\n              <mat-form-field>\n                <mat-label>Filter</mat-label>\n                <input matInput (keyup)=\"applyFilter($event)\" placeholder=\"Ex. ium\">\n              </mat-form-field>\n              \n              <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n              \n                <!-- Position Column -->\n                <ng-container matColumnDef=\"id\">\n                  <th mat-header-cell *matHeaderCellDef> ID </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.id}} </td>\n                </ng-container>\n              \n                <!-- Name Column -->\n                <ng-container matColumnDef=\"profesional\">\n                  <th mat-header-cell *matHeaderCellDef> Profesional </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.profesional}} </td>\n                </ng-container>\n              \n                <!-- Weight Column -->\n                <ng-container matColumnDef=\"especialidad\">\n                  <th mat-header-cell *matHeaderCellDef> Especialidad </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.especialidad}} </td>\n                </ng-container>\n              \n                <!-- Symbol Column -->\n                <ng-container matColumnDef=\"fecha\">\n                  <th mat-header-cell *matHeaderCellDef> Fecha </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.fecha}} </td>\n                </ng-container>\n                <!-- Position Column -->\n                <ng-container matColumnDef=\"hora\">\n                    <th mat-header-cell *matHeaderCellDef> Hora </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.hora}} </td>\n                  </ng-container>\n                \n                  <!-- Name Column -->\n                  <ng-container matColumnDef=\"atendido\">\n                    <th mat-header-cell *matHeaderCellDef> Atendido </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.atendido}} </td>\n                  </ng-container>\n                \n                  <!-- Weight Column -->\n                  <ng-container matColumnDef=\"estado\">\n                    <th mat-header-cell *matHeaderCellDef> Estado </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.estado}} </td>\n                  </ng-container>   \n\n                  <!-- Weight Column -->\n                  <ng-container matColumnDef=\"rechazar\">\n                    <th mat-header-cell *matHeaderCellDef> Rechazar </th>\n                    <td mat-cell *matCellDef=\"let element\"> <button mat-raised-button color=\"warn\" (click)=\"rechazar(element)\"><mat-icon>delete</mat-icon></button> </td>\n                  </ng-container>\n\n                <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n                <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n              </table>\n              &nbsp;\n              <h3>-<strong> Exportar a Excel</strong></h3>\n              <div class=\"container\">\n                <button mat-raised-button color=\"primary\" (click)=\"exportarAsXlsx()\">Exportar Todos</button> \n                &nbsp;\n                <button mat-raised-button color=\"accent\" (click)=\"exportarAsXlsxFilter()\">Exportar Filtrados</button>\n              </div>\n              &nbsp;\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  </main>\n  ");
 
 /***/ }),
 
@@ -74,7 +100,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-navbar [user]=\"user\"></app-navbar>\n<main>\n\n    <section class=\"section section-shaped section-lg\">\n      <div class=\"shape shape-style-1 bg-gradient-default\">\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n       \n      </div>\n      <div class=\"container pt-lg-md\">\n        \n        <div class=\"row justify-content-center\">\n          \n          <div class=\"col-lg-5\">\n            <div class=\"card bg-secondary shadow border-0\">\n              <div class=\"card-header bg-white pb-5\">\n               \n                <form [formGroup]=\"form\" (ngSubmit)=\"OnSubmitRegister()\">\n                  <div class=\"form-group\" [ngClass]=\"{'focused':focus1===true}\">\n                    <div class=\"input-group input-group-alternative mb-3\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-badge\"></i></span>\n                      </div>\n                      \n                      <select class=\"form-control\" formControlName=\"especialidad\" [(ngModel)]=\"espeSeleccionada\" (change)=\"capturarEspe()\" (focus)=\"focus1=true\" (blur)=\"focus1=false\">\n                        <option value=\"0\">Selecciona una opción</option>\n                        <option [value]=\"especialidad.idEspecialidad\" *ngFor=\"let especialidad of especialidadesT\">\n                          {{especialidad.nombre}}\n                        </option>\n                    </select>\n                    </div>\n                  </div>\n                  <div class=\"form-group\" [ngClass]=\"{'focused':focus2===true}\">\n                    <div class=\"input-group input-group-alternative mb-3\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-badge\"></i></span>\n                      </div>\n                      \n                      <select class=\"form-control\" formControlName=\"profesional\" [(ngModel)]=\"profSeleccionada\" (change)=\"capturarProf()\" (focus)=\"focus2=true\" (blur)=\"focus2=false\" >\n                        <option value=\"0\">Selecciona una opción</option>\n                        <option [value]=\"profesional.dni\" *ngFor=\"let profesional of profesionalesT\">\n                          {{profesional.apellido}}\n                        </option>\n                    </select>\n                    </div>\n                  </div>\n                  <div *ngIf=\"profSeleccionada!=0\" class=\"text-center\">\n                    <button type=\"button\" class=\"btn btn-primary my-4\" type=\"button\" (click)=\"mostrarCalend()\" >Mostrar Calendario</button>\n                  </div>\n                  \n                </form>\n                <div *ngIf=\"mostrarCalen\" >\n                  <ngb-datepicker [displayMonths]=\"1\" [navigation]=\"navigation\"\n                                  [showWeekNumbers]=\"showWeekNumbers\" [outsideDays]=\"outsideDays\"\n                                  [minDate]=\"today\"\n                                  [maxDate]=\"maxDate\"\n                                  [markDisabled]=\"isDisabled\"\n                                  #d1 [(ngModel)]=\"model1\" #c1=\"ngModel\" (click)=\"capturarDia(model1)\"\n                  >\n                  </ngb-datepicker>\n                  <p>{{model1 | json}}</p>\n                  <div *ngIf=\"diaSeleccionada!=0\" class=\"card\">\n                    <div class=\"card-header\"><strong>Horarios disponibles</strong></div>\n                    <div class=\"card-body\" (change)=\"tomarRadio($event)\">\n                      <!--ACA METO EL TURNO A SELECCIONAR, SALE DE EL TURNO MAÑANA Y TARDE Y LA DURACION DE ESOS TURNOS-->\n                      <div *ngIf=\"lu==0\">\n                        <label><strong> Lunes</strong></label>\n                        <div *ngIf=\"lu8\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosM\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                \n                                  </span>{{item}}</label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                        <div *ngIf=\"lu13\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosT\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      <div *ngIf=\"ma==0\">\n                        <label><strong>Martes</strong></label>\n                        <div *ngIf=\"ma8\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosM\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                        <div *ngIf=\"ma13\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosT\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      <div *ngIf=\"mi==0\">\n                        <label><strong>Miércoles</strong></label>\n                        <div *ngIf=\"mi8\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosM\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                        <div *ngIf=\"mi13\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosT\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      <div *ngIf=\"ju==0\">\n                        <label><strong>Jueves</strong></label>\n                        <div *ngIf=\"ju8\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosM\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                        <div *ngIf=\"ju13\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosT\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      <div *ngIf=\"vi==0\">\n                        <label><strong> Viernes</strong></label>\n                        <div *ngIf=\"vi8\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosM\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                        <div *ngIf=\"vi13\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosT\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      <div *ngIf=\"sa==0\">\n                        <label><strong>Sábado</strong></label>\n                        <div *ngIf=\"sa8\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosM\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                    <!--div class=\"card-footer\">\n                      <p>Turno</p>\n                      <tr>\n                        <td>{{turno.id}}</td>\n                        <td>{{turno.especialidad}}</td>\n                        <td>{{turno.profesional}}</td>\n                        <td>{{turno.paciente}}</td>\n                        <td>{{turno.especialidad}}</td>\n                        <td>{{turno.profesional}}</td>\n                        <td>{{turno.paciente}}</td>\n                      </tr>\n                    </div-->\n                  </div>\n                </div>\n                <div class=\"text-center\">\n                  <button type=\"button\" class=\"btn btn-primary my-4\" type=\"submit\" [disabled]=\"!form.valid\">Sacar Turno</button>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  </main>\n  ");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-navbar [user]=\"user\"></app-navbar>\n<main>\n\n    <section class=\"section section-shaped section-lg\">\n      <div class=\"shape shape-style-1 bg-gradient-default\">\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n       \n      </div>\n      <div class=\"container pt-lg-md\">\n        \n        <div class=\"row justify-content-center\">\n          \n          <div class=\"col-lg-5\">\n            <div class=\"card bg-secondary shadow border-0\">\n              <div class=\"card-header bg-white pb-5\">\n               \n                <form [formGroup]=\"form\">\n                  <div class=\"form-group\" [ngClass]=\"{'focused':focus1===true}\">\n                    <div class=\"input-group input-group-alternative mb-3\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-badge\"></i></span>\n                      </div>\n                      \n                      <select class=\"form-control\" formControlName=\"especialidad\" [(ngModel)]=\"espeSeleccionada\" (change)=\"capturarEspe()\" (focus)=\"focus1=true\" (blur)=\"focus1=false\">\n                        <option value=\"0\">Selecciona una opción</option>\n                        <option [value]=\"especialidad.idEspecialidad\" *ngFor=\"let especialidad of especialidadesT\">\n                          {{especialidad.nombre}}\n                        </option>\n                    </select>\n                    </div>\n                  </div>\n                  <div class=\"form-group\" [ngClass]=\"{'focused':focus2===true}\">\n                    <div class=\"input-group input-group-alternative mb-3\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-badge\"></i></span>\n                      </div>\n                      \n                      <select class=\"form-control\" formControlName=\"profesional\" [(ngModel)]=\"profSeleccionada\" (change)=\"capturarProf()\" (focus)=\"focus2=true\" (blur)=\"focus2=false\" >\n                        <option value=\"0\">Selecciona una opción</option>\n                        <option [value]=\"profesional.dni\" *ngFor=\"let profesional of profesionalesT\">\n                          {{profesional.apellido}}\n                        </option>\n                    </select>\n                    </div>\n                  </div>\n                  <div *ngIf=\"profSeleccionada!=0\" class=\"text-center\">\n                    <button type=\"button\" class=\"btn btn-primary my-4\" type=\"button\" (click)=\"mostrarCalend()\" >Mostrar Calendario</button>\n                  </div>\n                  \n                </form>\n                <div *ngIf=\"mostrarCalen\" >\n                  <ngb-datepicker [displayMonths]=\"1\" [navigation]=\"navigation\"\n                                  [showWeekNumbers]=\"showWeekNumbers\" [outsideDays]=\"outsideDays\"\n                                  [minDate]=\"today\"\n                                  [maxDate]=\"maxDate\"\n                                  [markDisabled]=\"isDisabled\"\n                                  #d1 [(ngModel)]=\"model1\" #c1=\"ngModel\" (click)=\"capturarDia(model1)\"\n                  >\n                  </ngb-datepicker>\n                  <p>{{model1 | json}}</p>\n                  <div *ngIf=\"diaSeleccionada!=0\" class=\"card\">\n                    <div class=\"card-header\"><strong>Horarios disponibles</strong></div>\n                    <div class=\"card-body\" (change)=\"tomarRadio($event)\">\n                      <!--ACA METO EL TURNO A SELECCIONAR, SALE DE EL TURNO MAÑANA Y TARDE Y LA DURACION DE ESOS TURNOS-->\n                      <div *ngIf=\"lu==0\">\n                        <label><strong> Lunes</strong></label>\n                        <div *ngIf=\"lu8\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosM\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                \n                                  </span>{{item}}</label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                        <div *ngIf=\"lu13\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosT\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      <div *ngIf=\"ma==0\">\n                        <label><strong>Martes</strong></label>\n                        <div *ngIf=\"ma8\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosM\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                        <div *ngIf=\"ma13\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosT\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      <div *ngIf=\"mi==0\">\n                        <label><strong>Miércoles</strong></label>\n                        <div *ngIf=\"mi8\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosM\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                        <div *ngIf=\"mi13\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosT\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      <div *ngIf=\"ju==0\">\n                        <label><strong>Jueves</strong></label>\n                        <div *ngIf=\"ju8\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosM\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                        <div *ngIf=\"ju13\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosT\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      <div *ngIf=\"vi==0\">\n                        <label><strong> Viernes</strong></label>\n                        <div *ngIf=\"vi8\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosM\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                        <div *ngIf=\"vi13\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosT\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      <div *ngIf=\"sa==0\">\n                        <label><strong>Sábado</strong></label>\n                        <div *ngIf=\"sa8\">\n                          <div class=\"row\" >\n                            <div class=\"col-3\" *ngFor=\"let item of turnosM\">\n                              <div class=\"form-check\">\n                                <label class=\"form-check-label\">\n                                  <input type=\"radio\" class=\"form-check-input \" [id]=\"item\" name=turn>\n                                  <span class=\"form-check-sign\">                    \n                                  </span> {{item}} </label>\n                                </div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                    <div *ngIf=\"mostrarTurno\" class=\"card-footer\">\n                      <p><strong>Turno</strong></p>\n                        <p><strong>id:</strong> {{turnoOK.id}}</p>\n                        <p><strong>Especialidad:</strong> {{turnoOK.especialidad}}</p>\n                        <p><strong>Profesional:</strong>{{turnoOK.profesional}}</p>\n                        <p><strong>Paciente:</strong>{{turnoOK.paciente}}</p>\n                        <p><strong>Fecha:</strong>{{turnoOK.fecha}}</p>\n                        <p><strong>Hora:</strong>{{turnoOK.hora}}</p>\n                        <p><strong>Estado:</strong>{{turnoOK.estado}}</p>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"text-center\">\n                  <button type=\"button\" class=\"btn btn-primary my-4\" id=\"sacar\" type=\"submit\"  (click)=\"sacarTurno()\">Sacar Turno</button>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  </main>\n  ");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/profesional/atencion/atencion.component.html":
+/*!****************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/profesional/atencion/atencion.component.html ***!
+  \****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<app-navbar [user]=\"user\"></app-navbar>\n<main>\n\n    <section class=\"section section-shaped section-lg\">\n      <div class=\"shape shape-style-1 bg-gradient-default\">\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n       \n      </div>\n      <div class=\"container pt-lg-md\">\n        \n        <div class=\"row justify-content-center\">\n          \n          <div class=\"col-lg-12\">\n            <div class=\"card bg-secondary shadow border-0\">\n              <!--div class=\"card-header bg-white pb-5\">\n              </div-->\n              <mat-form-field>\n                <mat-label>Filter</mat-label>\n                <input matInput (keyup)=\"applyFilter($event)\" placeholder=\"Ingrese una palabra clave...\">\n              </mat-form-field>\n              \n              <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n              \n                <!-- Position Column -->\n                <ng-container matColumnDef=\"id\">\n                  <th mat-header-cell *matHeaderCellDef> ID </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.id}} </td>\n                </ng-container>\n              \n                <!-- Name Column -->\n                <ng-container matColumnDef=\"paciente\">\n                  <th mat-header-cell *matHeaderCellDef> Paciente </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.paciente}} </td>\n                </ng-container>\n              \n                <!-- Weight Column -->\n                <ng-container matColumnDef=\"especialidad\">\n                  <th mat-header-cell *matHeaderCellDef> Especialidad </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.especialidad}} </td>\n                </ng-container>\n              \n                <!-- Symbol Column -->\n                <ng-container matColumnDef=\"fecha\">\n                  <th mat-header-cell *matHeaderCellDef> Fecha </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.fecha}} </td>\n                </ng-container>\n                <!-- Position Column -->\n                <ng-container matColumnDef=\"hora\">\n                    <th mat-header-cell *matHeaderCellDef> Hora </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.hora}} </td>\n                  </ng-container>\n                \n                  <!-- Name Column -->\n                  <ng-container matColumnDef=\"atender\">\n                    <th mat-header-cell *matHeaderCellDef> Atender </th>\n                    <td mat-cell *matCellDef=\"let element\"> <button mat-raised-button color=\"primary\" (click)=\"atender(element)\"><mat-icon>favorite</mat-icon></button> </td>\n                  </ng-container>\n                \n                <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n                <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n              </table>\n              &nbsp;\n              <div *ngIf=\"atendiendo\">\n                <form [formGroup]=\"hClinicaForm\" (ngSubmit)=\"mostrarEncuesta()\" novalidate>\n                    <label>Historia Clínica de {{turno.paciente}}</label>\n                    <!-- Form elements goes here -->\n                    <div class=\"form-group\" [ngClass]=\"{'focused':focus1===true}\">\n                        <div class=\"input-group input-group-alternative mb-3\">\n                            <div class=\"input-group-prepend\">\n                            <span class=\"input-group-text\"><i class=\"ni ni-single-02\"></i></span>\n                            </div>\n                            <input class=\"form-control\" formControlName=\"id\" type=\"text\" (focus)=\"focus1=true\" (blur)=\"focus1=false\" disabled [value]=\"turno.id\">\n                        </div>\n                    </div>\n                    <div class=\"form-group\" [ngClass]=\"{'focused':focus2===true}\">\n                    <div class=\"input-group input-group-alternative mb-3\">\n                        <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-single-02\"></i></span>\n                        </div>\n                        <input class=\"form-control\" formControlName=\"edad\" placeholder=\"Edad\" type=\"number\" (focus)=\"focus2=true\" (blur)=\"focus2=false\">\n                    </div>\n                    </div>\n                    <div class=\"form-group\" [ngClass]=\"{'focused':focus3===true}\">\n                        <div class=\"input-group input-group-alternative mb-3\">\n                            <div class=\"input-group-prepend\">\n                            <span class=\"input-group-text\"><i class=\"ni ni-single-02\"></i></span>\n                            </div>\n                            <input class=\"form-control\" formControlName=\"temperatura\" placeholder=\"Temperatura\" type=\"number\" (focus)=\"focus3=true\" (blur)=\"focus3=false\">\n                        </div>\n                    </div>\n                    <div class=\"form-group\" [ngClass]=\"{'focused':focus4===true}\">\n                    <div class=\"input-group input-group-alternative mb-3\">\n                        <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-single-02\"></i></span>\n                        </div>\n                        <input class=\"form-control\" formControlName=\"presion\" placeholder=\"Presión\" type=\"text\" (focus)=\"focus4=true\" (blur)=\"focus4=false\">\n                    </div>\n                    </div>\n                    <div class=\"form-group\" [ngClass]=\"{'focused':focus5===true}\">\n                    <div class=\"input-group input-group-alternative\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-single-02\"></i></span>\n                      </div>\n                      <input class=\"form-control\" formControlName=\"addC\" placeholder=\"Ingrese nombre de campo\" type=\"text\" (focus)=\"focus5=true\" (blur)=\"focus5=false\">\n                      <button class=\"form-control btn btn-primary\" type=\"button\" (click)=\"addCampo()\">Agregar campo</button>\n                    </div>\n                    \n                  </div>\n                  <!--ACA VAN LOS 3 DINAMICOS-->\n                  <div *ngIf=\"din1!==''\" class=\"form-group\" [ngClass]=\"{'focused':focus6===true}\">\n                    <div class=\"input-group input-group-alternative mb-3\">\n                        <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-single-02\"></i></span>\n                        </div>\n                        <input class=\"form-control\" formControlName=\"dina1\" placeholder=\"{{din1}}\" type=\"text\" (focus)=\"focus6=true\" (blur)=\"focus6=false\">\n                    </div>\n                    </div>\n                    <div *ngIf=\"din2!==''\" class=\"form-group\" [ngClass]=\"{'focused':focus7===true}\">\n                        <div class=\"input-group input-group-alternative mb-3\">\n                            <div class=\"input-group-prepend\">\n                            <span class=\"input-group-text\"><i class=\"ni ni-single-02\"></i></span>\n                            </div>\n                            <input class=\"form-control\" formControlName=\"dina2\" placeholder=\"{{din2}}\" type=\"text\" (focus)=\"focus7=true\" (blur)=\"focus7=false\">\n                        </div>\n                    </div>\n                    <div *ngIf=\"din3!==''\" class=\"form-group\" [ngClass]=\"{'focused':focus8===true}\">\n                    <div class=\"input-group input-group-alternative mb-3\">\n                        <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-single-02\"></i></span>\n                        </div>\n                        <input class=\"form-control\" formControlName=\"dina3\" placeholder=\"{{din3}}\" type=\"text\" (focus)=\"focus8=true\" (blur)=\"focus8=false\">\n                    </div>\n                    </div>\n                    <div class=\"text-center\">\n                        <input class=\"btn btn-primary my-4\" [disabled]=\"!hClinicaForm.valid\" type=\"submit\" value=\"Guardar Historia\">\n                    </div>\n                </form>\n            </div>\n              &nbsp;\n            </div>\n          </div>\n        </div>\n      </div>\n      <!--ENCUESTA***************************************************************** -->\n      <div class=\"container\" *ngIf=\"encuestar\">\n        <div class=\"container h-100\">\n            <div class=\"row justify-content-center align-items-center\">\n              <div class=\"col-6\">\n                <div class=\"card\" [ngClass]=\"{'border-danger': error}\">\n                  <div class=\"card-body\">\n                    <h5 class=\"card-title\">Encuesta</h5>\n                    <form [formGroup]=\"form\">\n                      <div class=\"form-group\">\n                          <label for=\"user\" class=\"col-6\">Califique al Paciente</label>\n                          <ngb-rating [(rate)]=\"selectedPaciente\" class=\"col-6\">\n                              <ng-template let-fill=\"fill\" let-index=\"index\">\n                                <span class=\"star\" [class.filled]=\"fill === 100\">&#9733;</span>\n                              </ng-template>\n                            </ngb-rating>\n                      </div>\n                      <div class=\"form-group\">\n                        <label for=\"coci\" class=\"col-6\">Por favor deje su comentario</label>\n                        <textarea formControlName=\"comentario\" class=\"col-6 span6\" rows=\"3\" placeholder=\"Sugerencias?\" required></textarea>\n                      </div>\n                     <button class=\"col-6 btn btn-primary\" (click)=\"Submit()\">Enviar</button>\n                     <button class=\"col-6 btn btn-secondary\" (click)=\"Cancel()\">Cancelar</button>\n                    </form>\n                    </div>\n                        <div *ngIf=\"error\" class=\"card-footer\">\n                          <small class=\"text-danger font-weight-bold\"><i class=\"fa fa-times\"></i> {{errorMessage}} </small>\n                        </div>\n                </div>\n              </div>\n            </div>\n          </div>\n      </div>\n      \n    </section>\n    \n  </main>\n  \n  ");
 
 /***/ }),
 
@@ -87,7 +126,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<main>\n    <div class=\"position-relative\">\n      <!-- Hero for FREE version -->\n      <section class=\"section section-lg section-hero section-shaped\">\n        <!-- Background circles -->\n        <div class=\"shape shape-style-1 shape-primary\">\n          <span class=\"span-150\"></span>\n          <span class=\"span-50\"></span>\n          <span class=\"span-50\"></span>\n          <span class=\"span-75\"></span>\n          <span class=\"span-100\"></span>\n          <span class=\"span-75\"></span>\n          <span class=\"span-50\"></span>\n          <span class=\"span-100\"></span>\n          <span class=\"span-50\"></span>\n          <span class=\"span-100\"></span>\n        </div>\n        <div class=\"container shape-container d-flex align-items-center py-lg\">\n          <div class=\"col px-0\">\n            <div class=\"row align-items-center justify-content-center\">\n              <div class=\"col-lg-6 text-center\">\n                <img src=\"./assets/img/brand/argon-white.png\" style=\"width: 200px;\" class=\"img-fluid\">\n                <p class=\"lead text-white\">Bienvenido a Clínica Lab 4 TP.</p>\n              </div>\n              \n            </div>\n          </div>\n        </div>\n        <div>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            \n        </div>\n      \n        \n      </section>\n    </div>\n  </main>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-navbar [user]=\"'profesional'\"></app-navbar>\n<main>\n    <div class=\"position-relative\">\n      <!-- Hero for FREE version -->\n      <section class=\"section section-lg section-hero section-shaped\">\n        <!-- Background circles -->\n        <div class=\"shape shape-style-1 shape-primary\">\n          <span class=\"span-150\"></span>\n          <span class=\"span-50\"></span>\n          <span class=\"span-50\"></span>\n          <span class=\"span-75\"></span>\n          <span class=\"span-100\"></span>\n          <span class=\"span-75\"></span>\n          <span class=\"span-50\"></span>\n          <span class=\"span-100\"></span>\n          <span class=\"span-50\"></span>\n          <span class=\"span-100\"></span>\n        </div>\n        <div class=\"container shape-container d-flex align-items-center py-lg\">\n          <div class=\"col px-0\">\n            <div class=\"row align-items-center justify-content-center\">\n              <div class=\"col-lg-6 text-center\">\n                <img src=\"./assets/img/brand/argon-white.png\" style=\"width: 200px;\" class=\"img-fluid\">\n                <p class=\"lead text-white\">Bienvenido a Clínica Lab 4 TP.</p>\n              </div>\n              \n            </div>\n          </div>\n        </div>\n        <div>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            <p></p>\n            \n        </div>\n      \n        \n      </section>\n    </div>\n  </main>\n\n");
 
 /***/ }),
 
@@ -100,7 +139,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<main>\n\n    <section class=\"section section-shaped section-lg\">\n      <div class=\"shape shape-style-1 bg-gradient-default\">\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n       \n      </div>\n      <div class=\"container pt-lg-md\">\n        \n        <div class=\"row justify-content-center\">\n          \n          <div class=\"col-lg-5\">\n            <div class=\"card bg-secondary shadow border-0\">\n              <div class=\"card-header bg-white pb-5\">\n               <!--div>\n                 <button (click)=\"addUserAEspecialidad()\">EspeXUSU</button>\n                 \n               </div-->\n                <form [formGroup]=\"form\"> <!--(ngSubmit)=\"OnSubmitRegister()\"-->\n                  <div class=\"form-group\" [ngClass]=\"{'focused':focus1===true}\">\n                    <div class=\"input-group input-group-alternative mb-3\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-email-83\"></i></span>\n                      </div>\n                      <input class=\"form-control\" formControlName=\"mail\" placeholder=\"Correo\" type=\"email\" (focus)=\"focus1=true\" (blur)=\"focus1=false\">\n                    </div>\n                  </div>\n                  <div class=\"form-group\" [ngClass]=\"{'focused':focus2===true}\">\n                    <div class=\"input-group input-group-alternative mb-3\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-lock-circle-open\"></i></span>\n                      </div>\n                      <input class=\"form-control\" formControlName=\"password\" placeholder=\"Clave\" type=\"password\" (focus)=\"focus2=true\" (blur)=\"focus2=false\">\n                    </div>\n                  </div>\n                  <div class=\"form-group\" [ngClass]=\"{'focused':focus3===true}\">\n                    <div class=\"input-group input-group-alternative mb-3\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-lock-circle-open\"></i></span>\n                      </div>\n                      <input class=\"form-control\" formControlName=\"password2\" placeholder=\"Confirmar Clave\" type=\"password\" (focus)=\"focus3=true\" (blur)=\"focus3=false\">\n                    </div>\n                  </div>\n                  <div class=\"form-group\" [ngClass]=\"{'focused':focus4===true}\">\n                    <div class=\"input-group input-group-alternative mb-3\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-single-02\"></i></span>\n                      </div>\n                      <input class=\"form-control\" formControlName=\"nombre\" placeholder=\"Nombre\" type=\"text\" (focus)=\"focus4=true\" (blur)=\"focus4=false\">\n                    </div>\n                  </div>\n                  <div class=\"form-group\" [ngClass]=\"{'focused':focus5===true}\">\n                    <div class=\"input-group input-group-alternative mb-3\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-single-02\"></i></span>\n                      </div>\n                      <input class=\"form-control\" formControlName=\"apellido\" placeholder=\"Apellido\" type=\"text\" (focus)=\"focus5=true\" (blur)=\"focus5=false\">\n                    </div>\n                  </div>\n                  <div class=\"form-group\" [ngClass]=\"{'focused':focus6===true}\">\n                    <div class=\"input-group input-group-alternative\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-single-02\"></i></span>\n                      </div>\n                      <input class=\"form-control\" formControlName=\"dni\" placeholder=\"DNI\" type=\"number\" (focus)=\"focus6=true\" (blur)=\"focus6=false\">\n                    </div>\n                  </div>\n                  <!--div class=\"form-group\" [ngClass]=\"{'focused':focus7===true}\">\n                    <div class=\"input-group input-group-alternative\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-image\"></i></span>\n                      </div>\n                      <input class=\"form-control btn btn-secondary\" formControlName=\"foto\" (change)=\"cambioArchivo($event)\" type=\"file\" (focus)=\"focus7=true\" (blur)=\"focus7=false\">\n                      <button class=\"form-control btn btn-primary\" (click)=\"subirArchivo()\" disabled id=\"subirOK\">Subir</button>\n                    </div>\n                    \n                  </div-->\n                  <!--form [formGroup]=\"especialidadesForm\" type=\"submit\" (change)=\"submitForm()\" novalidate-->\n                    <label><strong> Especialidades</strong></label>\n                    <div *ngFor=\"let data of especialidadesT; let i=index\">\n                        <label>\n                          <input type=\"checkbox\" [id]=\"data.idEspecialidad\" (change)=\"check($event)\"/>\n                          {{data.nombre}}\n                        </label>\n                        <div *ngIf=\"ok[data.idEspecialidad]\" class=\"row\">\n                          <input type=\"radio\"  [id]=\"data.idEspecialidad+','+30\" [value]=\"data.nombre\" [name]=\"data.nombre\" (change)=\"onCheckboxChange($event)\" />30 \n                          <input type=\"radio\"  [id]=\"data.idEspecialidad+','+45\" [value]=\"data.nombre\" [name]=\"data.nombre\" (change)=\"onCheckboxChange($event)\" />45\n                          <input type=\"radio\"  [id]=\"data.idEspecialidad+','+60\" [value]=\"data.nombre\" [name]=\"data.nombre\" (change)=\"onCheckboxChange($event)\" />60\n                          <input type=\"radio\"  [id]=\"data.idEspecialidad+','+75\" [value]=\"data.nombre\" [name]=\"data.nombre\" (change)=\"onCheckboxChange($event)\" />75\n                        </div>\n                        \n                      </div>\n                    <!--input type=\"submit\" value=\"Submit\"-->\n                <!--/form-->\n                <form [formGroup]=\"horariosForm\" (ngSubmit)=\"cargaHorarios()\">\n                <br>\n                    <label><strong> Horarios</strong></label>\n                    <div class=\"row\">\n                        <div class=\"col-12\">\n                          <div class=\"form-check\">\n                            <label class=\"form-check-label\">\n                              <input type=\"checkbox\" class=\"form-check-input \" formControlName=\"lunes\" [(ngModel)]=\"lunesOK\">\n                              <span class=\"form-check-sign\">                    \n                              </span><strong> Lunes</strong> </label>\n                              <div class=\"hora\" *ngIf=\"lunesOK\">\n                                <div class=\"row\">\n                                    <div class=\"col-6\">\n                                      <div class=\"form-check\">\n                                        <label class=\"form-check-label\">\n                                          <input type=\"checkbox\" class=\"form-check-input \" id=\"lu8\" (change)=\"checkValue($event)\">\n                                          <span class=\"form-check-sign\">                    \n                                          </span> 8:00 a 13:30 </label>\n                                        </div>\n                                    </div>\n                                    <div class=\"col-6\">\n                                        <div class=\"form-check\">\n                                          <label class=\"form-check-label\">\n                                            <input type=\"checkbox\" class=\"form-check-input \" id=\"lu13\" (change)=\"checkValue($event)\">\n                                            <span class=\"form-check-sign\">                    \n                                            </span> 13:30 a 19:00 </label>\n                                            \n                                          </div>\n                                      </div>\n                                </div>\n                               \n                              </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col-12\">\n                          <div class=\"form-check\">\n                            <label class=\"form-check-label\">\n                              <input type=\"checkbox\" color=\"warning\" class=\"form-check-input\" formControlName=\"martes\" [(ngModel)]=\"martesOK\">\n                              <span class=\"form-check-sign\">                    \n                              </span><strong> Martes </strong></label>\n                              <div class=\"hora\" *ngIf=\"martesOK\">\n                                <div class=\"row\">\n                                    <div class=\"col-6\">\n                                      <div class=\"form-check\">\n                                        <label class=\"form-check-label\">\n                                          <input type=\"checkbox\" class=\"form-check-input \" id=\"ma8\" (change)=\"checkValue($event)\">\n                                          <span class=\"form-check-sign\">                    \n                                          </span> 8:00 a 13:30 </label>\n                                        </div>\n                                    </div>\n                                    <div class=\"col-6\">\n                                        <div class=\"form-check\">\n                                          <label class=\"form-check-label\">\n                                            <input type=\"checkbox\" class=\"form-check-input \" id=\"ma13\" (change)=\"checkValue($event)\">\n                                            <span class=\"form-check-sign\">                    \n                                            </span> 13:30 a 19:00 </label>\n                                            \n                                          </div>\n                                      </div>\n                                </div>\n                               \n                              </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col-12\">\n                          <div class=\"form-check\">\n                            <label class=\"form-check-label\">\n                              <input type=\"checkbox\" color=\"warning\" class=\"form-check-input\" formControlName=\"miercoles\" [(ngModel)]=\"miercolesOK\">\n                              <span class=\"form-check-sign\">                    \n                              </span><strong> Miercoles</strong> </label>\n                              <div class=\"hora\" *ngIf=\"miercolesOK\">\n                                <div class=\"row\">\n                                    <div class=\"col-6\">\n                                      <div class=\"form-check\">\n                                        <label class=\"form-check-label\">\n                                          <input type=\"checkbox\" class=\"form-check-input \" id=\"mi8\" (change)=\"checkValue($event)\">\n                                          <span class=\"form-check-sign\">                    \n                                          </span> 8:00 a 13:30 </label>\n                                        </div>\n                                    </div>\n                                    <div class=\"col-6\">\n                                        <div class=\"form-check\">\n                                          <label class=\"form-check-label\">\n                                            <input type=\"checkbox\" class=\"form-check-input \" id=\"mi13\" (change)=\"checkValue($event)\">\n                                            <span class=\"form-check-sign\">                    \n                                            </span> 13:30 a 19:00 </label>\n                                            \n                                          </div>\n                                      </div>\n                                </div>\n                               \n                              </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col-12\">\n                          <div class=\"form-check\">\n                            <label class=\"form-check-label\">\n                              <input type=\"checkbox\" color=\"warning\" class=\"form-check-input\" formControlName=\"jueves\"  [(ngModel)]=\"juevesOK\">\n                              <span class=\"form-check-sign\">                    \n                              </span><strong> Jueves </strong></label>\n                              <div class=\"hora\" *ngIf=\"juevesOK\">\n                                <div class=\"row\">\n                                    <div class=\"col-6\">\n                                      <div class=\"form-check\">\n                                        <label class=\"form-check-label\">\n                                          <input type=\"checkbox\" class=\"form-check-input \" id=\"ju8\" (change)=\"checkValue($event)\">\n                                          <span class=\"form-check-sign\">                    \n                                          </span> 8:00 a 13:30 </label>\n                                        </div>\n                                    </div>\n                                    <div class=\"col-6\">\n                                        <div class=\"form-check\">\n                                          <label class=\"form-check-label\">\n                                            <input type=\"checkbox\" class=\"form-check-input \" id=\"ju13\" (change)=\"checkValue($event)\">\n                                            <span class=\"form-check-sign\">                    \n                                            </span> 13:30 a 19:00 </label>\n                                            \n                                          </div>\n                                      </div>\n                                </div>\n                               \n                              </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col-12\">\n                          <div class=\"form-check\">\n                            <label class=\"form-check-label\">\n                              <input type=\"checkbox\" color=\"warning\" class=\"form-check-input\" formControlName=\"viernes\" [(ngModel)]=\"viernesOK\">\n                              <span class=\"form-check-sign\">                    \n                              </span><strong> Viernes</strong> </label>\n                              <div class=\"hora\" *ngIf=\"viernesOK\">\n                                <div class=\"row\">\n                                    <div class=\"col-6\">\n                                      <div class=\"form-check\">\n                                        <label class=\"form-check-label\">\n                                          <input type=\"checkbox\" class=\"form-check-input \" id=\"vi8\" (change)=\"checkValue($event)\">\n                                          <span class=\"form-check-sign\">                    \n                                          </span> 8:00 a 13:30 </label>\n                                        </div>\n                                    </div>\n                                    <div class=\"col-6\">\n                                        <div class=\"form-check\">\n                                          <label class=\"form-check-label\">\n                                            <input type=\"checkbox\" class=\"form-check-input \" id=\"vi13\" (change)=\"checkValue($event)\">\n                                            <span class=\"form-check-sign\">                    \n                                            </span> 13:30 a 19:00 </label>\n                                            \n                                          </div>\n                                      </div>\n                                </div>\n                               \n                              </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col-12\">\n                          <div class=\"form-check\">\n                            <label class=\"form-check-label\">\n                              <input type=\"checkbox\" color=\"warning\" class=\"form-check-input\" formControlName=\"sabado\" [(ngModel)]=\"sabadoOK\">\n                              <span class=\"form-check-sign\">                    \n                              </span><strong> Sábado</strong> </label>\n                              <div class=\"hora\" *ngIf=\"sabadoOK\">\n                                <div class=\"row\">\n                                    <div class=\"col-6\">\n                                      <div class=\"form-check\">\n                                        <label class=\"form-check-label\">\n                                          <input type=\"checkbox\" class=\"form-check-input \" id=\"sa8\" (change)=\"checkValue($event)\">\n                                          <span class=\"form-check-sign\">                    \n                                          </span> 8:00 a 14:00 </label>\n                                        </div>\n                                    </div>\n                                </div>\n                               \n                              </div>\n                            </div>\n                        </div>\n                    </div>\n                </form>\n                  <div class=\"text-center\">\n                    <button type=\"button\" class=\"btn btn-primary my-4\" type=\"submit\" [disabled]=\"!form.valid\" (click)=\"OnSubmitRegister()\">Crear Usuario</button>\n                  </div>\n                </form>\n                <form [formGroup]=\"especialidadForm\" (ngSubmit)=\"altaEspecialidades()\" novalidate>\n                    <label>Alta de Especialidad</label>\n                    <!-- Form elements goes here -->\n                    <div class=\"form-group\" [ngClass]=\"{'focused':focus11===true}\">\n                        <div class=\"input-group input-group-alternative mb-3\">\n                            <div class=\"input-group-prepend\">\n                            <span class=\"input-group-text\"><i class=\"ni ni-single-02\"></i></span>\n                            </div>\n                            <input class=\"form-control\" formControlName=\"idEspecialidad\" placeholder=\"Id Especialidad\" type=\"text\" (focus)=\"focus11=true\" (blur)=\"focus11=false\">\n                        </div>\n                    </div>\n                        <div class=\"form-group\" [ngClass]=\"{'focused':focus12===true}\">\n                        <div class=\"input-group input-group-alternative mb-3\">\n                            <div class=\"input-group-prepend\">\n                            <span class=\"input-group-text\"><i class=\"ni ni-single-02\"></i></span>\n                            </div>\n                            <input class=\"form-control\" formControlName=\"nombre\" placeholder=\"Nombre Especialidad\" type=\"text\" (focus)=\"focus12=true\" (blur)=\"focus12=false\">\n                        </div>\n                        </div>\n                        <div class=\"text-center\">\n                    <input class=\"btn btn-primary my-4\" [disabled]=\"!especialidadForm.valid\" type=\"submit\" value=\"Crear Especialidad\">\n                        </div>\n                </form>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  </main>\n  \n");
+/* harmony default export */ __webpack_exports__["default"] = ("<main>\n\n    <section class=\"section section-shaped section-lg\">\n      <div class=\"shape shape-style-1 bg-gradient-default\">\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n       \n      </div>\n      <div class=\"container pt-lg-md\">\n        \n        <div class=\"row justify-content-center\">\n          \n          <div class=\"col-lg-5\">\n            <div class=\"card bg-secondary shadow border-0\">\n              <div class=\"card-header bg-white pb-5\">\n               <!--div>\n                 <button (click)=\"addUserAEspecialidad()\">EspeXUSU</button>\n                 \n               </div-->\n                <form [formGroup]=\"form\"> <!--(ngSubmit)=\"OnSubmitRegister()\"-->\n                  <div class=\"form-group\" [ngClass]=\"{'focused':focus1===true}\">\n                    <div class=\"input-group input-group-alternative mb-3\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-email-83\"></i></span>\n                      </div>\n                      <input class=\"form-control\" formControlName=\"mail\" placeholder=\"Correo\" type=\"email\" (focus)=\"focus1=true\" (blur)=\"focus1=false\">\n                    </div>\n                  </div>\n                  <div class=\"form-group\" [ngClass]=\"{'focused':focus2===true}\">\n                    <div class=\"input-group input-group-alternative mb-3\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-lock-circle-open\"></i></span>\n                      </div>\n                      <input class=\"form-control\" formControlName=\"password\" placeholder=\"Clave\" type=\"password\" (focus)=\"focus2=true\" (blur)=\"focus2=false\">\n                    </div>\n                  </div>\n                  <div class=\"form-group\" [ngClass]=\"{'focused':focus3===true}\">\n                    <div class=\"input-group input-group-alternative mb-3\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-lock-circle-open\"></i></span>\n                      </div>\n                      <input class=\"form-control\" formControlName=\"password2\" placeholder=\"Confirmar Clave\" type=\"password\" (focus)=\"focus3=true\" (blur)=\"focus3=false\">\n                    </div>\n                  </div>\n                  <div class=\"form-group\" [ngClass]=\"{'focused':focus4===true}\">\n                    <div class=\"input-group input-group-alternative mb-3\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-single-02\"></i></span>\n                      </div>\n                      <input class=\"form-control\" formControlName=\"nombre\" placeholder=\"Nombre\" type=\"text\" (focus)=\"focus4=true\" (blur)=\"focus4=false\">\n                    </div>\n                  </div>\n                  <div class=\"form-group\" [ngClass]=\"{'focused':focus5===true}\">\n                    <div class=\"input-group input-group-alternative mb-3\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-single-02\"></i></span>\n                      </div>\n                      <input class=\"form-control\" formControlName=\"apellido\" placeholder=\"Apellido\" type=\"text\" (focus)=\"focus5=true\" (blur)=\"focus5=false\">\n                    </div>\n                  </div>\n                  <div class=\"form-group\" [ngClass]=\"{'focused':focus6===true}\">\n                    <div class=\"input-group input-group-alternative\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-single-02\"></i></span>\n                      </div>\n                      <input class=\"form-control\" formControlName=\"dni\" placeholder=\"DNI\" type=\"number\" (focus)=\"focus6=true\" (blur)=\"focus6=false\">\n                    </div>\n                  </div>\n                  <!--div class=\"form-group\" [ngClass]=\"{'focused':focus7===true}\">\n                    <div class=\"input-group input-group-alternative\">\n                      <div class=\"input-group-prepend\">\n                        <span class=\"input-group-text\"><i class=\"ni ni-image\"></i></span>\n                      </div>\n                      <input class=\"form-control btn btn-secondary\" formControlName=\"foto\" (change)=\"cambioArchivo($event)\" type=\"file\" (focus)=\"focus7=true\" (blur)=\"focus7=false\">\n                      <button class=\"form-control btn btn-primary\" (click)=\"subirArchivo()\" disabled id=\"subirOK\">Subir</button>\n                    </div>\n                    \n                  </div-->\n                  <!--form [formGroup]=\"especialidadesForm\" type=\"submit\" (change)=\"submitForm()\" novalidate-->\n                    <label><strong> Especialidades</strong></label>\n                    <div *ngFor=\"let data of especialidadesT; let i=index\">\n                        <label>\n                          <input type=\"checkbox\" [id]=\"data.idEspecialidad\" (change)=\"check($event)\"/>\n                          {{data.nombre}}\n                        </label>\n                        <div *ngIf=\"ok[data.idEspecialidad]\" class=\"row\">\n                          <input type=\"radio\"  [id]=\"data.idEspecialidad+','+30\" [value]=\"data.nombre\" [name]=\"data.nombre\" (change)=\"onCheckboxChange($event)\" />30 \n                          <input type=\"radio\"  [id]=\"data.idEspecialidad+','+45\" [value]=\"data.nombre\" [name]=\"data.nombre\" (change)=\"onCheckboxChange($event)\" />45\n                          <input type=\"radio\"  [id]=\"data.idEspecialidad+','+60\" [value]=\"data.nombre\" [name]=\"data.nombre\" (change)=\"onCheckboxChange($event)\" />60\n                          <input type=\"radio\"  [id]=\"data.idEspecialidad+','+75\" [value]=\"data.nombre\" [name]=\"data.nombre\" (change)=\"onCheckboxChange($event)\" />75\n                        </div>\n                        \n                      </div>\n                    <!--input type=\"submit\" value=\"Submit\"-->\n                <!--/form-->\n                <form [formGroup]=\"horariosForm\" (ngSubmit)=\"cargaHorarios()\">\n                <br>\n                    <label><strong> Horarios</strong></label>\n                    <div class=\"row\">\n                        <div class=\"col-12\">\n                          <div class=\"form-check\">\n                            <label class=\"form-check-label\">\n                              <input type=\"checkbox\" class=\"form-check-input \" formControlName=\"lunes\" [(ngModel)]=\"lunesOK\">\n                              <span class=\"form-check-sign\">                    \n                              </span><strong> Lunes</strong> </label>\n                              <div class=\"hora\" *ngIf=\"lunesOK\">\n                                <div class=\"row\">\n                                    <div class=\"col-6\">\n                                      <div class=\"form-check\">\n                                        <label class=\"form-check-label\">\n                                          <input type=\"checkbox\" class=\"form-check-input \" id=\"lu8\" (change)=\"checkValue($event)\">\n                                          <span class=\"form-check-sign\">                    \n                                          </span> 8:00 a 13:30 </label>\n                                        </div>\n                                    </div>\n                                    <div class=\"col-6\">\n                                        <div class=\"form-check\">\n                                          <label class=\"form-check-label\">\n                                            <input type=\"checkbox\" class=\"form-check-input \" id=\"lu13\" (change)=\"checkValue($event)\">\n                                            <span class=\"form-check-sign\">                    \n                                            </span> 13:30 a 19:00 </label>\n                                            \n                                          </div>\n                                      </div>\n                                </div>\n                               \n                              </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col-12\">\n                          <div class=\"form-check\">\n                            <label class=\"form-check-label\">\n                              <input type=\"checkbox\" color=\"warning\" class=\"form-check-input\" formControlName=\"martes\" [(ngModel)]=\"martesOK\">\n                              <span class=\"form-check-sign\">                    \n                              </span><strong> Martes </strong></label>\n                              <div class=\"hora\" *ngIf=\"martesOK\">\n                                <div class=\"row\">\n                                    <div class=\"col-6\">\n                                      <div class=\"form-check\">\n                                        <label class=\"form-check-label\">\n                                          <input type=\"checkbox\" class=\"form-check-input \" id=\"ma8\" (change)=\"checkValue($event)\">\n                                          <span class=\"form-check-sign\">                    \n                                          </span> 8:00 a 13:30 </label>\n                                        </div>\n                                    </div>\n                                    <div class=\"col-6\">\n                                        <div class=\"form-check\">\n                                          <label class=\"form-check-label\">\n                                            <input type=\"checkbox\" class=\"form-check-input \" id=\"ma13\" (change)=\"checkValue($event)\">\n                                            <span class=\"form-check-sign\">                    \n                                            </span> 13:30 a 19:00 </label>\n                                            \n                                          </div>\n                                      </div>\n                                </div>\n                               \n                              </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col-12\">\n                          <div class=\"form-check\">\n                            <label class=\"form-check-label\">\n                              <input type=\"checkbox\" color=\"warning\" class=\"form-check-input\" formControlName=\"miercoles\" [(ngModel)]=\"miercolesOK\">\n                              <span class=\"form-check-sign\">                    \n                              </span><strong> Miercoles</strong> </label>\n                              <div class=\"hora\" *ngIf=\"miercolesOK\">\n                                <div class=\"row\">\n                                    <div class=\"col-6\">\n                                      <div class=\"form-check\">\n                                        <label class=\"form-check-label\">\n                                          <input type=\"checkbox\" class=\"form-check-input \" id=\"mi8\" (change)=\"checkValue($event)\">\n                                          <span class=\"form-check-sign\">                    \n                                          </span> 8:00 a 13:30 </label>\n                                        </div>\n                                    </div>\n                                    <div class=\"col-6\">\n                                        <div class=\"form-check\">\n                                          <label class=\"form-check-label\">\n                                            <input type=\"checkbox\" class=\"form-check-input \" id=\"mi13\" (change)=\"checkValue($event)\">\n                                            <span class=\"form-check-sign\">                    \n                                            </span> 13:30 a 19:00 </label>\n                                            \n                                          </div>\n                                      </div>\n                                </div>\n                               \n                              </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col-12\">\n                          <div class=\"form-check\">\n                            <label class=\"form-check-label\">\n                              <input type=\"checkbox\" color=\"warning\" class=\"form-check-input\" formControlName=\"jueves\"  [(ngModel)]=\"juevesOK\">\n                              <span class=\"form-check-sign\">                    \n                              </span><strong> Jueves </strong></label>\n                              <div class=\"hora\" *ngIf=\"juevesOK\">\n                                <div class=\"row\">\n                                    <div class=\"col-6\">\n                                      <div class=\"form-check\">\n                                        <label class=\"form-check-label\">\n                                          <input type=\"checkbox\" class=\"form-check-input \" id=\"ju8\" (change)=\"checkValue($event)\">\n                                          <span class=\"form-check-sign\">                    \n                                          </span> 8:00 a 13:30 </label>\n                                        </div>\n                                    </div>\n                                    <div class=\"col-6\">\n                                        <div class=\"form-check\">\n                                          <label class=\"form-check-label\">\n                                            <input type=\"checkbox\" class=\"form-check-input \" id=\"ju13\" (change)=\"checkValue($event)\">\n                                            <span class=\"form-check-sign\">                    \n                                            </span> 13:30 a 19:00 </label>\n                                            \n                                          </div>\n                                      </div>\n                                </div>\n                               \n                              </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col-12\">\n                          <div class=\"form-check\">\n                            <label class=\"form-check-label\">\n                              <input type=\"checkbox\" color=\"warning\" class=\"form-check-input\" formControlName=\"viernes\" [(ngModel)]=\"viernesOK\">\n                              <span class=\"form-check-sign\">                    \n                              </span><strong> Viernes</strong> </label>\n                              <div class=\"hora\" *ngIf=\"viernesOK\">\n                                <div class=\"row\">\n                                    <div class=\"col-6\">\n                                      <div class=\"form-check\">\n                                        <label class=\"form-check-label\">\n                                          <input type=\"checkbox\" class=\"form-check-input \" id=\"vi8\" (change)=\"checkValue($event)\">\n                                          <span class=\"form-check-sign\">                    \n                                          </span> 8:00 a 13:30 </label>\n                                        </div>\n                                    </div>\n                                    <div class=\"col-6\">\n                                        <div class=\"form-check\">\n                                          <label class=\"form-check-label\">\n                                            <input type=\"checkbox\" class=\"form-check-input \" id=\"vi13\" (change)=\"checkValue($event)\">\n                                            <span class=\"form-check-sign\">                    \n                                            </span> 13:30 a 19:00 </label>\n                                            \n                                          </div>\n                                      </div>\n                                </div>\n                               \n                              </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col-12\">\n                          <div class=\"form-check\">\n                            <label class=\"form-check-label\">\n                              <input type=\"checkbox\" color=\"warning\" class=\"form-check-input\" formControlName=\"sabado\" [(ngModel)]=\"sabadoOK\">\n                              <span class=\"form-check-sign\">                    \n                              </span><strong> Sábado</strong> </label>\n                              <div class=\"hora\" *ngIf=\"sabadoOK\">\n                                <div class=\"row\">\n                                    <div class=\"col-6\">\n                                      <div class=\"form-check\">\n                                        <label class=\"form-check-label\">\n                                          <input type=\"checkbox\" class=\"form-check-input \" id=\"sa8\" (change)=\"checkValue($event)\">\n                                          <span class=\"form-check-sign\">                    \n                                          </span> 8:00 a 14:00 </label>\n                                        </div>\n                                    </div>\n                                </div>\n                               \n                              </div>\n                            </div>\n                        </div>\n                    </div>\n                    \n                </form>\n                  <div class=\"text-center\">\n                    <button type=\"button\" class=\"btn btn-primary my-4\" type=\"submit\" [disabled]=\"!form.valid\" (click)=\"OnSubmitRegister()\">Crear Usuario</button>\n                  </div>\n                </form>\n                <form [formGroup]=\"especialidadForm\" (ngSubmit)=\"altaEspecialidades()\" novalidate>\n                    <label>Alta de Especialidad</label>\n                    <!-- Form elements goes here -->\n                    <div class=\"form-group\" [ngClass]=\"{'focused':focus11===true}\">\n                        <div class=\"input-group input-group-alternative mb-3\">\n                            <div class=\"input-group-prepend\">\n                            <span class=\"input-group-text\"><i class=\"ni ni-single-02\"></i></span>\n                            </div>\n                            <input class=\"form-control\" formControlName=\"idEspecialidad\" placeholder=\"Id Especialidad\" type=\"text\" (focus)=\"focus11=true\" (blur)=\"focus11=false\">\n                        </div>\n                    </div>\n                        <div class=\"form-group\" [ngClass]=\"{'focused':focus12===true}\">\n                        <div class=\"input-group input-group-alternative mb-3\">\n                            <div class=\"input-group-prepend\">\n                            <span class=\"input-group-text\"><i class=\"ni ni-single-02\"></i></span>\n                            </div>\n                            <input class=\"form-control\" formControlName=\"nombre\" placeholder=\"Nombre Especialidad\" type=\"text\" (focus)=\"focus12=true\" (blur)=\"focus12=false\">\n                        </div>\n                        </div>\n                        <div class=\"row\">\n                          <div class=\"col-12\">\n                          <div class=\"form-group\">\n                            <ngx-recaptcha2 (resolved)=\"resolved($event)\" #captchaElem [siteKey]=\"key\" [size]=\"'normal'\" [hl]=\"'es'\" [theme]=\"'light'\" [type]=\"'image'\" formControlName=\"recaptcha\">\n                            </ngx-recaptcha2>  \n                          </div>  \n                          </div>\n                        </div>\n                        <div class=\"text-center\">\n                    <input class=\"btn btn-primary my-4\" [disabled]=\"!especialidadForm.valid\" type=\"submit\" value=\"Crear Especialidad\">\n                        </div>\n                </form>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  </main>\n  \n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/profesional/turnos/turnos.component.html":
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/profesional/turnos/turnos.component.html ***!
+  \************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<app-navbar [user]=\"user\"></app-navbar>\n<main>\n\n    <section class=\"section section-shaped section-lg\">\n      <div class=\"shape shape-style-1 bg-gradient-default\">\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n       \n      </div>\n      <div class=\"container pt-lg-md\">\n        \n        <div class=\"row justify-content-center\">\n          \n          <div class=\"col-lg-12\">\n            <div class=\"card bg-secondary shadow border-0\">\n              <!--div class=\"card-header bg-white pb-5\">\n              </div-->\n              <mat-form-field>\n                <mat-label>Filter</mat-label>\n                <input matInput (keyup)=\"applyFilter($event)\" placeholder=\"Ingrese una palabra clave...\">\n              </mat-form-field>\n              \n              <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n              \n                <!-- Position Column -->\n                <ng-container matColumnDef=\"id\">\n                  <th mat-header-cell *matHeaderCellDef> ID </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.id}} </td>\n                </ng-container>\n              \n                <!-- Name Column -->\n                <ng-container matColumnDef=\"paciente\">\n                  <th mat-header-cell *matHeaderCellDef> Paciente </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.paciente}} </td>\n                </ng-container>\n              \n                <!-- Weight Column -->\n                <ng-container matColumnDef=\"especialidad\">\n                  <th mat-header-cell *matHeaderCellDef> Especialidad </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.especialidad}} </td>\n                </ng-container>\n              \n                <!-- Symbol Column -->\n                <ng-container matColumnDef=\"fecha\">\n                  <th mat-header-cell *matHeaderCellDef> Fecha </th>\n                  <td mat-cell *matCellDef=\"let element\"> {{element.fecha}} </td>\n                </ng-container>\n                <!-- Position Column -->\n                <ng-container matColumnDef=\"hora\">\n                    <th mat-header-cell *matHeaderCellDef> Hora </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.hora}} </td>\n                  </ng-container>\n                \n                  <!-- Name Column -->\n                  <ng-container matColumnDef=\"atendido\">\n                    <th mat-header-cell *matHeaderCellDef> Atendido </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.atendido}} </td>\n                  </ng-container>\n                \n                  <!-- Weight Column -->\n                  <ng-container matColumnDef=\"estado\">\n                    <th mat-header-cell *matHeaderCellDef> Estado </th>\n                    <td mat-cell *matCellDef=\"let element\"> {{element.estado}} </td>\n                  </ng-container>   \n\n                  <!-- Weight Column -->\n                  <ng-container matColumnDef=\"aceptar\">\n                    <th mat-header-cell *matHeaderCellDef> Aceptar </th>\n                    <td mat-cell *matCellDef=\"let element\"> <button mat-raised-button color=\"primary\" (click)=\"aceptar(element)\"><mat-icon>favorite</mat-icon></button> </td>\n                    \n                  </ng-container>\n\n                  <!-- Weight Column -->\n                  <ng-container matColumnDef=\"rechazar\">\n                    <th mat-header-cell *matHeaderCellDef> Rechazar </th>\n                    <td mat-cell *matCellDef=\"let element\"> <button mat-raised-button color=\"warn\" (click)=\"rechazar(element)\"><mat-icon>delete</mat-icon></button> </td>\n                  </ng-container>\n\n                <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n                <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n              </table>\n              &nbsp;\n              <h3>-<strong> Exportar a Excel</strong></h3>\n              <div class=\"container\">\n                <button mat-raised-button color=\"primary\" (click)=\"exportarAsXlsx()\">Exportar Todos</button> \n                &nbsp;\n                <button mat-raised-button color=\"accent\" (click)=\"exportarAsXlsxFilter()\">Exportar Filtrados</button>\n              </div>\n              &nbsp;\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  </main>\n  ");
 
 /***/ }),
 
@@ -178,7 +230,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <nav id=\"navbar-main\" class=\"navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned\">\n    <div class=\"container\">\n      <a class=\"navbar-brand mr-lg-5\" [routerLink]=\"['/home']\">\n        <img src=\"./assets/img/brand/argon-white.png\">\n      </a>\n      <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\"\n            [attr.aria-expanded]=\"!isCollapsed\" aria-controls=\"navbar_global\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n      <div class=\"navbar-collapse collapse\" id=\"navbar_global\" [ngbCollapse]=\"isCollapsed\">\n        <div class=\"navbar-collapse-header\">\n          <div class=\"row\">\n            <div class=\"col-6 collapse-brand\">\n              <a [routerLink]=\"['/home']\">\n                <img src=\"./assets/img/brand/blue.png\">\n              </a>\n            </div>\n            <div class=\"col-6 collapse-close\">\n              <button type=\"button\" class=\"navbar-toggler\" (click)=\"isCollapsed = !isCollapsed\"\n                    [attr.aria-expanded]=\"!isCollapsed\" aria-controls=\"navbar_global\">\n                <span></span>\n                <span></span>\n              </button>\n            </div>\n          </div>\n        </div>\n        <ul class=\"navbar-nav navbar-nav-hover align-items-lg-center\">\n          <li *ngIf=\"user==='paciente'\" class=\"nav-item dropdown\">\n            <a class=\"nav-link no-caret\" data-toggle=\"dropdown\" role=\"button\">\n              <i class=\"ni ni-ui-04 d-lg-none\"></i>\n              <span class=\"nav-link-inner--text\">Paciente</span>\n            </a>\n            <div class=\"dropdown-menu-xl dropdown-menu\" >\n              <div class=\"dropdown-menu-inner\">\n                <a routerLinkActive=\"active\" [routerLink]=\"['paciente/sacarTurno']\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-primary rounded-circle text-white\">\n                    <i class=\"ni ni-spaceship\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h6 class=\"heading text-primary mb-md-1\">SACAR TURNOS</h6>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El paciente podra sacar un turno seleccionando profesional o especialidad.</p>\n                  </div>\n                </a>\n                <a routerLinkActive=\"active\" [routerLink]=\"['documentation/colors']\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-success rounded-circle text-white\">\n                    <i class=\"ni ni-palette\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h6 class=\"heading text-primary mb-md-1\">Foundation</h6>\n                    <p class=\"description d-none d-md-inline-block mb-0\">Learn more about colors, typography, icons and the grid system we used for Argon.</p>\n                  </div>\n                </a>\n                <a routerLinkActive=\"active\" [routerLink]=\"['documentation/alerts']\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-warning rounded-circle text-white\">\n                    <i class=\"ni ni-ui-04\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h5 class=\"heading text-warning mb-md-1\">Components</h5>\n                    <p class=\"description d-none d-md-inline-block mb-0\">Browse our 50 beautiful handcrafted components offered in the Free version.</p>\n                  </div>\n                </a>\n              </div>\n            </div>\n          </li>\n          <li *ngIf=\"user==='profesional'\" class=\"nav-item dropdown\">\n            <a class=\"nav-link no-caret\" data-toggle=\"dropdown\" role=\"button\">\n              <i class=\"ni ni-collection d-lg-none\"></i>\n              <span class=\"nav-link-inner--text\">Examples</span>\n            </a>\n            <div class=\"dropdown-menu\">\n              <a [routerLink]=\"['/#/landing']\" class=\"dropdown-item\">Landing</a>\n              <a [routerLink]=\"['/#/user-profile']\" class=\"dropdown-item\">Profile</a>\n              <a [routerLink]=\"['/#/login']\" class=\"dropdown-item\">Login</a>\n              <a [routerLink]=\"['/#/registro']\" class=\"dropdown-item\">Register</a>\n            </div>\n          </li>\n        </ul>\n        <ul class=\"navbar-nav align-items-lg-center ml-lg-auto\">\n          \n          <li class=\"nav-item d-none d-lg-block ml-lg-4\">\n            <a href=\"\" class=\"btn btn-neutral btn-icon\">\n              <span class=\"btn-inner--icon\">\n                <i class=\"fa fa-sign-out mr-2\"></i>\n              </span>\n              <span class=\"nav-link-inner--text\" (click)=\"desconectar()\">Desconectar</span>\n            </a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  \n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <nav id=\"navbar-main\" class=\"navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned\">\n    <div class=\"container\">\n      <a class=\"navbar-brand mr-lg-5\" routerLink=\"/home\">\n        <img src=\"./assets/img/brand/argon-white.png\">\n      </a>\n      <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\"\n            [attr.aria-expanded]=\"!isCollapsed\" aria-controls=\"navbar_global\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n      <div class=\"navbar-collapse collapse\" id=\"navbar_global\" [ngbCollapse]=\"isCollapsed\">\n        <div class=\"navbar-collapse-header\">\n          <div class=\"row\">\n            <div class=\"col-6 collapse-brand\">\n              <a routerLink=\"/home\">\n                <img src=\"./assets/img/brand/blue.png\">\n              </a>\n            </div>\n            <div class=\"col-6 collapse-close\">\n              <button type=\"button\" class=\"navbar-toggler\" (click)=\"isCollapsed = !isCollapsed\"\n                    [attr.aria-expanded]=\"!isCollapsed\" aria-controls=\"navbar_global\">\n                <span></span>\n                <span></span>\n              </button>\n            </div>\n          </div>\n        </div>\n        <ul class=\"navbar-nav navbar-nav-hover align-items-lg-center\">\n          <li *ngIf=\"user==='paciente'\" class=\"nav-item dropdown\">\n            <a class=\"nav-link no-caret\" data-toggle=\"dropdown\" role=\"button\">\n              <i class=\"ni ni-ui-04 d-lg-none\"></i>\n              <span class=\"nav-link-inner--text\">Paciente</span>\n            </a>\n            <div class=\"dropdown-menu-xl dropdown-menu\" >\n              <div class=\"dropdown-menu-inner\">\n                <a routerLinkActive=\"active\" routerLink=\"/paciente/sacarTurno\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-primary rounded-circle text-white\">\n                    <i class=\"ni ni-spaceship\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h6 class=\"heading text-primary mb-md-1\">SACAR TURNOS</h6>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El paciente podra sacar un turno seleccionando profesional o especialidad.</p>\n                  </div>\n                </a>\n                <a routerLinkActive=\"active\" routerLink=\"/paciente/listaTurnos\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-success rounded-circle text-white\">\n                    <i class=\"ni ni-palette\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h6 class=\"heading text-primary mb-md-1\">LISTA DE TURNOS</h6>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El paciente puede ver el listado de sus turnos.</p>\n                  </div>\n                </a>\n                <a routerLinkActive=\"active\" routerLink=\"/paciente/resenias\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-warning rounded-circle text-white\">\n                    <i class=\"ni ni-ui-04\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h5 class=\"heading text-warning mb-md-1\">RESEÑAS</h5>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El Paciente puede ver la reseña del Profesional y devolver un comentario completando una\n                      breve encuesta\n                      .</p>\n                  </div>\n                </a>\n              </div>\n            </div>\n          </li>\n          <li *ngIf=\"user==='profesional'\" class=\"nav-item dropdown\">\n            <a class=\"nav-link no-caret\" data-toggle=\"dropdown\" role=\"button\">\n              <i class=\"ni ni-ui-04 d-lg-none\"></i>\n              <span class=\"nav-link-inner--text\">Profesional</span>\n            </a>\n            <div class=\"dropdown-menu-xl dropdown-menu\" >\n              <div class=\"dropdown-menu-inner\">\n                <a routerLinkActive=\"active\" routerLink=\"/profesional/turnos\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-primary rounded-circle text-white\">\n                    <i class=\"ni ni-spaceship\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h6 class=\"heading text-primary mb-md-1\">LISTA DE TURNOS</h6>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El profesional podrá gestionar los turnos de sus pacientes.</p>\n                  </div>\n                </a>\n                <a routerLinkActive=\"active\" routerLink=\"/profesional/atencion\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-success rounded-circle text-white\">\n                    <i class=\"ni ni-palette\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h6 class=\"heading text-primary mb-md-1\">ATENDER PACIENTES</h6>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El profesional atenderá a sus pacientes y podrá guardar información importante de estos.</p>\n                  </div>\n                </a>\n                <a routerLinkActive=\"active\" routerLink=\"/profesional/atencion\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-warning rounded-circle text-white\">\n                    <i class=\"ni ni-ui-04\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h5 class=\"heading text-warning mb-md-1\">RESEÑA DE PACIENTES</h5>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El profesional puede ver el comentario del Paciente sobre la atención recibida.</p>\n                  </div>\n                </a>\n              </div>\n            </div>\n          </li>\n        </ul>\n        <ul class=\"navbar-nav align-items-lg-center ml-lg-auto\">\n          \n          <li class=\"nav-item d-none d-lg-block ml-lg-4\">\n            <a href=\"\" class=\"btn btn-neutral btn-icon\">\n              <span class=\"btn-inner--icon\">\n                <i class=\"fa fa-sign-out mr-2\"></i>\n              </span>\n              <span class=\"nav-link-inner--text\" (click)=\"desconectar()\">Desconectar</span>\n            </a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  \n</div>\n");
 
 /***/ }),
 
@@ -388,6 +440,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componentes_profesional_home_pr_home_pr_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./componentes/profesional/home-pr/home-pr.component */ "./src/app/componentes/profesional/home-pr/home-pr.component.ts");
 /* harmony import */ var _componentes_paciente_home_pac_home_pac_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./componentes/paciente/home-pac/home-pac.component */ "./src/app/componentes/paciente/home-pac/home-pac.component.ts");
 /* harmony import */ var _extra_calendar_calendar_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./extra/calendar/calendar.component */ "./src/app/extra/calendar/calendar.component.ts");
+/* harmony import */ var ngx_captcha__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ngx-captcha */ "./node_modules/ngx-captcha/__ivy_ngcc__/fesm5/ngx-captcha.js");
+/* harmony import */ var _componentes_profesional_turnos_turnos_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./componentes/profesional/turnos/turnos.component */ "./src/app/componentes/profesional/turnos/turnos.component.ts");
+/* harmony import */ var ng2_smart_table__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ng2-smart-table */ "./node_modules/ng2-smart-table/__ivy_ngcc__/fesm5/ng2-smart-table.js");
+/* harmony import */ var _akveo_ng2_completer__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @akveo/ng2-completer */ "./node_modules/@akveo/ng2-completer/__ivy_ngcc__/esm5/ng2-completer.js");
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @angular/material/core */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/table.js");
+/* harmony import */ var _servicios_exporter_service__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./servicios/exporter.service */ "./src/app/servicios/exporter.service.ts");
+/* harmony import */ var _componentes_profesional_atencion_atencion_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./componentes/profesional/atencion/atencion.component */ "./src/app/componentes/profesional/atencion/atencion.component.ts");
+/* harmony import */ var _componentes_paciente_lista_turnos_lista_turnos_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./componentes/paciente/lista-turnos/lista-turnos.component */ "./src/app/componentes/paciente/lista-turnos/lista-turnos.component.ts");
+/* harmony import */ var _componentes_encuesta_encuesta_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./componentes/encuesta/encuesta.component */ "./src/app/componentes/encuesta/encuesta.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -430,7 +492,17 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 
+
+
 //import { NgbCalendar, NgbCalendarHebrew, NgbDatepickerI18n, NgbDatepickerI18nHebrew } from '_node_modules/@ng-bootstrap/ng-bootstrap';
+
+
+
+
+
+
+
+
 //, , , 
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -450,10 +522,15 @@ var AppModule = /** @class */ (function () {
                 _componentes_no_hab_no_hab_component__WEBPACK_IMPORTED_MODULE_27__["NoHabComponent"],
                 _componentes_profesional_home_pr_home_pr_component__WEBPACK_IMPORTED_MODULE_28__["HomePrComponent"],
                 _componentes_paciente_home_pac_home_pac_component__WEBPACK_IMPORTED_MODULE_29__["HomePacComponent"],
-                _extra_calendar_calendar_component__WEBPACK_IMPORTED_MODULE_30__["CalendarComponent"]
+                _extra_calendar_calendar_component__WEBPACK_IMPORTED_MODULE_30__["CalendarComponent"],
+                _componentes_profesional_turnos_turnos_component__WEBPACK_IMPORTED_MODULE_32__["TurnosComponent"],
+                _componentes_profesional_atencion_atencion_component__WEBPACK_IMPORTED_MODULE_38__["AtencionComponent"],
+                _componentes_paciente_lista_turnos_lista_turnos_component__WEBPACK_IMPORTED_MODULE_39__["ListaTurnosComponent"],
+                _componentes_encuesta_encuesta_component__WEBPACK_IMPORTED_MODULE_40__["EncuestaComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_20__["BrowserAnimationsModule"],
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"],
@@ -471,11 +548,21 @@ var AppModule = /** @class */ (function () {
                 _angular_material_input__WEBPACK_IMPORTED_MODULE_21__["MatInputModule"],
                 _angular_material_button__WEBPACK_IMPORTED_MODULE_22__["MatButtonModule"],
                 _angular_material_select__WEBPACK_IMPORTED_MODULE_23__["MatSelectModule"],
-                _angular_material_icon__WEBPACK_IMPORTED_MODULE_24__["MatIconModule"]
+                _angular_material_core__WEBPACK_IMPORTED_MODULE_35__["MatNativeDateModule"],
+                _angular_material_table__WEBPACK_IMPORTED_MODULE_36__["MatTableModule"],
+                _angular_material_icon__WEBPACK_IMPORTED_MODULE_24__["MatIconModule"],
+                ngx_captcha__WEBPACK_IMPORTED_MODULE_31__["NgxCaptchaModule"],
+                ng2_smart_table__WEBPACK_IMPORTED_MODULE_33__["Ng2SmartTableModule"],
+                _akveo_ng2_completer__WEBPACK_IMPORTED_MODULE_34__["Ng2CompleterModule"]
             ],
             providers: [
                 _angular_fire_auth__WEBPACK_IMPORTED_MODULE_14__["AngularFireAuth"],
                 { provide: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbCalendar"], useClass: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbCalendarGregorian"] },
+                _servicios_exporter_service__WEBPACK_IMPORTED_MODULE_37__["ExporterService"]
+                //{provide: NgbDatepickerI18n, useClass: NgbDatepickerI18nHebrew}
+                //NologinGuard,
+                //FormBuilder
+                //AngularFirestore//
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
         })
@@ -513,6 +600,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componentes_no_hab_no_hab_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./componentes/no-hab/no-hab.component */ "./src/app/componentes/no-hab/no-hab.component.ts");
 /* harmony import */ var _componentes_profesional_home_pr_home_pr_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./componentes/profesional/home-pr/home-pr.component */ "./src/app/componentes/profesional/home-pr/home-pr.component.ts");
 /* harmony import */ var _componentes_paciente_home_pac_home_pac_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./componentes/paciente/home-pac/home-pac.component */ "./src/app/componentes/paciente/home-pac/home-pac.component.ts");
+/* harmony import */ var _componentes_profesional_turnos_turnos_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./componentes/profesional/turnos/turnos.component */ "./src/app/componentes/profesional/turnos/turnos.component.ts");
+/* harmony import */ var _componentes_profesional_atencion_atencion_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./componentes/profesional/atencion/atencion.component */ "./src/app/componentes/profesional/atencion/atencion.component.ts");
+/* harmony import */ var _componentes_paciente_lista_turnos_lista_turnos_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./componentes/paciente/lista-turnos/lista-turnos.component */ "./src/app/componentes/paciente/lista-turnos/lista-turnos.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -538,16 +628,22 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 
+
+
+
 //import { ProfGuard } from './guards/prof.guard';
 var routes = [
     { path: 'home', component: _componentes_home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]] },
     { path: 'paciente/sacarTurno', component: _componentes_paciente_sacar_turno_sacar_turno_component__WEBPACK_IMPORTED_MODULE_11__["SacarTurnoComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]] },
     { path: 'paciente/home', component: _componentes_paciente_home_pac_home_pac_component__WEBPACK_IMPORTED_MODULE_15__["HomePacComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]] },
+    { path: 'paciente/listaTurnos', component: _componentes_paciente_lista_turnos_lista_turnos_component__WEBPACK_IMPORTED_MODULE_18__["ListaTurnosComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]] },
     { path: 'noHab', component: _componentes_no_hab_no_hab_component__WEBPACK_IMPORTED_MODULE_13__["NoHabComponent"] },
     { path: 'perfil', component: _profile_profile_component__WEBPACK_IMPORTED_MODULE_5__["ProfileComponent"] },
     { path: 'registro', component: _componentes_registro_signup_component__WEBPACK_IMPORTED_MODULE_6__["SignupComponent"] },
     { path: 'profesional/registro', component: _componentes_profesional_registro_prof_registro_prof_component__WEBPACK_IMPORTED_MODULE_12__["RegistroProfComponent"] },
     { path: 'profesional/home', component: _componentes_profesional_home_pr_home_pr_component__WEBPACK_IMPORTED_MODULE_14__["HomePrComponent"] },
+    { path: 'profesional/atencion', component: _componentes_profesional_atencion_atencion_component__WEBPACK_IMPORTED_MODULE_17__["AtencionComponent"] },
+    { path: 'profesional/turnos', component: _componentes_profesional_turnos_turnos_component__WEBPACK_IMPORTED_MODULE_16__["TurnosComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]] },
     { path: 'navbar', component: _shared_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_10__["NavbarComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]] },
     { path: 'login', component: _componentes_login_login_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"], canActivate: [_guards_nologin_guard__WEBPACK_IMPORTED_MODULE_8__["NologinGuard"]], data: { animation: 'LoginPage' } },
     { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -685,6 +781,155 @@ var ProfesionalAConfirmar = /** @class */ (function () {
         this.habilitado = false;
     }
     return ProfesionalAConfirmar;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/clases/turno.ts":
+/*!*********************************!*\
+  !*** ./src/app/clases/turno.ts ***!
+  \*********************************/
+/*! exports provided: turno */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "turno", function() { return turno; });
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+var turno = /** @class */ (function () {
+    function turno() {
+    }
+    return turno;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/componentes/encuesta/encuesta.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/componentes/encuesta/encuesta.component.css ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\r\nh1{\r\n    text-align: center;\r\n    \r\n    font-size: 90px;\r\n    \r\n}\r\n\r\n.rowLogin{\r\n    background-position: center; /* Center the image */\r\n    background-repeat: no-repeat; /* Do not repeat the image */\r\n    background-size: cover; /* Resize the background image to cover the entire container */\r\n   \r\n}\r\n\r\n.buttonDefault{\r\n    margin: 5px;\r\n    margin-bottom: 15px;\r\n}\r\n\r\n.ar{\r\n    margin: 0 10px;\r\n}\r\n\r\n/* .form-control.login-user {\r\n    border: 0px solid #fff !important;\r\n  }\r\n  .form-control.login-user {\r\n    border: 0 solid #fff !important;\r\n  } */\r\n\r\n.star {\r\n    font-size: 1.5rem;\r\n    color: #b0c4de;\r\n  }\r\n\r\n.filled {\r\n    color: #1e90ff;\r\n  }\r\n\r\n.filled.bad {\r\n    color: #ff1e1e;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvZW5jdWVzdGEvZW5jdWVzdGEuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0E7SUFDSSxrQkFBa0I7O0lBRWxCLGVBQWU7O0FBRW5COztBQUVBO0lBQ0ksMkJBQTJCLEVBQUUscUJBQXFCO0lBQ2xELDRCQUE0QixFQUFFLDRCQUE0QjtJQUMxRCxzQkFBc0IsRUFBRSw4REFBOEQ7O0FBRTFGOztBQUlBO0lBQ0ksV0FBVztJQUNYLG1CQUFtQjtBQUN2Qjs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUE7Ozs7O0tBS0s7O0FBR0Y7SUFDQyxpQkFBaUI7SUFDakIsY0FBYztFQUNoQjs7QUFDQTtJQUNFLGNBQWM7RUFDaEI7O0FBRUE7SUFDRSxjQUFjO0VBQ2hCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50ZXMvZW5jdWVzdGEvZW5jdWVzdGEuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5oMXtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIFxyXG4gICAgZm9udC1zaXplOiA5MHB4O1xyXG4gICAgXHJcbn1cclxuXHJcbi5yb3dMb2dpbntcclxuICAgIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjsgLyogQ2VudGVyIHRoZSBpbWFnZSAqL1xyXG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDsgLyogRG8gbm90IHJlcGVhdCB0aGUgaW1hZ2UgKi9cclxuICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7IC8qIFJlc2l6ZSB0aGUgYmFja2dyb3VuZCBpbWFnZSB0byBjb3ZlciB0aGUgZW50aXJlIGNvbnRhaW5lciAqL1xyXG4gICBcclxufVxyXG5cclxuXHJcblxyXG4uYnV0dG9uRGVmYXVsdHtcclxuICAgIG1hcmdpbjogNXB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMTVweDtcclxufVxyXG5cclxuLmFye1xyXG4gICAgbWFyZ2luOiAwIDEwcHg7XHJcbn1cclxuXHJcbi8qIC5mb3JtLWNvbnRyb2wubG9naW4tdXNlciB7XHJcbiAgICBib3JkZXI6IDBweCBzb2xpZCAjZmZmICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIC5mb3JtLWNvbnRyb2wubG9naW4tdXNlciB7XHJcbiAgICBib3JkZXI6IDAgc29saWQgI2ZmZiAhaW1wb3J0YW50O1xyXG4gIH0gKi9cclxuXHJcbiAgXHJcbiAgIC5zdGFyIHtcclxuICAgIGZvbnQtc2l6ZTogMS41cmVtO1xyXG4gICAgY29sb3I6ICNiMGM0ZGU7XHJcbiAgfVxyXG4gIC5maWxsZWQge1xyXG4gICAgY29sb3I6ICMxZTkwZmY7XHJcbiAgfVxyXG4gIFxyXG4gIC5maWxsZWQuYmFkIHtcclxuICAgIGNvbG9yOiAjZmYxZTFlO1xyXG4gIH0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/componentes/encuesta/encuesta.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/componentes/encuesta/encuesta.component.ts ***!
+  \************************************************************/
+/*! exports provided: EncuestaComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EncuestaComponent", function() { return EncuestaComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+/* harmony import */ var _servicios_encuesta_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../servicios/encuesta.service */ "./src/app/servicios/encuesta.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+//import { Encuesta } from '../../clases/Encuesta';
+
+
+//import { ClienteInterface } from '../app/clases/Cliente';
+var EncuestaComponent = /** @class */ (function () {
+    function EncuestaComponent(fb, encuestaService, router) {
+        this.fb = fb;
+        this.encuestaService = encuestaService;
+        this.router = router;
+        this.selectedMesa = 4;
+        this.selectedResto = 4;
+        this.selectedMozo = 4;
+        this.selectedCoci = 4;
+        this.encuesta = {};
+        this.clienteData = {};
+    }
+    EncuestaComponent.prototype.ngOnInit = function () {
+        this.form = this.fb.group({
+            comentario: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]
+        });
+    };
+    EncuestaComponent.prototype.Submit = function () {
+        var _this = this;
+        this.errorMessage = '';
+        this.error = false;
+        if (this.form.valid) {
+            this.getDatosPedido();
+            /*
+                  this.encuesta.puntuacionMesa=this.selectedMesa;
+                  this.encuesta.puntuacionRestaurante=this.selectedResto;
+                  this.encuesta.puntuacionMozo=this.selectedMozo;
+                  this.encuesta.puntuacionCocinero=this.selectedCoci;
+                  this.encuesta.comentario=this.form.get('comentario').value;
+                  this.encuesta.codigoMesa=this.clienteData.mesa;
+                  this.encuesta.idMozo=this.clienteData.mozo;
+                  this.encuesta.idCliente=this.clienteData.cliente;
+            */
+            this.encuestaService.Registrar(this.encuesta)
+                .then(function (res) {
+                //guardo el elmpeado
+                _this.router.navigate(["/home"]);
+            })
+                .catch(function (error) {
+                _this.error = true;
+                //this.errorMessage = res['Mensaje'];
+                if (error) {
+                    //this.toastService.error('Usuario no encontrado.');
+                    _this.errorMessage = 'Error al Registrar encuesta.' + error;
+                }
+            });
+        }
+        else {
+            this.errorMessage = 'Debe completar los campos correctamente.';
+            this.error = true;
+        }
+    };
+    EncuestaComponent.prototype.getDatosPedido = function () {
+        var data = localStorage.getItem('encuestaCli');
+        this.clienteData = JSON.parse(data);
+    };
+    EncuestaComponent.prototype.Cancel = function () {
+        this.router.navigate(["/Bienvenida"]);
+    };
+    EncuestaComponent.ctorParameters = function () { return [
+        { type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"] },
+        { type: _servicios_encuesta_service__WEBPACK_IMPORTED_MODULE_3__["EncuestaService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+    ]; };
+    EncuestaComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-encuesta',
+            template: __importDefault(__webpack_require__(/*! raw-loader!./encuesta.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/encuesta/encuesta.component.html")).default,
+            styles: [__importDefault(__webpack_require__(/*! ./encuesta.component.css */ "./src/app/componentes/encuesta/encuesta.component.css")).default]
+        }),
+        __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"],
+            _servicios_encuesta_service__WEBPACK_IMPORTED_MODULE_3__["EncuestaService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+    ], EncuestaComponent);
+    return EncuestaComponent;
 }());
 
 
@@ -1092,6 +1337,10 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePacComponent", function() { return HomePacComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/table.js");
+/* harmony import */ var src_app_servicios_exporter_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/servicios/exporter.service */ "./src/app/servicios/exporter.service.ts");
+/* harmony import */ var src_app_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/servicios/firebase.service */ "./src/app/servicios/firebase.service.ts");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/__ivy_ngcc__/auth/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1105,20 +1354,231 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
   return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 
+
+
+
+
 var HomePacComponent = /** @class */ (function () {
-    function HomePacComponent() {
+    function HomePacComponent(exporter, firebase, afAuth) {
+        this.exporter = exporter;
+        this.firebase = firebase;
+        this.afAuth = afAuth;
+        this.displayedColumns = ['id', 'profesional', 'especialidad', 'fecha', 'hora', 'atendido', 'estado', 'rechazar'];
+        this.turnosTodos = [];
     }
     HomePacComponent.prototype.ngOnInit = function () {
+        this.user = "paciente";
+        this.traerUser();
+        this.traerTurnos();
     };
+    HomePacComponent.prototype.traerUser = function () {
+        this.profe = this.afAuth.auth.currentUser.email.valueOf();
+    };
+    HomePacComponent.prototype.traerTurnos = function () {
+        var _this = this;
+        this.firebase.getTurnos(this.profe).subscribe(function (resul) {
+            resul.forEach(function (data) {
+                if (data.payload.doc.data().estado === 'rechazado') {
+                    _this.turnosTodos.push({
+                        id: data.payload.doc.data().id,
+                        fecha: data.payload.doc.data().fecha,
+                        hora: data.payload.doc.data().hora,
+                        paciente: data.payload.doc.data().paciente,
+                        especialidad: data.payload.doc.data().especialidad,
+                        atendido: data.payload.doc.data().atendido,
+                        estado: data.payload.doc.data().estado,
+                        profesional: data.payload.doc.data().profesional
+                    });
+                }
+            });
+            _this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](_this.turnosTodos);
+        });
+    };
+    HomePacComponent.prototype.rechazar = function (e) {
+        var _this = this;
+        if (e.estado !== "cancelado") {
+            e.estado = "rechazado";
+            this.firebase.updateTurno(e.id, e).then(function (resul) {
+                console.log("OK");
+                _this.firebase.updateTurnoXProf(e.id, e).then(function (resul) {
+                    console.log("OK2");
+                }).catch(function (error) { console.log(error); });
+            }).catch(function (error) { console.log(error); });
+            this.actualizarTurno(e);
+        }
+        else {
+            console.log("El turno ya est\u00E1 " + e.estado);
+        }
+    };
+    HomePacComponent.prototype.actualizarTurno = function (turno) {
+        for (var _i = 0, _a = this.turnosTodos; _i < _a.length; _i++) {
+            var t = _a[_i];
+            if (t.id === turno.id) {
+                t.estado = turno.estado;
+            }
+        }
+    };
+    HomePacComponent.prototype.applyFilter = function (event) {
+        var filterValue = event.target.value;
+        this.dataSource.filter = filterValue.trim().toLowerCase();
+    };
+    HomePacComponent.prototype.exportarAsXlsx = function () {
+        this.exporter.exportToExcel(this.dataSource.data, 'turnos');
+    };
+    HomePacComponent.prototype.exportarAsXlsxFilter = function () {
+        this.exporter.exportToExcel(this.dataSource.filteredData, 'turnos_filtrados');
+    };
+    HomePacComponent.ctorParameters = function () { return [
+        { type: src_app_servicios_exporter_service__WEBPACK_IMPORTED_MODULE_2__["ExporterService"] },
+        { type: src_app_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseService"] },
+        { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_4__["AngularFireAuth"] }
+    ]; };
     HomePacComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-home-pac',
             template: __importDefault(__webpack_require__(/*! raw-loader!./home-pac.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/paciente/home-pac/home-pac.component.html")).default,
             styles: [__importDefault(__webpack_require__(/*! ./home-pac.component.css */ "./src/app/componentes/paciente/home-pac/home-pac.component.css")).default]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [src_app_servicios_exporter_service__WEBPACK_IMPORTED_MODULE_2__["ExporterService"],
+            src_app_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseService"],
+            _angular_fire_auth__WEBPACK_IMPORTED_MODULE_4__["AngularFireAuth"]])
     ], HomePacComponent);
     return HomePacComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/componentes/paciente/lista-turnos/lista-turnos.component.css":
+/*!******************************************************************************!*\
+  !*** ./src/app/componentes/paciente/lista-turnos/lista-turnos.component.css ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudGVzL3BhY2llbnRlL2xpc3RhLXR1cm5vcy9saXN0YS10dXJub3MuY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/componentes/paciente/lista-turnos/lista-turnos.component.ts":
+/*!*****************************************************************************!*\
+  !*** ./src/app/componentes/paciente/lista-turnos/lista-turnos.component.ts ***!
+  \*****************************************************************************/
+/*! exports provided: ListaTurnosComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListaTurnosComponent", function() { return ListaTurnosComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/table.js");
+/* harmony import */ var src_app_servicios_exporter_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/servicios/exporter.service */ "./src/app/servicios/exporter.service.ts");
+/* harmony import */ var src_app_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/servicios/firebase.service */ "./src/app/servicios/firebase.service.ts");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/__ivy_ngcc__/auth/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+
+
+
+var ListaTurnosComponent = /** @class */ (function () {
+    function ListaTurnosComponent(exporter, firebase, afAuth) {
+        this.exporter = exporter;
+        this.firebase = firebase;
+        this.afAuth = afAuth;
+        this.displayedColumns = ['id', 'profesional', 'especialidad', 'fecha', 'hora', 'atendido', 'estado', 'rechazar'];
+        this.turnosTodos = [];
+    }
+    ListaTurnosComponent.prototype.ngOnInit = function () {
+        this.user = "paciente";
+        this.traerUser();
+        this.traerTurnos();
+    };
+    ListaTurnosComponent.prototype.traerUser = function () {
+        this.profe = this.afAuth.auth.currentUser.email.valueOf();
+    };
+    ListaTurnosComponent.prototype.traerTurnos = function () {
+        var _this = this;
+        this.firebase.getTurnosXProf(this.profe).subscribe(function (resul) {
+            resul.forEach(function (data) {
+                _this.turnosTodos.push({
+                    id: data.payload.doc.data().id,
+                    fecha: data.payload.doc.data().fecha,
+                    hora: data.payload.doc.data().hora,
+                    paciente: data.payload.doc.data().paciente,
+                    especialidad: data.payload.doc.data().especialidad,
+                    atendido: data.payload.doc.data().atendido,
+                    estado: data.payload.doc.data().estado,
+                    profesional: data.payload.doc.data().profesional
+                });
+            });
+            _this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](_this.turnosTodos);
+        });
+    };
+    ListaTurnosComponent.prototype.rechazar = function (e) {
+        var _this = this;
+        if (e.estado !== "cancelado") {
+            e.estado = "rechazado";
+            this.firebase.updateTurno(e.id, e).then(function (resul) {
+                console.log("OK");
+                _this.firebase.updateTurnoXProf(e.id, e).then(function (resul) {
+                    console.log("OK2");
+                }).catch(function (error) { console.log(error); });
+            }).catch(function (error) { console.log(error); });
+            this.actualizarTurno(e);
+        }
+        else {
+            console.log("El turno ya est\u00E1 " + e.estado);
+        }
+    };
+    ListaTurnosComponent.prototype.actualizarTurno = function (turno) {
+        for (var _i = 0, _a = this.turnosTodos; _i < _a.length; _i++) {
+            var t = _a[_i];
+            if (t.id === turno.id) {
+                t.estado = turno.estado;
+            }
+        }
+    };
+    ListaTurnosComponent.prototype.applyFilter = function (event) {
+        var filterValue = event.target.value;
+        this.dataSource.filter = filterValue.trim().toLowerCase();
+    };
+    ListaTurnosComponent.prototype.exportarAsXlsx = function () {
+        this.exporter.exportToExcel(this.dataSource.data, 'turnos');
+    };
+    ListaTurnosComponent.prototype.exportarAsXlsxFilter = function () {
+        this.exporter.exportToExcel(this.dataSource.filteredData, 'turnos_filtrados');
+    };
+    ListaTurnosComponent.ctorParameters = function () { return [
+        { type: src_app_servicios_exporter_service__WEBPACK_IMPORTED_MODULE_2__["ExporterService"] },
+        { type: src_app_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseService"] },
+        { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_4__["AngularFireAuth"] }
+    ]; };
+    ListaTurnosComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-lista-turnos',
+            template: __importDefault(__webpack_require__(/*! raw-loader!./lista-turnos.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/paciente/lista-turnos/lista-turnos.component.html")).default,
+            styles: [__importDefault(__webpack_require__(/*! ./lista-turnos.component.css */ "./src/app/componentes/paciente/lista-turnos/lista-turnos.component.css")).default]
+        }),
+        __metadata("design:paramtypes", [src_app_servicios_exporter_service__WEBPACK_IMPORTED_MODULE_2__["ExporterService"],
+            src_app_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseService"],
+            _angular_fire_auth__WEBPACK_IMPORTED_MODULE_4__["AngularFireAuth"]])
+    ], ListaTurnosComponent);
+    return ListaTurnosComponent;
 }());
 
 
@@ -1151,7 +1611,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _servicios_firebase_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../servicios/firebase.service */ "./src/app/servicios/firebase.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
-/* harmony import */ var src_app_servicios_auth_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/servicios/auth/auth.service */ "./src/app/servicios/auth/auth.service.ts");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/__ivy_ngcc__/auth/index.js");
+/* harmony import */ var src_app_clases_turno__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/clases/turno */ "./src/app/clases/turno.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1204,13 +1665,14 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 
+
 var SacarTurnoComponent = /** @class */ (function () {
     //para traer HORARIOS
-    function SacarTurnoComponent(firebase, formBuilder, auth) {
+    function SacarTurnoComponent(afAuth, firebase, formBuilder) {
         var _this = this;
+        this.afAuth = afAuth;
         this.firebase = firebase;
         this.formBuilder = formBuilder;
-        this.auth = auth;
         this.colas = [];
         this.espeSeleccionada = "0";
         this.profSeleccionada = "0";
@@ -1241,11 +1703,14 @@ var SacarTurnoComponent = /** @class */ (function () {
         this.turnosM = [];
         this.turnosT = [];
         this.i = 30;
+        this.turnoOK = new src_app_clases_turno__WEBPACK_IMPORTED_MODULE_4__["turno"];
+        this.mostrarTurno = false;
+        //TRAIGO TODOS LOS TURNOS
+        this.turnosTodos = [];
         this.form = this.formBuilder.group({
+            //id: new FormControl('', Validators.required),
             especialidad: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
             profesional: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-            dia: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-            horario: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
         });
     }
     SacarTurnoComponent.prototype.mostrarCalend = function () {
@@ -1257,6 +1722,7 @@ var SacarTurnoComponent = /** @class */ (function () {
         }
     };
     SacarTurnoComponent.prototype.ngOnInit = function () {
+        this.traerUser();
         this.traerProfesionales();
         this.traerEspecialidades();
         this.user = "paciente";
@@ -1318,8 +1784,8 @@ var SacarTurnoComponent = /** @class */ (function () {
     SacarTurnoComponent.prototype.capturarDia = function (e) {
         //console.log(e)
         //recibo la fecha y la guardo en un formato asignable a date
-        var fecha = e.year + "-" + e.month + "-" + e.day;
-        var Xmas95 = new Date(fecha);
+        this.fecha = e.year + "-" + e.month + "-" + e.day;
+        var Xmas95 = new Date(this.fecha);
         //saco el dia de la semana
         var weekday = Xmas95.getDay();
         this.diaSeleccionada = weekday.toString();
@@ -1356,19 +1822,25 @@ var SacarTurnoComponent = /** @class */ (function () {
     };
     //asigno los dias disponibles
     SacarTurnoComponent.prototype.horariosDisp = function (weekday) {
-        console.log(weekday, "weekday");
+        //console.log(weekday, "weekday"); 
         //recorro todos los prof y lo matcheo con el que se selecciono en el combo
         for (var _i = 0, _a = this.profesT; _i < _a.length; _i++) {
             var prof = _a[_i];
             //si son iguales extraigo datos
             if (prof.dni == this.profSeleccionada) {
-                console.log("this", JSON.parse(prof.horarios));
+                this.profe = prof.correo;
+                this.traerTurnos();
+                //console.log("this", JSON.parse(prof.horarios))
                 var objHorarios = JSON.parse(prof.horarios);
                 if (objHorarios.luok) {
                     this.lu = 0;
                     if (weekday == 1) {
                         this.lu8 = objHorarios.lu8;
                         this.lu13 = objHorarios.lu13;
+                    }
+                    else {
+                        this.lu8 = null;
+                        this.lu13 = null;
                     }
                 }
                 else {
@@ -1380,6 +1852,10 @@ var SacarTurnoComponent = /** @class */ (function () {
                         this.ma8 = objHorarios.ma8;
                         this.ma13 = objHorarios.ma13;
                     }
+                    else {
+                        this.ma8 = null;
+                        this.ma13 = null;
+                    }
                 }
                 else {
                     this.ma = 2;
@@ -1389,6 +1865,10 @@ var SacarTurnoComponent = /** @class */ (function () {
                     if (weekday == 3) {
                         this.mi8 = objHorarios.mi8;
                         this.mi13 = objHorarios.mi13;
+                    }
+                    else {
+                        this.mi8 = null;
+                        this.mi13 = null;
                     }
                 }
                 else {
@@ -1400,6 +1880,10 @@ var SacarTurnoComponent = /** @class */ (function () {
                         this.ju8 = objHorarios.ju8;
                         this.ju13 = objHorarios.ju13;
                     }
+                    else {
+                        this.ju8 = null;
+                        this.ju13 = null;
+                    }
                 }
                 else {
                     this.ju = 4;
@@ -1410,14 +1894,21 @@ var SacarTurnoComponent = /** @class */ (function () {
                         this.vi8 = objHorarios.vi8;
                         this.vi13 = objHorarios.vi13;
                     }
+                    else {
+                        this.vi8 = null;
+                        this.vi13 = null;
+                    }
                 }
                 else {
                     this.vi = 5;
                 }
                 if (objHorarios.saok) {
                     this.sa = 0;
-                    if (weekday == 1) {
+                    if (weekday == 6) {
                         this.sa8 = objHorarios.sa8;
+                    }
+                    else {
+                        this.sa8 = null;
                     }
                 }
                 else {
@@ -1429,50 +1920,125 @@ var SacarTurnoComponent = /** @class */ (function () {
                     var espe = objEspecialidades_1[_b];
                     if (espe.idEspecialidad === this.espeSeleccionada) {
                         var duracion = espe.duracion;
-                        console.log("duracion", duracion);
+                        //console.log("duracion", duracion)
                         this.i;
                         if (duracion == 30) {
                             this.i = 11;
-                            this.tMañana = ["8:00", "8:30", "9:00", "9:30", "10:00", "10:30", "11:00",
+                            this.tManiana = ["8:00", "8:30", "9:00", "9:30", "10:00", "10:30", "11:00",
                                 "11:30", "12:00", "12:30", "13:00", "13:30"];
+                            this.tManiana = this.turnosLibres(this.tManiana);
                             this.tTarde = ["13:30", "14:00", "14:30", "15:00", "15:30",
                                 "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00"];
+                            this.tTarde = this.turnosLibres(this.tTarde);
                         }
                         if (duracion == 45) {
                             this.i = 7;
-                            this.tMañana = ["8:00", "8:45", "9:30", "10:15", "11:00",
+                            this.tManiana = ["8:00", "8:45", "9:30", "10:15", "11:00",
                                 "11:45", "12:30", "13:15"];
+                            this.tManiana = this.turnosLibres(this.tManiana);
                             this.tTarde = ["13:30", "14:15", "15:00", "15:45",
                                 "16:30", "17:15", "18:00", "18:45"];
+                            this.tTarde = this.turnosLibres(this.tTarde);
                         }
                         if (duracion == 60) {
                             this.i = 5;
-                            this.tMañana = ["8:00", "9:00", "10:00", "11:00", "12:00", "13:00"];
+                            this.tManiana = ["8:00", "9:00", "10:00", "11:00", "12:00", "13:00"];
+                            this.tManiana = this.turnosLibres(this.tManiana);
                             this.tTarde = ["13:30", "14:30", "15:30",
                                 "16:30", "17:30", "18:30"];
+                            this.tTarde = this.turnosLibres(this.tTarde);
                         }
                         if (duracion == 75) {
                             this.i = 4;
-                            this.tMañana = ["8:00", "9:15", "10:30", "11:45", "13:00"];
+                            this.tManiana = ["8:00", "9:15", "10:30", "11:45", "13:00"];
+                            this.tManiana = this.turnosLibres(this.tManiana);
                             this.tTarde = ["13:30", "14:45", "16:00", "17:15", "18:30"];
+                            this.tTarde = this.turnosLibres(this.tTarde);
                         }
                         for (var j = 0; j < this.i; j++) {
-                            this.turnosM[j] = this.tMañana[j];
+                            this.turnosM[j] = this.tManiana[j];
                             this.turnosT[j] = this.tTarde[j];
                         }
-                        console.log(this.turnosM, this.turnosT);
+                        //console.log(this.turnosM, this.turnosT)
                     } //fin if
                 } //fin for
             }
         }
     };
     SacarTurnoComponent.prototype.tomarRadio = function (e) {
-        console.log("e", e.target.id);
+        this.traerEspe();
+        this.mostrarTurno = true;
+        //console.log("e",e.target.id)
+        this.turnoOK.id = this.usuario + "-" + this.profe + "-" + this.fecha;
+        this.turnoOK.fecha = this.fecha;
+        this.turnoOK.hora = e.target.id;
+        this.turnoOK.especialidad = this.especialidadU;
+        this.turnoOK.paciente = this.usuario;
+        this.turnoOK.profesional = this.profe;
+        this.turnoOK.atendido = false;
+        this.turnoOK.estado = 'pendiente'; // pendiente - confirmado - cancelado - rechazado
+        this.turnoOK.observaciones = "";
+        //console.log(this.turnoOK)
+    };
+    SacarTurnoComponent.prototype.traerUser = function () {
+        this.usuario = this.afAuth.auth.currentUser.email.valueOf();
+    };
+    SacarTurnoComponent.prototype.traerEspe = function () {
+        for (var _i = 0, _a = this.especialidadesT; _i < _a.length; _i++) {
+            var espe = _a[_i];
+            if (espe.idEspecialidad == this.espeSeleccionada) {
+                this.especialidadU = espe.nombre;
+            }
+        }
+    };
+    SacarTurnoComponent.prototype.traerTurnos = function () {
+        var _this = this;
+        this.firebase.getTurnosXProf(this.profe).subscribe(function (resul) {
+            resul.forEach(function (data) {
+                _this.turnosTodos.push({
+                    id: data.payload.doc.data().id,
+                    fecha: data.payload.doc.data().fecha,
+                    hora: data.payload.doc.data().hora
+                });
+            });
+        });
+    };
+    //ESTO NO SE SI LO VOY A HACER --->VALIDO QUE DIA Y HORARIO TURNO NO ESTEN OCUPADOS PARA ESE PROF trayendo todos los turnos y verificando que no exista
+    //ELIMINO LOS TURNOS YA OTORGADOS
+    SacarTurnoComponent.prototype.turnosLibres = function (tMoT) {
+        //lo comparo con el turno actual
+        for (var _i = 0, _a = this.turnosTodos; _i < _a.length; _i++) {
+            var turno_1 = _a[_i];
+            for (var i = 0; i <= tMoT.length; i++) {
+                if (turno_1.hora === tMoT[i] && turno_1.fecha === this.fecha) {
+                    tMoT.splice(i, 1);
+                }
+            }
+        }
+        return tMoT;
+    };
+    SacarTurnoComponent.prototype.sacarTurno = function () {
+        var _this = this;
+        console.log(this.turnoOK);
+        var turnoFire = { id: this.turnoOK.id, fecha: this.turnoOK.fecha, hora: this.turnoOK.hora,
+            especialidad: this.turnoOK.especialidad, paciente: this.turnoOK.paciente, profesional: this.turnoOK.profesional,
+            atendido: this.turnoOK.atendido, estado: this.turnoOK.estado, observaciones: this.turnoOK.observaciones };
+        this.firebase.createTurnoXProf(turnoFire.id, turnoFire).then(function (resul) {
+            alert("Turno Creado!");
+            _this.firebase.createTurno(turnoFire.id, turnoFire).then(function (resul2) {
+                console.log("turno creado en ambas tablas");
+            }).catch(function (error) {
+                console.log(error);
+            });
+            //mandar a listado
+        }).catch(function (error) {
+            console.log("TURNOS POR PROF", error);
+        });
     };
     SacarTurnoComponent.ctorParameters = function () { return [
+        { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuth"] },
         { type: _servicios_firebase_service__WEBPACK_IMPORTED_MODULE_1__["FirebaseService"] },
-        { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
-        { type: src_app_servicios_auth_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] }
+        { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] }
     ]; };
     SacarTurnoComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1480,9 +2046,287 @@ var SacarTurnoComponent = /** @class */ (function () {
             template: __importDefault(__webpack_require__(/*! raw-loader!./sacar-turno.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/paciente/sacar-turno/sacar-turno.component.html")).default,
             styles: [__importDefault(__webpack_require__(/*! ./sacar-turno.component.css */ "./src/app/componentes/paciente/sacar-turno/sacar-turno.component.css")).default]
         }),
-        __metadata("design:paramtypes", [_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_1__["FirebaseService"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"], src_app_servicios_auth_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]])
+        __metadata("design:paramtypes", [_angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuth"], _servicios_firebase_service__WEBPACK_IMPORTED_MODULE_1__["FirebaseService"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]])
     ], SacarTurnoComponent);
     return SacarTurnoComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/componentes/profesional/atencion/atencion.component.css":
+/*!*************************************************************************!*\
+  !*** ./src/app/componentes/profesional/atencion/atencion.component.css ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\r\nh1{\r\n    text-align: center;\r\n    \r\n    font-size: 90px;\r\n    \r\n}\r\n\r\n.rowLogin{\r\n    background-position: center; /* Center the image */\r\n    background-repeat: no-repeat; /* Do not repeat the image */\r\n    background-size: cover; /* Resize the background image to cover the entire container */\r\n   \r\n}\r\n\r\n.buttonDefault{\r\n    margin: 5px;\r\n    margin-bottom: 15px;\r\n}\r\n\r\n.ar{\r\n    margin: 0 10px;\r\n}\r\n\r\n/* .form-control.login-user {\r\n    border: 0px solid #fff !important;\r\n  }\r\n  .form-control.login-user {\r\n    border: 0 solid #fff !important;\r\n  } */\r\n\r\n.star {\r\n    font-size: 1.5rem;\r\n    color: #b0c4de;\r\n  }\r\n\r\n.filled {\r\n    color: #1e90ff;\r\n  }\r\n\r\n.filled.bad {\r\n    color: #ff1e1e;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvcHJvZmVzaW9uYWwvYXRlbmNpb24vYXRlbmNpb24uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0E7SUFDSSxrQkFBa0I7O0lBRWxCLGVBQWU7O0FBRW5COztBQUVBO0lBQ0ksMkJBQTJCLEVBQUUscUJBQXFCO0lBQ2xELDRCQUE0QixFQUFFLDRCQUE0QjtJQUMxRCxzQkFBc0IsRUFBRSw4REFBOEQ7O0FBRTFGOztBQUlBO0lBQ0ksV0FBVztJQUNYLG1CQUFtQjtBQUN2Qjs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUE7Ozs7O0tBS0s7O0FBR0Y7SUFDQyxpQkFBaUI7SUFDakIsY0FBYztFQUNoQjs7QUFDQTtJQUNFLGNBQWM7RUFDaEI7O0FBRUE7SUFDRSxjQUFjO0VBQ2hCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50ZXMvcHJvZmVzaW9uYWwvYXRlbmNpb24vYXRlbmNpb24uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5oMXtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIFxyXG4gICAgZm9udC1zaXplOiA5MHB4O1xyXG4gICAgXHJcbn1cclxuXHJcbi5yb3dMb2dpbntcclxuICAgIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjsgLyogQ2VudGVyIHRoZSBpbWFnZSAqL1xyXG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDsgLyogRG8gbm90IHJlcGVhdCB0aGUgaW1hZ2UgKi9cclxuICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7IC8qIFJlc2l6ZSB0aGUgYmFja2dyb3VuZCBpbWFnZSB0byBjb3ZlciB0aGUgZW50aXJlIGNvbnRhaW5lciAqL1xyXG4gICBcclxufVxyXG5cclxuXHJcblxyXG4uYnV0dG9uRGVmYXVsdHtcclxuICAgIG1hcmdpbjogNXB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMTVweDtcclxufVxyXG5cclxuLmFye1xyXG4gICAgbWFyZ2luOiAwIDEwcHg7XHJcbn1cclxuXHJcbi8qIC5mb3JtLWNvbnRyb2wubG9naW4tdXNlciB7XHJcbiAgICBib3JkZXI6IDBweCBzb2xpZCAjZmZmICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIC5mb3JtLWNvbnRyb2wubG9naW4tdXNlciB7XHJcbiAgICBib3JkZXI6IDAgc29saWQgI2ZmZiAhaW1wb3J0YW50O1xyXG4gIH0gKi9cclxuXHJcbiAgXHJcbiAgIC5zdGFyIHtcclxuICAgIGZvbnQtc2l6ZTogMS41cmVtO1xyXG4gICAgY29sb3I6ICNiMGM0ZGU7XHJcbiAgfVxyXG4gIC5maWxsZWQge1xyXG4gICAgY29sb3I6ICMxZTkwZmY7XHJcbiAgfVxyXG4gIFxyXG4gIC5maWxsZWQuYmFkIHtcclxuICAgIGNvbG9yOiAjZmYxZTFlO1xyXG4gIH0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/componentes/profesional/atencion/atencion.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/componentes/profesional/atencion/atencion.component.ts ***!
+  \************************************************************************/
+/*! exports provided: AtencionComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AtencionComponent", function() { return AtencionComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/table.js");
+/* harmony import */ var src_app_servicios_exporter_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/servicios/exporter.service */ "./src/app/servicios/exporter.service.ts");
+/* harmony import */ var src_app_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/servicios/firebase.service */ "./src/app/servicios/firebase.service.ts");
+/* harmony import */ var _servicios_encuesta_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../servicios/encuesta.service */ "./src/app/servicios/encuesta.service.ts");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/__ivy_ngcc__/auth/index.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+
+
+
+
+
+
+var AtencionComponent = /** @class */ (function () {
+    function AtencionComponent(exporter, firebase, afAuth, fb, router, encuestaService) {
+        this.exporter = exporter;
+        this.firebase = firebase;
+        this.afAuth = afAuth;
+        this.fb = fb;
+        this.router = router;
+        this.encuestaService = encuestaService;
+        this.displayedColumns = ['id', 'paciente', 'especialidad', 'fecha', 'hora', 'atender'];
+        this.atendiendo = false;
+        //ENCUESTA
+        this.selectedPaciente = 4;
+        this.encuesta = {
+            id: "",
+            profesional: "",
+            paciente: "",
+            puntuacionPaciente: 0,
+            comentario: ""
+        };
+        this.clienteData = {};
+        this.encuestar = false;
+        this.encuestado = false;
+        this.turnosTodos = [];
+        this.din1 = '';
+        this.din2 = '';
+        this.din3 = ''; //dina1 = ''; dina2 = '';dina3 = '';
+        this.hClinicaForm = fb.group({
+            id: new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormControl"](''),
+            edad: new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormControl"](''),
+            temperatura: new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormControl"](''),
+            presion: new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormControl"](''),
+            addC: new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormControl"](''),
+            dina1: new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormControl"](''),
+            dina2: new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormControl"](''),
+            dina3: new _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormControl"]('')
+        });
+    }
+    AtencionComponent.prototype.ngOnInit = function () {
+        this.user = "profesional";
+        //this.traerUser();s
+        this.traerTurnos();
+        //ENCUESTA
+        this.form = this.fb.group({
+            comentario: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required]
+        });
+    };
+    AtencionComponent.prototype.mostrarEncuesta = function () {
+        this.encuestar = true;
+    };
+    AtencionComponent.prototype.traerUser = function () {
+        this.profe = this.afAuth.auth.currentUser.email.valueOf();
+    };
+    AtencionComponent.prototype.traerTurnos = function () {
+        var _this = this;
+        this.firebase.getTurnosXProf(/*this.profe*/ 'prof@c.com').subscribe(function (resul) {
+            resul.forEach(function (data) {
+                if (data.payload.doc.data().atendido === false) {
+                    _this.turnosTodos.push({
+                        id: data.payload.doc.data().id,
+                        fecha: data.payload.doc.data().fecha,
+                        hora: data.payload.doc.data().hora,
+                        paciente: data.payload.doc.data().paciente,
+                        especialidad: data.payload.doc.data().especialidad,
+                        atendido: data.payload.doc.data().atendido,
+                        estado: data.payload.doc.data().estado,
+                        profesional: data.payload.doc.data().profesional
+                    });
+                }
+            });
+            _this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](_this.turnosTodos);
+        });
+    };
+    AtencionComponent.prototype.atender = function (e) {
+        this.turno = e;
+        this.atendiendo = true;
+        console.log(this.turno);
+    };
+    AtencionComponent.prototype.disab = function () {
+        document.getElementById('add').removeAttribute("disabled");
+    };
+    AtencionComponent.prototype.addCampo = function () {
+        //console.log("aaaa")
+        if (this.din1 === '') {
+            this.din1 = this.hClinicaForm.get('addC').value;
+        }
+        else if (this.din2 === '') {
+            this.din2 = this.hClinicaForm.get('addC').value;
+        }
+        else if (this.din3 === '') {
+            this.din3 = this.hClinicaForm.get('addC').value;
+        }
+    };
+    AtencionComponent.prototype.altaHClinica = function () {
+        var _this = this;
+        if (this.din3 !== '') {
+            this.hclinica = {
+                id: this.turno.id,
+                hora: this.turno.hora,
+                fecha: this.turno.fecha,
+                especialidad: this.turno.especialidad,
+                atendido: true,
+                estado: this.turno.estado,
+                paciente: this.turno.paciente,
+                profesional: this.turno.profesional,
+                hclinica: "{edad: " + this.hClinicaForm.get('edad').value + ",\n            temperatura: " + this.hClinicaForm.get('temperatura').value + ",\n            presion: " + this.hClinicaForm.get('presion').value + ",\n            " + this.din1 + ":" + this.hClinicaForm.get('dina1').value + ",\n            " + this.din2 + ":" + this.hClinicaForm.get('dina2').value + ",\n            " + this.din3 + ":" + this.hClinicaForm.get('dina3').value + "}"
+            };
+        }
+        else if (this.din2 !== '') {
+            this.hclinica = {
+                id: this.turno.id,
+                hora: this.turno.hora,
+                fecha: this.turno.fecha,
+                especialidad: this.turno.especialidad,
+                atendido: true,
+                estado: this.turno.estado,
+                paciente: this.turno.paciente,
+                profesional: this.turno.profesional,
+                hclinica: "{edad: " + this.hClinicaForm.get('edad').value + ",\n            temperatura: " + this.hClinicaForm.get('temperatura').value + ",\n            presion: " + this.hClinicaForm.get('presion').value + ",\n            " + this.din1 + ":" + this.hClinicaForm.get('dina1').value + ",\n            " + this.din2 + ":" + this.hClinicaForm.get('dina2').value + "}"
+            };
+        }
+        else if (this.din1 !== '') {
+            //agrear cambio de estado atendido a true
+            this.hclinica = {
+                id: this.turno.id,
+                hora: this.turno.hora,
+                fecha: this.turno.fecha,
+                especialidad: this.turno.especialidad,
+                atendido: true,
+                estado: this.turno.estado,
+                paciente: this.turno.paciente,
+                profesional: this.turno.profesional,
+                hclinica: "{edad: " + this.hClinicaForm.get('edad').value + ",\n            temperatura: " + this.hClinicaForm.get('temperatura').value + ",\n            presion: " + this.hClinicaForm.get('presion').value + ",\n            " + this.din1 + ":" + this.hClinicaForm.get('dina1').value + "}"
+            };
+        }
+        else {
+            this.hclinica = {
+                id: this.turno.id,
+                hora: this.turno.hora,
+                fecha: this.turno.fecha,
+                especialidad: this.turno.especialidad,
+                atendido: true,
+                estado: this.turno.estado,
+                paciente: this.turno.paciente,
+                profesional: this.turno.profesional,
+                hclinica: "{edad: " + this.hClinicaForm.get('edad').value + ",\n            temperatura: " + this.hClinicaForm.get('temperatura').value + ",\n            presion: " + this.hClinicaForm.get('presion').value + "}"
+            };
+        }
+        console.log(this.hclinica);
+        this.firebase.agregaHClincia(this.turno.id, this.hclinica).then(function (resul) {
+            console.log("OK");
+            _this.firebase.agregaHClinciaXProf(_this.turno.id, _this.hclinica).then(function (resul) {
+                console.log("OK");
+                _this.router.navigate(['/profesional/atencion']);
+            }).catch();
+        }).catch(function (error) { console.log(error); });
+    };
+    AtencionComponent.prototype.actualizarTurno = function (turno) {
+        for (var _i = 0, _a = this.turnosTodos; _i < _a.length; _i++) {
+            var t = _a[_i];
+            if (t.id === turno.id) {
+                t.estado = turno.estado;
+            }
+        }
+    };
+    //ENCUESTA
+    AtencionComponent.prototype.Submit = function () {
+        var _this = this;
+        this.errorMessage = '';
+        this.error = false;
+        if (this.form.valid) {
+            //this.getDatosPedido();
+            this.encuesta.puntuacionPaciente = this.selectedPaciente;
+            this.encuesta.comentario = this.form.get('comentario').value;
+            this.encuesta.id = this.turno.id;
+            this.encuesta.paciente = this.turno.paciente;
+            this.encuesta.profesional = this.turno.profesional;
+            this.encuestaService.Registrar(this.encuesta)
+                .then(function (res) {
+                //guardo el elmpeado
+                _this.altaHClinica();
+                _this.router.navigate(["/home"]);
+            })
+                .catch(function (error) {
+                _this.error = true;
+                //this.errorMessage = res['Mensaje'];
+                if (error) {
+                    //this.toastService.error('Usuario no encontrado.');
+                    _this.errorMessage = 'Error al Registrar encuesta.' + error;
+                }
+            });
+        }
+        else {
+            this.errorMessage = 'Debe completar los campos correctamente.';
+            this.error = true;
+        }
+    };
+    AtencionComponent.prototype.Cancel = function () {
+        this.router.navigate(["/profesional/atencion"]);
+    };
+    AtencionComponent.ctorParameters = function () { return [
+        { type: src_app_servicios_exporter_service__WEBPACK_IMPORTED_MODULE_2__["ExporterService"] },
+        { type: src_app_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseService"] },
+        { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_5__["AngularFireAuth"] },
+        { type: _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"] },
+        { type: _servicios_encuesta_service__WEBPACK_IMPORTED_MODULE_4__["EncuestaService"] }
+    ]; };
+    AtencionComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-atencion',
+            template: __importDefault(__webpack_require__(/*! raw-loader!./atencion.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/profesional/atencion/atencion.component.html")).default,
+            styles: [__importDefault(__webpack_require__(/*! ./atencion.component.css */ "./src/app/componentes/profesional/atencion/atencion.component.css")).default]
+        }),
+        __metadata("design:paramtypes", [src_app_servicios_exporter_service__WEBPACK_IMPORTED_MODULE_2__["ExporterService"],
+            src_app_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseService"],
+            _angular_fire_auth__WEBPACK_IMPORTED_MODULE_5__["AngularFireAuth"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"],
+            _servicios_encuesta_service__WEBPACK_IMPORTED_MODULE_4__["EncuestaService"]])
+    ], AtencionComponent);
+    return AtencionComponent;
 }());
 
 
@@ -1576,6 +2420,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _clases_profesional__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../clases/profesional */ "./src/app/clases/profesional.ts");
 /* harmony import */ var _servicios_firebase_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../servicios/firebase.service */ "./src/app/servicios/firebase.service.ts");
 /* harmony import */ var _clases_especialidad__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../clases/especialidad */ "./src/app/clases/especialidad.ts");
+/* harmony import */ var ngx_captcha__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ngx-captcha */ "./node_modules/ngx-captcha/__ivy_ngcc__/fesm5/ngx-captcha.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1624,6 +2469,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
   return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+
 
 
 
@@ -1696,6 +2542,7 @@ var RegistroProfComponent = /** @class */ (function () {
         this.jueves = false;
         this.viernes = false;
         this.sabado = false;
+        this.key = '6Ld8pqUZAAAAAJJ-Z89Y3jyK1wDmukJMK7gEg5ec';
         this.form = this.formBuilder.group({
             mail: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].compose([
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required,
@@ -1708,14 +2555,15 @@ var RegistroProfComponent = /** @class */ (function () {
             dni: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required),
             //foto: new FormControl('', Validators.required),
             especialidades: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](),
-            horarios: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]()
+            horarios: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]() //['', Validators.required]
         });
         /*this.especialidadesForm = this.fb.group({
           checkArray: this.fb.array([])
         });*/
         this.especialidadForm = this.fb.group({
             idEspecialidad: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required),
-            nombre: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required)
+            nombre: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required),
+            recaptcha: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required)
         });
         this.horariosForm = this.fb.group({
             lunes: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](),
@@ -2010,6 +2858,18 @@ var RegistroProfComponent = /** @class */ (function () {
         { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] },
         { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] }
     ]; };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('captchaElem', { static: true }),
+        __metadata("design:type", ngx_captcha__WEBPACK_IMPORTED_MODULE_7__["ReCaptcha2Component"])
+    ], RegistroProfComponent.prototype, "captcha", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('inputEmail', { static: true }),
+        __metadata("design:type", ngx_captcha__WEBPACK_IMPORTED_MODULE_7__["ReCaptcha2Component"])
+    ], RegistroProfComponent.prototype, "inputEmail", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('inputPassword', { static: true }),
+        __metadata("design:type", ngx_captcha__WEBPACK_IMPORTED_MODULE_7__["ReCaptcha2Component"])
+    ], RegistroProfComponent.prototype, "inputPasword", void 0);
     RegistroProfComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-registro-prof',
@@ -2023,6 +2883,160 @@ var RegistroProfComponent = /** @class */ (function () {
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]])
     ], RegistroProfComponent);
     return RegistroProfComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/componentes/profesional/turnos/turnos.component.css":
+/*!*********************************************************************!*\
+  !*** ./src/app/componentes/profesional/turnos/turnos.component.css ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("/* Structure */\r\ntable {\r\n    width: 100%;\r\n  }\r\n.mat-form-field {\r\n    font-size: 14px;\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvcHJvZmVzaW9uYWwvdHVybm9zL3R1cm5vcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGNBQWM7QUFDZDtJQUNJLFdBQVc7RUFDYjtBQUVBO0lBQ0UsZUFBZTtJQUNmLFdBQVc7RUFDYiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudGVzL3Byb2Zlc2lvbmFsL3R1cm5vcy90dXJub3MuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIFN0cnVjdHVyZSAqL1xyXG50YWJsZSB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgXHJcbiAgLm1hdC1mb3JtLWZpZWxkIHtcclxuICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/componentes/profesional/turnos/turnos.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/componentes/profesional/turnos/turnos.component.ts ***!
+  \********************************************************************/
+/*! exports provided: TurnosComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TurnosComponent", function() { return TurnosComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/table.js");
+/* harmony import */ var src_app_servicios_exporter_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/servicios/exporter.service */ "./src/app/servicios/exporter.service.ts");
+/* harmony import */ var src_app_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/servicios/firebase.service */ "./src/app/servicios/firebase.service.ts");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/__ivy_ngcc__/auth/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+
+
+
+/**
+ * @title Table with filtering
+ */
+var TurnosComponent = /** @class */ (function () {
+    function TurnosComponent(exporter, firebase, afAuth) {
+        this.exporter = exporter;
+        this.firebase = firebase;
+        this.afAuth = afAuth;
+        this.displayedColumns = ['id', 'paciente', 'especialidad', 'fecha', 'hora', 'atendido', 'estado', 'aceptar', 'rechazar'];
+        this.turnosTodos = [];
+    }
+    TurnosComponent.prototype.ngOnInit = function () {
+        this.user = "profesional";
+        this.traerUser();
+        this.traerTurnos();
+    };
+    TurnosComponent.prototype.traerUser = function () {
+        this.profe = this.afAuth.auth.currentUser.email.valueOf();
+    };
+    TurnosComponent.prototype.traerTurnos = function () {
+        var _this = this;
+        this.firebase.getTurnosXProf(this.profe).subscribe(function (resul) {
+            resul.forEach(function (data) {
+                _this.turnosTodos.push({
+                    id: data.payload.doc.data().id,
+                    fecha: data.payload.doc.data().fecha,
+                    hora: data.payload.doc.data().hora,
+                    paciente: data.payload.doc.data().paciente,
+                    especialidad: data.payload.doc.data().especialidad,
+                    atendido: data.payload.doc.data().atendido,
+                    estado: data.payload.doc.data().estado,
+                    profesional: data.payload.doc.data().profesional
+                });
+            });
+            _this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](_this.turnosTodos);
+        });
+    };
+    TurnosComponent.prototype.aceptar = function (e) {
+        var _this = this;
+        if (e.estado == "pendiente") {
+            e.estado = "confirmado";
+            this.firebase.updateTurno(e.id, e).then(function (resul) {
+                console.log("OK");
+                _this.firebase.updateTurnoXProf(e.id, e).then(function (resul) {
+                    console.log("OK2");
+                }).catch(function (error) { console.log(error); });
+            }).catch(function (error) { console.log(error); });
+            this.actualizarTurno(e);
+        }
+        else {
+            console.log("El turno est\u00E1 " + e.estado);
+        }
+    };
+    TurnosComponent.prototype.rechazar = function (e) {
+        var _this = this;
+        if (e.estado !== "rechazado") {
+            e.estado = "rechazado";
+            this.firebase.updateTurno(e.id, e).then(function (resul) {
+                console.log("OK");
+                _this.firebase.updateTurnoXProf(e.id, e).then(function (resul) {
+                    console.log("OK2");
+                }).catch(function (error) { console.log(error); });
+            }).catch(function (error) { console.log(error); });
+            this.actualizarTurno(e);
+        }
+        else {
+            console.log("El turno ya est\u00E1 " + e.estado);
+        }
+    };
+    TurnosComponent.prototype.actualizarTurno = function (turno) {
+        for (var _i = 0, _a = this.turnosTodos; _i < _a.length; _i++) {
+            var t = _a[_i];
+            if (t.id === turno.id) {
+                t.estado = turno.estado;
+            }
+        }
+    };
+    TurnosComponent.prototype.applyFilter = function (event) {
+        var filterValue = event.target.value;
+        this.dataSource.filter = filterValue.trim().toLowerCase();
+    };
+    TurnosComponent.prototype.exportarAsXlsx = function () {
+        this.exporter.exportToExcel(this.dataSource.data, 'turnos');
+    };
+    TurnosComponent.prototype.exportarAsXlsxFilter = function () {
+        this.exporter.exportToExcel(this.dataSource.filteredData, 'turnos_filtrados');
+    };
+    TurnosComponent.ctorParameters = function () { return [
+        { type: src_app_servicios_exporter_service__WEBPACK_IMPORTED_MODULE_2__["ExporterService"] },
+        { type: src_app_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseService"] },
+        { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_4__["AngularFireAuth"] }
+    ]; };
+    TurnosComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-turnos',
+            template: __importDefault(__webpack_require__(/*! raw-loader!./turnos.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/profesional/turnos/turnos.component.html")).default,
+            styles: [__importDefault(__webpack_require__(/*! ./turnos.component.css */ "./src/app/componentes/profesional/turnos/turnos.component.css")).default]
+        }),
+        __metadata("design:paramtypes", [src_app_servicios_exporter_service__WEBPACK_IMPORTED_MODULE_2__["ExporterService"],
+            src_app_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseService"],
+            _angular_fire_auth__WEBPACK_IMPORTED_MODULE_4__["AngularFireAuth"]])
+    ], TurnosComponent);
+    return TurnosComponent;
 }());
 
 
@@ -2750,6 +3764,115 @@ var AuthService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/servicios/encuesta.service.ts":
+/*!***********************************************!*\
+  !*** ./src/app/servicios/encuesta.service.ts ***!
+  \***********************************************/
+/*! exports provided: EncuestaService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EncuestaService", function() { return EncuestaService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/__ivy_ngcc__/firestore/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+var EncuestaService = /** @class */ (function () {
+    function EncuestaService(db) {
+        this.db = db;
+    }
+    EncuestaService.prototype.Registrar = function (objeto) {
+        return this.db.collection("encuesta").doc(objeto.id).set(objeto);
+    };
+    EncuestaService.ctorParameters = function () { return [
+        { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__["AngularFirestore"] }
+    ]; };
+    EncuestaService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__["AngularFirestore"]])
+    ], EncuestaService);
+    return EncuestaService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/servicios/exporter.service.ts":
+/*!***********************************************!*\
+  !*** ./src/app/servicios/exporter.service.ts ***!
+  \***********************************************/
+/*! exports provided: ExporterService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExporterService", function() { return ExporterService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! file-saver */ "./node_modules/file-saver/dist/FileSaver.min.js");
+/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(file_saver__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! xlsx */ "./node_modules/xlsx/xlsx.js");
+/* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(xlsx__WEBPACK_IMPORTED_MODULE_2__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+
+var EXCEL_TYPE = 'application/vnd.openx  mlformats-officedocument.spreadsheetml.sheet; charset=UTF-8';
+var EXCEL_EXT = '.xlsx';
+var ExporterService = /** @class */ (function () {
+    function ExporterService() {
+    }
+    ExporterService.prototype.exportToExcel = function (json, excelFileName) {
+        var worksheet = xlsx__WEBPACK_IMPORTED_MODULE_2__["utils"].json_to_sheet(json);
+        var workbook = {
+            Sheets: { 'data': worksheet },
+            SheetNames: ['data']
+        };
+        var excelBuffer = xlsx__WEBPACK_IMPORTED_MODULE_2__["write"](workbook, { bookType: 'xlsx', type: 'array' });
+        // llamar metodo 
+        this.saveAsExcel(excelBuffer, excelFileName);
+    };
+    ExporterService.prototype.saveAsExcel = function (buffer, fileName) {
+        var data = new Blob([buffer], { type: EXCEL_TYPE });
+        file_saver__WEBPACK_IMPORTED_MODULE_1__["saveAs"](data, fileName + '_export_' + new Date().getTime() + EXCEL_EXT);
+    };
+    ExporterService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [])
+    ], ExporterService);
+    return ExporterService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/servicios/firebase.service.ts":
 /*!***********************************************!*\
   !*** ./src/app/servicios/firebase.service.ts ***!
@@ -2858,6 +3981,60 @@ var FirebaseService = /** @class */ (function () {
     FirebaseService.prototype.deleteProfesional = function (documentId) {
         console.log(documentId);
         return this.db.collection('profesionales').doc(documentId).delete();
+    };
+    /***************************************************************************** */
+    /**************************************TURNOS ******************************** */
+    //Trae Todos
+    FirebaseService.prototype.getTurnos = function (paciente) {
+        //console.log("entre a servicio", this.firestore.collection('mercados').snapshotChanges())
+        return this.db.collection("turnos/" + paciente + "/turnos").snapshotChanges()
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["delay"])(2000));
+    };
+    //Alta
+    FirebaseService.prototype.createTurno = function (id, data) {
+        return this.db.collection("turnos/" + data.paciente + "/turnos").doc(id).set(data);
+    };
+    //Trae 1
+    FirebaseService.prototype.getTurno = function (documentId) {
+        return this.db.collection('turnos').doc(documentId).snapshotChanges();
+    };
+    //Actualiza 1 VER COMO MODIFICAR UN SOLO VALOR
+    FirebaseService.prototype.updateTurno = function (documentId, data) {
+        return this.db.collection("turnos/" + data.paciente + "/turnos").doc(documentId).set(data);
+    };
+    /***************************************************************************** */
+    /**************************************TURNOS X PROFESIONAL ******************************** */
+    //Trae Todos
+    FirebaseService.prototype.getTurnosXProf = function (profesional) {
+        //console.log("entre a servicio", this.firestore.collection('mercados').snapshotChanges())
+        return this.db.collection("turnosXProf/" + profesional + "/turnos").snapshotChanges()
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["delay"])(2000));
+    };
+    //Alta
+    FirebaseService.prototype.createTurnoXProf = function (id, data) {
+        return this.db.collection("turnosXProf/" + data.profesional + "/turnos").doc(id).set(data);
+    };
+    //Trae 1
+    FirebaseService.prototype.getTurnoXProf = function (documentId) {
+        return this.db.collection('turnosXProf').doc(documentId).snapshotChanges();
+    };
+    //Actualiza 1 VER COMO MODIFICAR UN SOLO VALOR
+    FirebaseService.prototype.updateTurnoXProf = function (documentId, data) {
+        return this.db.collection("turnos/" + data.profesional + "/turnos").doc(documentId).set(data);
+    };
+    /***************************************************************************** */
+    /***********************************HClinica************************************ */
+    //Actualiza 1 VER COMO MODIFICAR UN SOLO VALOR
+    FirebaseService.prototype.agregaHClinciaXProf = function (documentId, data) {
+        return this.db.collection("turnosXProf/" + data.profesional + "/turnos").doc(documentId).set(data);
+    };
+    //Actualiza 1 VER COMO MODIFICAR UN SOLO VALOR
+    FirebaseService.prototype.agregaHClincia = function (documentId, data) {
+        return this.db.collection("turnos/" + data.paciente + "/turnos").doc(documentId).set(data);
+    };
+    //Actualiza 1 VER COMO MODIFICAR UN SOLO VALOR
+    FirebaseService.prototype.agrega = function (documentId, data) {
+        return this.db.collection("turnos/" + data.paciente + "/turnos").doc(documentId).set(data);
     };
     FirebaseService.ctorParameters = function () { return [
         { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__["AngularFirestore"] },
@@ -3162,6 +4339,39 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 
 module.exports = __webpack_require__(/*! C:\Users\Waldo\LABO4-ANG\Clinica2\src\main.ts */"./src/main.ts");
 
+
+/***/ }),
+
+/***/ 1:
+/*!********************!*\
+  !*** fs (ignored) ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 2:
+/*!************************!*\
+  !*** crypto (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 3:
+/*!************************!*\
+  !*** stream (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
 
 /***/ })
 

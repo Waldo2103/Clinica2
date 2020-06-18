@@ -1,7 +1,7 @@
 <div>
   <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
     <div class="container">
-      <a class="navbar-brand mr-lg-5" [routerLink]="['/home']">
+      <a class="navbar-brand mr-lg-5" routerLink="/home">
         <img src="./assets/img/brand/argon-white.png">
       </a>
       <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
@@ -12,7 +12,7 @@
         <div class="navbar-collapse-header">
           <div class="row">
             <div class="col-6 collapse-brand">
-              <a [routerLink]="['/home']">
+              <a routerLink="/home">
                 <img src="./assets/img/brand/blue.png">
               </a>
             </div>
@@ -33,7 +33,7 @@
             </a>
             <div class="dropdown-menu-xl dropdown-menu" >
               <div class="dropdown-menu-inner">
-                <a routerLinkActive="active" [routerLink]="['paciente/sacarTurno']" class="media d-flex align-items-center">
+                <a routerLinkActive="active" routerLink="/paciente/sacarTurno" class="media d-flex align-items-center">
                   <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
                     <i class="ni ni-spaceship"></i>
                   </div>
@@ -42,22 +42,24 @@
                     <p class="description d-none d-md-inline-block mb-0">El paciente podra sacar un turno seleccionando profesional o especialidad.</p>
                   </div>
                 </a>
-                <a routerLinkActive="active" [routerLink]="['documentation/colors']" class="media d-flex align-items-center">
+                <a routerLinkActive="active" routerLink="/paciente/listaTurnos" class="media d-flex align-items-center">
                   <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
                     <i class="ni ni-palette"></i>
                   </div>
                   <div class="media-body ml-3">
-                    <h6 class="heading text-primary mb-md-1">Foundation</h6>
-                    <p class="description d-none d-md-inline-block mb-0">Learn more about colors, typography, icons and the grid system we used for Argon.</p>
+                    <h6 class="heading text-primary mb-md-1">LISTA DE TURNOS</h6>
+                    <p class="description d-none d-md-inline-block mb-0">El paciente puede ver el listado de sus turnos.</p>
                   </div>
                 </a>
-                <a routerLinkActive="active" [routerLink]="['documentation/alerts']" class="media d-flex align-items-center">
+                <a routerLinkActive="active" routerLink="/paciente/resenias" class="media d-flex align-items-center">
                   <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                     <i class="ni ni-ui-04"></i>
                   </div>
                   <div class="media-body ml-3">
-                    <h5 class="heading text-warning mb-md-1">Components</h5>
-                    <p class="description d-none d-md-inline-block mb-0">Browse our 50 beautiful handcrafted components offered in the Free version.</p>
+                    <h5 class="heading text-warning mb-md-1">RESEÑAS</h5>
+                    <p class="description d-none d-md-inline-block mb-0">El Paciente puede ver la reseña del Profesional y devolver un comentario completando una
+                      breve encuesta
+                      .</p>
                   </div>
                 </a>
               </div>
@@ -65,14 +67,39 @@
           </li>
           <li *ngIf="user==='profesional'" class="nav-item dropdown">
             <a class="nav-link no-caret" data-toggle="dropdown" role="button">
-              <i class="ni ni-collection d-lg-none"></i>
-              <span class="nav-link-inner--text">Examples</span>
+              <i class="ni ni-ui-04 d-lg-none"></i>
+              <span class="nav-link-inner--text">Profesional</span>
             </a>
-            <div class="dropdown-menu">
-              <a [routerLink]="['/#/landing']" class="dropdown-item">Landing</a>
-              <a [routerLink]="['/#/user-profile']" class="dropdown-item">Profile</a>
-              <a [routerLink]="['/#/login']" class="dropdown-item">Login</a>
-              <a [routerLink]="['/#/registro']" class="dropdown-item">Register</a>
+            <div class="dropdown-menu-xl dropdown-menu" >
+              <div class="dropdown-menu-inner">
+                <a routerLinkActive="active" routerLink="/profesional/turnos" class="media d-flex align-items-center">
+                  <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                    <i class="ni ni-spaceship"></i>
+                  </div>
+                  <div class="media-body ml-3">
+                    <h6 class="heading text-primary mb-md-1">LISTA DE TURNOS</h6>
+                    <p class="description d-none d-md-inline-block mb-0">El profesional podrá gestionar los turnos de sus pacientes.</p>
+                  </div>
+                </a>
+                <a routerLinkActive="active" routerLink="/profesional/atencion" class="media d-flex align-items-center">
+                  <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                    <i class="ni ni-palette"></i>
+                  </div>
+                  <div class="media-body ml-3">
+                    <h6 class="heading text-primary mb-md-1">ATENDER PACIENTES</h6>
+                    <p class="description d-none d-md-inline-block mb-0">El profesional atenderá a sus pacientes y podrá guardar información importante de estos.</p>
+                  </div>
+                </a>
+                <a routerLinkActive="active" routerLink="/profesional/atencion" class="media d-flex align-items-center">
+                  <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                    <i class="ni ni-ui-04"></i>
+                  </div>
+                  <div class="media-body ml-3">
+                    <h5 class="heading text-warning mb-md-1">RESEÑA DE PACIENTES</h5>
+                    <p class="description d-none d-md-inline-block mb-0">El profesional puede ver el comentario del Paciente sobre la atención recibida.</p>
+                  </div>
+                </a>
+              </div>
             </div>
           </li>
         </ul>

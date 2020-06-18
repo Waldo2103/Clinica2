@@ -1,0 +1,55 @@
+<div class="container h-100">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-6">
+        <div class="card" [ngClass]="{'border-danger': error}">
+          <div class="card-body">
+            <h5 class="card-title">Encuesta</h5>
+            <form [formGroup]="form">
+              <div class="form-group">
+                  <label for="user" class="col-6">Califique al Paciente</label>
+                  <ngb-rating [(rate)]="selectedMesa" class="col-6">
+                      <ng-template let-fill="fill" let-index="index">
+                        <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                      </ng-template>
+                    </ngb-rating>
+              </div>
+              <!--div class="form-group">
+                <label for="rest" class="col-6">Califique el Restaurante</label>
+                <ngb-rating [(rate)]="selectedResto" class="col-6">
+                  <ng-template let-fill="fill" let-index="index">
+                    <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                  </ng-template>
+                </ngb-rating>
+              </div>
+              <div class="form-group">
+                <label for="moz" class="col-6">Califique el Mozo</label>
+                <ngb-rating [(rate)]="selectedMozo" class="col-6">
+                    <ng-template let-fill="fill" let-index="index">
+                        <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                      </ng-template>
+                    </ngb-rating>
+  
+              </div>
+              <div class="form-group">
+                <label for="coci" class="col-6">Califique el Cocinero</label>
+                <ngb-rating [(rate)]="selectedCoci" class="col-6" >
+                    <ng-template let-fill="fill" let-index="index">
+                        <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                      </ng-template>
+                    </ngb-rating>
+              </div-->
+              <div class="form-group">
+                <label for="coci" class="col-6">Por favor deje su comentario</label>
+                <textarea formControlName="comentario" class="col-6 span6" rows="3" placeholder="Sugerencias?" required></textarea>
+              </div>
+             <button class="col-6 btn btn-primary" (click)="Submit()">Enviar</button>
+             <button class="col-6 btn btn-secondary" (click)="Cancel()">Cancelar</button>
+            </form>
+            </div>
+                <div *ngIf="error" class="card-footer">
+                  <small class="text-danger font-weight-bold"><i class="fa fa-times"></i> {{errorMessage}} </small>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>

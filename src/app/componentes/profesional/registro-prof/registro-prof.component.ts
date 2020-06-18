@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../../../servicios/auth/auth.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormControl, Validators, FormGroup, FormArray } from '@angular/forms';
 import { Profesional } from '../../../clases/profesional';
 import { FirebaseService } from '../../../servicios/firebase.service';
 import { especialidad } from '../../../clases/especialidad';
+
+import { ReCaptcha2Component } from 'ngx-captcha';
 
 @Component({
   selector: 'app-registro-prof',
@@ -73,6 +75,12 @@ export class RegistroProfComponent implements OnInit {
  password2:string;
   modalText: string;
 
+  //Para captcha
+  @ViewChild('captchaElem',{static:true}) captcha: ReCaptcha2Component;
+  @ViewChild('inputEmail',{static:true}) inputEmail: ReCaptcha2Component;
+  @ViewChild('inputPassword',{static:true}) inputPasword: ReCaptcha2Component;
+  key:string;
+
   constructor(
     private authService: AuthService,
     private firebase: FirebaseService,
@@ -80,6 +88,7 @@ export class RegistroProfComponent implements OnInit {
     private formBuilder: FormBuilder,
     private fb: FormBuilder
     ) { 
+      this.key = '6Ld8pqUZAAAAAJJ-Z89Y3jyK1wDmukJMK7gEg5ec';
 
       this.form = this.formBuilder.group({
         mail: new FormControl('', Validators.compose([
@@ -93,7 +102,7 @@ export class RegistroProfComponent implements OnInit {
         dni: new FormControl('', Validators.required),
         //foto: new FormControl('', Validators.required),
         especialidades: new FormControl(),
-        horarios: new FormControl()
+        horarios: new FormControl()//['', Validators.required]
       });
       /*this.especialidadesForm = this.fb.group({
         checkArray: this.fb.array([])
@@ -101,7 +110,8 @@ export class RegistroProfComponent implements OnInit {
 
       this.especialidadForm = this.fb.group({
         idEspecialidad: new FormControl('', Validators.required),
-        nombre:  new FormControl('', Validators.required)
+        nombre:  new FormControl('', Validators.required),
+        recaptcha: new FormControl('', Validators.required)
       });
 
       this.horariosForm = this.fb.group({

@@ -3,14 +3,14 @@ import { Profesional } from './profesional';
 import { especialidad } from './especialidad';
 
 export class turno {
-    idTurno: string; 
+    id: string; 
     fecha: string;
     hora:string;
-    especialidad:especialidad;
-    paciente:Paciente;
-    profesional:Profesional;
-    tomado:boolean;
-    cancelado:boolean;
+    especialidad: string;
+    paciente: string;
+    profesional: string;
+    atendido:boolean;
+    estado:string;
     observaciones:string; 
     constructor() {
         

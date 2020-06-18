@@ -40,7 +40,21 @@ import { NoHabComponent } from './componentes/no-hab/no-hab.component';
 import { HomePrComponent } from './componentes/profesional/home-pr/home-pr.component';
 import { HomePacComponent } from './componentes/paciente/home-pac/home-pac.component';
 import { CalendarComponent } from './extra/calendar/calendar.component';
+import { NgxCaptchaModule } from 'ngx-captcha';
+import { TurnosComponent } from './componentes/profesional/turnos/turnos.component';
 //import { NgbCalendar, NgbCalendarHebrew, NgbDatepickerI18n, NgbDatepickerI18nHebrew } from '_node_modules/@ng-bootstrap/ng-bootstrap';
+
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { Ng2CompleterModule, CompleterService } from '@akveo/ng2-completer';
+
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatTableModule } from '@angular/material/table';
+import { ExporterService } from './servicios/exporter.service';
+import { AtencionComponent } from './componentes/profesional/atencion/atencion.component';
+import { ListaTurnosComponent } from './componentes/paciente/lista-turnos/lista-turnos.component';
+import { EncuestaComponent } from './componentes/encuesta/encuesta.component';
+
+
 
 //, , , 
 @NgModule({
@@ -57,10 +71,15 @@ import { CalendarComponent } from './extra/calendar/calendar.component';
     NoHabComponent,
     HomePrComponent,
     HomePacComponent,
-    CalendarComponent
+    CalendarComponent,
+    TurnosComponent,
+    AtencionComponent,
+    ListaTurnosComponent,
+    EncuestaComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
@@ -78,12 +97,17 @@ import { CalendarComponent } from './extra/calendar/calendar.component';
     MatInputModule, 
     MatButtonModule,
     MatSelectModule,
-    MatIconModule
-
+    MatNativeDateModule,
+    MatTableModule,
+    MatIconModule,
+    NgxCaptchaModule,
+    Ng2SmartTableModule,
+    Ng2CompleterModule
   ],
   providers: [
     AngularFireAuth,
     {provide: NgbCalendar, useClass: NgbCalendarGregorian},
+    ExporterService
     //{provide: NgbDatepickerI18n, useClass: NgbDatepickerI18nHebrew}
     //NologinGuard,
     //FormBuilder

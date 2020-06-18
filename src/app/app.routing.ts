@@ -16,17 +16,23 @@ import { RegistroProfComponent } from './componentes/profesional/registro-prof/r
 import { NoHabComponent } from './componentes/no-hab/no-hab.component';
 import { HomePrComponent } from './componentes/profesional/home-pr/home-pr.component';
 import { HomePacComponent } from './componentes/paciente/home-pac/home-pac.component';
+import { TurnosComponent } from './componentes/profesional/turnos/turnos.component';
+import { AtencionComponent } from './componentes/profesional/atencion/atencion.component';
+import { ListaTurnosComponent } from './componentes/paciente/lista-turnos/lista-turnos.component';
 //import { ProfGuard } from './guards/prof.guard';
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent, canActivate:[AuthGuard] },
     { path: 'paciente/sacarTurno',component: SacarTurnoComponent, canActivate:[AuthGuard] },
     { path: 'paciente/home',component: HomePacComponent, canActivate:[AuthGuard] },
+    { path: 'paciente/listaTurnos',component: ListaTurnosComponent, canActivate:[AuthGuard] },
     { path: 'noHab',component: NoHabComponent },
     { path: 'perfil',     component: ProfileComponent },
     { path: 'registro',           component: SignupComponent },
     { path: 'profesional/registro', component: RegistroProfComponent },
     { path: 'profesional/home', component: HomePrComponent },
+    { path: 'profesional/atencion', component: AtencionComponent },
+    { path: 'profesional/turnos', component: TurnosComponent, canActivate:[AuthGuard] },
     { path: 'navbar',          component: NavbarComponent, canActivate:[AuthGuard] },
     { path: 'login', component: LoginComponent,canActivate:[NologinGuard] ,data: {animation: 'LoginPage'}},
     { path: '', redirectTo: '/login', pathMatch: 'full' },

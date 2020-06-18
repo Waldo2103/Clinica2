@@ -80,7 +80,7 @@ export class AtencionComponent implements OnInit {
   traerTurnos(){
     this.firebase.getTurnosXProf(/*this.profe*/'prof@c.com').subscribe(resul => {
       resul.forEach(data =>{
-        if(data.payload.doc.data().atendido === false){
+        if(data.payload.doc.data().atendido === false && data.payload.doc.data().estado === 'confirmado'){
           this.turnosTodos.push(
             {
               id: data.payload.doc.data().id,

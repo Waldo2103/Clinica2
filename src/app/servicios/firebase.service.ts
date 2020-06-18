@@ -131,7 +131,7 @@ export class FirebaseService {
   }
    //Actualiza 1 VER COMO MODIFICAR UN SOLO VALOR
    public updateTurnoXProf(documentId: string, data: {id: string, fecha: string, hora: string, paciente: string, especialidad: string, atendido: boolean, estado: string, profesional:string}) {
-    return this.db.collection(`turnos/${data.profesional}/turnos`).doc(documentId).set(data);
+    return this.db.collection(`turnosXProf/${data.profesional}/turnos`).doc(documentId).set(data);
   }
   /***************************************************************************** */
   /***********************************HClinica************************************ */

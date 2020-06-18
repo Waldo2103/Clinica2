@@ -31,8 +31,10 @@ export class ListaTurnosComponent implements OnInit {
 
   turnosTodos = [];
   traerTurnos(){
-    this.firebase.getTurnosXProf(this.profe).subscribe(resul => {
+    //console.log("entre");
+    this.firebase.getTurnos(this.profe).subscribe(resul => {
       resul.forEach(data =>{
+        //console.log(data.payload.doc.data());
         this.turnosTodos.push(
           {
             id: data.payload.doc.data().id,
@@ -52,14 +54,14 @@ export class ListaTurnosComponent implements OnInit {
   
   rechazar(e){
     if(e.estado !== "cancelado"){
-      e.estado = "rechazado";
+      e.estado = "cancelado";
       this.firebase.updateTurno(e.id, e).then(resul =>{
         console.log("OK")
         this.firebase.updateTurnoXProf(e.id, e).then(resul=>{
           console.log("OK2");
         }).catch(error =>{console.log(error)});
       }).catch(error=>{console.log(error)});
-      this.actualizarTurno(e);
+     // this.actualizarTurno(e);
     }else{
       console.log(`El turno ya está ${e.estado}`)
     }

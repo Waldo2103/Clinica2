@@ -1397,14 +1397,14 @@ var HomePacComponent = /** @class */ (function () {
     HomePacComponent.prototype.rechazar = function (e) {
         var _this = this;
         if (e.estado !== "cancelado") {
-            e.estado = "rechazado";
+            e.estado = "canclado";
             this.firebase.updateTurno(e.id, e).then(function (resul) {
                 console.log("OK");
                 _this.firebase.updateTurnoXProf(e.id, e).then(function (resul) {
                     console.log("OK2");
                 }).catch(function (error) { console.log(error); });
             }).catch(function (error) { console.log(error); });
-            this.actualizarTurno(e);
+            //this.actualizarTurno(e);
         }
         else {
             console.log("El turno ya est\u00E1 " + e.estado);
@@ -1513,8 +1513,10 @@ var ListaTurnosComponent = /** @class */ (function () {
     };
     ListaTurnosComponent.prototype.traerTurnos = function () {
         var _this = this;
-        this.firebase.getTurnosXProf(this.profe).subscribe(function (resul) {
+        //console.log("entre");
+        this.firebase.getTurnos(this.profe).subscribe(function (resul) {
             resul.forEach(function (data) {
+                //console.log(data.payload.doc.data());
                 _this.turnosTodos.push({
                     id: data.payload.doc.data().id,
                     fecha: data.payload.doc.data().fecha,
@@ -1532,14 +1534,14 @@ var ListaTurnosComponent = /** @class */ (function () {
     ListaTurnosComponent.prototype.rechazar = function (e) {
         var _this = this;
         if (e.estado !== "cancelado") {
-            e.estado = "rechazado";
+            e.estado = "cancelado";
             this.firebase.updateTurno(e.id, e).then(function (resul) {
                 console.log("OK");
                 _this.firebase.updateTurnoXProf(e.id, e).then(function (resul) {
                     console.log("OK2");
                 }).catch(function (error) { console.log(error); });
             }).catch(function (error) { console.log(error); });
-            this.actualizarTurno(e);
+            // this.actualizarTurno(e);
         }
         else {
             console.log("El turno ya est\u00E1 " + e.estado);
@@ -2162,7 +2164,7 @@ var AtencionComponent = /** @class */ (function () {
         var _this = this;
         this.firebase.getTurnosXProf(/*this.profe*/ 'prof@c.com').subscribe(function (resul) {
             resul.forEach(function (data) {
-                if (data.payload.doc.data().atendido === false) {
+                if (data.payload.doc.data().atendido === false && data.payload.doc.data().estado === 'confirmado') {
                     _this.turnosTodos.push({
                         id: data.payload.doc.data().id,
                         fecha: data.payload.doc.data().fecha,
@@ -2981,7 +2983,7 @@ var TurnosComponent = /** @class */ (function () {
                     console.log("OK2");
                 }).catch(function (error) { console.log(error); });
             }).catch(function (error) { console.log(error); });
-            this.actualizarTurno(e);
+            //this.actualizarTurno(e);
         }
         else {
             console.log("El turno est\u00E1 " + e.estado);
@@ -2997,7 +2999,7 @@ var TurnosComponent = /** @class */ (function () {
                     console.log("OK2");
                 }).catch(function (error) { console.log(error); });
             }).catch(function (error) { console.log(error); });
-            this.actualizarTurno(e);
+            //this.actualizarTurno(e);
         }
         else {
             console.log("El turno ya est\u00E1 " + e.estado);
@@ -4020,7 +4022,7 @@ var FirebaseService = /** @class */ (function () {
     };
     //Actualiza 1 VER COMO MODIFICAR UN SOLO VALOR
     FirebaseService.prototype.updateTurnoXProf = function (documentId, data) {
-        return this.db.collection("turnos/" + data.profesional + "/turnos").doc(documentId).set(data);
+        return this.db.collection("turnosXProf/" + data.profesional + "/turnos").doc(documentId).set(data);
     };
     /***************************************************************************** */
     /***********************************HClinica************************************ */

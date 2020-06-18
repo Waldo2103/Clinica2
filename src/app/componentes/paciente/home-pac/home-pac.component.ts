@@ -56,14 +56,14 @@ export class HomePacComponent implements OnInit {
   
   rechazar(e){
     if(e.estado !== "cancelado"){
-      e.estado = "rechazado";
+      e.estado = "canclado";
       this.firebase.updateTurno(e.id, e).then(resul =>{
         console.log("OK")
         this.firebase.updateTurnoXProf(e.id, e).then(resul=>{
           console.log("OK2");
         }).catch(error =>{console.log(error)});
       }).catch(error=>{console.log(error)});
-      this.actualizarTurno(e);
+      //this.actualizarTurno(e);
     }else{
       console.log(`El turno ya está ${e.estado}`)
     }

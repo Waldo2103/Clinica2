@@ -66,7 +66,7 @@ export class TurnosComponent implements OnInit {
           console.log("OK2");
         }).catch(error =>{console.log(error)});
       }).catch(error=>{console.log(error)});
-      this.actualizarTurno(e);
+      //this.actualizarTurno(e);
     }else{
       console.log(`El turno está ${e.estado}`)
     }
@@ -82,7 +82,7 @@ export class TurnosComponent implements OnInit {
           console.log("OK2");
         }).catch(error =>{console.log(error)});
       }).catch(error=>{console.log(error)});
-      this.actualizarTurno(e);
+      //this.actualizarTurno(e);
     }else{
       console.log(`El turno ya está ${e.estado}`)
     }

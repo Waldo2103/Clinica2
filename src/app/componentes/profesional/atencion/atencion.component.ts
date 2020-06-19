@@ -31,7 +31,7 @@ export class AtencionComponent implements OnInit {
     id: "",
     profesional: "",
     paciente: "",
-    puntuacionPaciente: 0,
+    puntuacion: 0,
     comentario: ""
   };
   clienteData={};
@@ -223,7 +223,7 @@ disab(){
 
       //this.getDatosPedido();
 
-      this.encuesta.puntuacionPaciente = this.selectedPaciente;
+      this.encuesta.puntuacion = this.selectedPaciente;
       this.encuesta.comentario=this.form.get('comentario').value;
       this.encuesta.id = this.turno.id;
       this.encuesta.paciente = this.turno.paciente;

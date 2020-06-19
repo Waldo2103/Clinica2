@@ -53,6 +53,7 @@ import { ExporterService } from './servicios/exporter.service';
 import { AtencionComponent } from './componentes/profesional/atencion/atencion.component';
 import { ListaTurnosComponent } from './componentes/paciente/lista-turnos/lista-turnos.component';
 import { EncuestaComponent } from './componentes/encuesta/encuesta.component';
+import { ReseniasComponent } from './componentes/paciente/resenias/resenias.component';
 
 
 
@@ -75,7 +76,8 @@ import { EncuestaComponent } from './componentes/encuesta/encuesta.component';
     TurnosComponent,
     AtencionComponent,
     ListaTurnosComponent,
-    EncuestaComponent
+    EncuestaComponent,
+    ReseniasComponent
   ],
   imports: [
     BrowserModule,

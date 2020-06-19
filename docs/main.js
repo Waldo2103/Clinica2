@@ -91,6 +91,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/paciente/resenias/resenias.component.html":
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/paciente/resenias/resenias.component.html ***!
+  \*************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<app-navbar [user]=\"user\"></app-navbar>\n<main>\n\n    <section class=\"section section-shaped section-lg\">\n      <div class=\"shape shape-style-1 bg-gradient-default\">\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n       \n      </div>\n      <div class=\"container pt-lg-md\">\n        \n        <div class=\"row justify-content-center\">\n          \n          <div class=\"col-lg-12\">\n            <div class=\"card bg-secondary shadow border-0\">\n              <!--div class=\"card-header bg-white pb-5\">\n              </div-->\n              <div class=\"container\" *ngFor=\"let encu of encuestas\">\n                <h1>Reseña de {{encu.profesional}}</h1>\n                <p>Id: {{encu.id}}</p>\n                <p>Puntuación: {{encu.puntuacion}}</p>\n                <p>Comentario: {{encu.comentario}}</p>\n                <button class=\"form-control btn btn-primary\" type=\"button\" (click)=\"comentar(encu)\">Responder</button>\n            </div>\n              &nbsp;\n            </div>\n          </div>\n        </div>\n      </div>\n      <!--ENCUESTA***************************************************************** -->\n      <div class=\"container\" *ngIf=\"encuestar\">\n        <div class=\"container h-100\">\n            <div class=\"row justify-content-center align-items-center\">\n              <div class=\"col-6\">\n                <div class=\"card\" [ngClass]=\"{'border-danger': error}\">\n                  <div class=\"card-body\">\n                    <h5 class=\"card-title\">Encuesta</h5>\n                    <form [formGroup]=\"form\">\n                      <div class=\"form-group\">\n                          <label for=\"user\" class=\"col-6\">Califique al Profesional</label>\n                          <ngb-rating [(rate)]=\"selectedProfesional\" class=\"col-6\">\n                              <ng-template let-fill=\"fill\" let-index=\"index\">\n                                <span class=\"star\" [class.filled]=\"fill === 100\">&#9733;</span>\n                              </ng-template>\n                            </ngb-rating>\n                      </div>\n                      <div class=\"form-group\">\n                        <label for=\"coci\" class=\"col-6\">Por favor deje su comentario</label>\n                        <textarea formControlName=\"comentario\" class=\"col-6 span6\" rows=\"3\" placeholder=\"Sugerencias?\" required></textarea>\n                      </div>\n                     <button class=\"col-6 btn btn-primary\" (click)=\"Submit()\">Enviar</button>\n                     <button class=\"col-6 btn btn-secondary\" (click)=\"Cancel()\">Cancelar</button>\n                    </form>\n                    </div>\n                        <div *ngIf=\"error\" class=\"card-footer\">\n                          <small class=\"text-danger font-weight-bold\"><i class=\"fa fa-times\"></i> {{errorMessage}} </small>\n                        </div>\n                </div>\n              </div>\n            </div>\n          </div>\n      </div>\n      \n    </section>\n    \n  </main>\n  \n  ");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/paciente/sacar-turno/sacar-turno.component.html":
 /*!*******************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/paciente/sacar-turno/sacar-turno.component.html ***!
@@ -450,6 +463,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componentes_profesional_atencion_atencion_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./componentes/profesional/atencion/atencion.component */ "./src/app/componentes/profesional/atencion/atencion.component.ts");
 /* harmony import */ var _componentes_paciente_lista_turnos_lista_turnos_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./componentes/paciente/lista-turnos/lista-turnos.component */ "./src/app/componentes/paciente/lista-turnos/lista-turnos.component.ts");
 /* harmony import */ var _componentes_encuesta_encuesta_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./componentes/encuesta/encuesta.component */ "./src/app/componentes/encuesta/encuesta.component.ts");
+/* harmony import */ var _componentes_paciente_resenias_resenias_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./componentes/paciente/resenias/resenias.component */ "./src/app/componentes/paciente/resenias/resenias.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -503,6 +517,7 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 
+
 //, , , 
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -526,7 +541,8 @@ var AppModule = /** @class */ (function () {
                 _componentes_profesional_turnos_turnos_component__WEBPACK_IMPORTED_MODULE_32__["TurnosComponent"],
                 _componentes_profesional_atencion_atencion_component__WEBPACK_IMPORTED_MODULE_38__["AtencionComponent"],
                 _componentes_paciente_lista_turnos_lista_turnos_component__WEBPACK_IMPORTED_MODULE_39__["ListaTurnosComponent"],
-                _componentes_encuesta_encuesta_component__WEBPACK_IMPORTED_MODULE_40__["EncuestaComponent"]
+                _componentes_encuesta_encuesta_component__WEBPACK_IMPORTED_MODULE_40__["EncuestaComponent"],
+                _componentes_paciente_resenias_resenias_component__WEBPACK_IMPORTED_MODULE_41__["ReseniasComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -603,6 +619,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componentes_profesional_turnos_turnos_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./componentes/profesional/turnos/turnos.component */ "./src/app/componentes/profesional/turnos/turnos.component.ts");
 /* harmony import */ var _componentes_profesional_atencion_atencion_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./componentes/profesional/atencion/atencion.component */ "./src/app/componentes/profesional/atencion/atencion.component.ts");
 /* harmony import */ var _componentes_paciente_lista_turnos_lista_turnos_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./componentes/paciente/lista-turnos/lista-turnos.component */ "./src/app/componentes/paciente/lista-turnos/lista-turnos.component.ts");
+/* harmony import */ var _componentes_paciente_resenias_resenias_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./componentes/paciente/resenias/resenias.component */ "./src/app/componentes/paciente/resenias/resenias.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -631,12 +648,14 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 
+
 //import { ProfGuard } from './guards/prof.guard';
 var routes = [
     { path: 'home', component: _componentes_home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]] },
     { path: 'paciente/sacarTurno', component: _componentes_paciente_sacar_turno_sacar_turno_component__WEBPACK_IMPORTED_MODULE_11__["SacarTurnoComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]] },
     { path: 'paciente/home', component: _componentes_paciente_home_pac_home_pac_component__WEBPACK_IMPORTED_MODULE_15__["HomePacComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]] },
     { path: 'paciente/listaTurnos', component: _componentes_paciente_lista_turnos_lista_turnos_component__WEBPACK_IMPORTED_MODULE_18__["ListaTurnosComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]] },
+    { path: 'paciente/resenias', component: _componentes_paciente_resenias_resenias_component__WEBPACK_IMPORTED_MODULE_19__["ReseniasComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]] },
     { path: 'noHab', component: _componentes_no_hab_no_hab_component__WEBPACK_IMPORTED_MODULE_13__["NoHabComponent"] },
     { path: 'perfil', component: _profile_profile_component__WEBPACK_IMPORTED_MODULE_5__["ProfileComponent"] },
     { path: 'registro', component: _componentes_registro_signup_component__WEBPACK_IMPORTED_MODULE_6__["SignupComponent"] },
@@ -1587,6 +1606,164 @@ var ListaTurnosComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/componentes/paciente/resenias/resenias.component.css":
+/*!**********************************************************************!*\
+  !*** ./src/app/componentes/paciente/resenias/resenias.component.css ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudGVzL3BhY2llbnRlL3Jlc2VuaWFzL3Jlc2VuaWFzLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/componentes/paciente/resenias/resenias.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/componentes/paciente/resenias/resenias.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: ReseniasComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReseniasComponent", function() { return ReseniasComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var src_app_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/servicios/firebase.service */ "./src/app/servicios/firebase.service.ts");
+/* harmony import */ var src_app_servicios_encuesta_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/servicios/encuesta.service */ "./src/app/servicios/encuesta.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/__ivy_ngcc__/auth/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+
+
+
+
+var ReseniasComponent = /** @class */ (function () {
+    function ReseniasComponent(fire, encuestaService, fb, router, afAuth) {
+        this.fire = fire;
+        this.encuestaService = encuestaService;
+        this.fb = fb;
+        this.router = router;
+        this.afAuth = afAuth;
+        //ENCUESTA
+        this.selectedProfesional = 4;
+        this.encuesta = {
+            id: "",
+            profesional: "",
+            paciente: "",
+            puntuacion: 0,
+            comentario: ""
+        };
+        this.clienteData = {};
+        this.encuestas = [];
+        this.encuestar = false;
+    }
+    ReseniasComponent.prototype.ngOnInit = function () {
+        this.traerUser();
+        this.traerResenias();
+        //ENCUESTA
+        this.form = this.fb.group({
+            comentario: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
+        });
+    };
+    ReseniasComponent.prototype.traerUser = function () {
+        this.profe = this.afAuth.auth.currentUser.email.valueOf();
+    };
+    ReseniasComponent.prototype.traerResenias = function () {
+        var _this = this;
+        this.encuestaService.getEncuestas().subscribe(function (resul) {
+            resul.forEach(function (data) {
+                _this.encuestas.push({
+                    id: data.payload.doc.data().id,
+                    profesional: data.payload.doc.data().profesional,
+                    puntuacion: data.payload.doc.data().puntuacion,
+                    comentario: data.payload.doc.data().comentario
+                });
+                console.log(data.payload.doc.data());
+            });
+        });
+    };
+    ReseniasComponent.prototype.comentar = function (e) {
+        //console.log(e)
+        this.encuestar = true;
+        this.encuesta.id = e.id;
+        this.encuesta.paciente = this.profe;
+        this.encuesta.profesional = e.profesional;
+    };
+    //ENCUESTA
+    ReseniasComponent.prototype.Submit = function () {
+        var _this = this;
+        this.errorMessage = '';
+        this.error = false;
+        if (this.form.valid) {
+            //this.getDatosPedido();
+            this.encuesta.puntuacion = this.selectedProfesional;
+            this.encuesta.comentario = this.form.get('comentario').value;
+            console.log(this.encuesta);
+            this.encuestaService.RegistrarPaci(this.encuesta)
+                .then(function (res) {
+                //guardo el elmpeado
+                //this.altaHClinica()
+                _this.router.navigate(["/home"]);
+            })
+                .catch(function (error) {
+                _this.error = true;
+                //this.errorMessage = res['Mensaje'];
+                if (error) {
+                    //this.toastService.error('Usuario no encontrado.');
+                    _this.errorMessage = 'Error al Registrar encuesta.' + error;
+                }
+            });
+        }
+        else {
+            this.errorMessage = 'Debe completar los campos correctamente.';
+            this.error = true;
+        }
+    };
+    ReseniasComponent.prototype.Cancel = function () {
+        this.router.navigate(["/paciente/home"]);
+    };
+    ReseniasComponent.ctorParameters = function () { return [
+        { type: src_app_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_1__["FirebaseService"] },
+        { type: src_app_servicios_encuesta_service__WEBPACK_IMPORTED_MODULE_2__["EncuestaService"] },
+        { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
+        { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_5__["AngularFireAuth"] }
+    ]; };
+    ReseniasComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-resenias',
+            template: __importDefault(__webpack_require__(/*! raw-loader!./resenias.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/paciente/resenias/resenias.component.html")).default,
+            styles: [__importDefault(__webpack_require__(/*! ./resenias.component.css */ "./src/app/componentes/paciente/resenias/resenias.component.css")).default]
+        }),
+        __metadata("design:paramtypes", [src_app_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_1__["FirebaseService"],
+            src_app_servicios_encuesta_service__WEBPACK_IMPORTED_MODULE_2__["EncuestaService"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],
+            _angular_fire_auth__WEBPACK_IMPORTED_MODULE_5__["AngularFireAuth"]])
+    ], ReseniasComponent);
+    return ReseniasComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/componentes/paciente/sacar-turno/sacar-turno.component.css":
 /*!****************************************************************************!*\
   !*** ./src/app/componentes/paciente/sacar-turno/sacar-turno.component.css ***!
@@ -2124,7 +2301,7 @@ var AtencionComponent = /** @class */ (function () {
             id: "",
             profesional: "",
             paciente: "",
-            puntuacionPaciente: 0,
+            puntuacion: 0,
             comentario: ""
         };
         this.clienteData = {};
@@ -2279,7 +2456,7 @@ var AtencionComponent = /** @class */ (function () {
         this.error = false;
         if (this.form.valid) {
             //this.getDatosPedido();
-            this.encuesta.puntuacionPaciente = this.selectedPaciente;
+            this.encuesta.puntuacion = this.selectedPaciente;
             this.encuesta.comentario = this.form.get('comentario').value;
             this.encuesta.id = this.turno.id;
             this.encuesta.paciente = this.turno.paciente;
@@ -3798,6 +3975,25 @@ var EncuestaService = /** @class */ (function () {
     }
     EncuestaService.prototype.Registrar = function (objeto) {
         return this.db.collection("encuesta").doc(objeto.id).set(objeto);
+    };
+    //Trae todas
+    EncuestaService.prototype.getEncuestas = function () {
+        return this.db.collection('encuesta').snapshotChanges();
+    };
+    //Trae 1
+    EncuestaService.prototype.getEncuesta = function (documentId) {
+        return this.db.collection('encuesta').doc(documentId).snapshotChanges();
+    };
+    EncuestaService.prototype.RegistrarPaci = function (objeto) {
+        return this.db.collection("encuestaPaci").doc(objeto.id).set(objeto);
+    };
+    //Trae todas
+    EncuestaService.prototype.getEncuestasPaci = function () {
+        return this.db.collection('encuestaPaci').snapshotChanges();
+    };
+    //Trae 1
+    EncuestaService.prototype.getEncuestaPaci = function (documentId) {
+        return this.db.collection('encuestaPaci').doc(documentId).snapshotChanges();
     };
     EncuestaService.ctorParameters = function () { return [
         { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__["AngularFirestore"] }

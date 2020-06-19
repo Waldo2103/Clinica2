@@ -19,6 +19,7 @@ import { HomePacComponent } from './componentes/paciente/home-pac/home-pac.compo
 import { TurnosComponent } from './componentes/profesional/turnos/turnos.component';
 import { AtencionComponent } from './componentes/profesional/atencion/atencion.component';
 import { ListaTurnosComponent } from './componentes/paciente/lista-turnos/lista-turnos.component';
+import { ReseniasComponent } from './componentes/paciente/resenias/resenias.component';
 //import { ProfGuard } from './guards/prof.guard';
 
 const routes: Routes =[
@@ -26,6 +27,7 @@ const routes: Routes =[
     { path: 'paciente/sacarTurno',component: SacarTurnoComponent, canActivate:[AuthGuard] },
     { path: 'paciente/home',component: HomePacComponent, canActivate:[AuthGuard] },
     { path: 'paciente/listaTurnos',component: ListaTurnosComponent, canActivate:[AuthGuard] },
+    { path: 'paciente/resenias',component: ReseniasComponent, canActivate:[AuthGuard] },
     { path: 'noHab',component: NoHabComponent },
     { path: 'perfil',     component: ProfileComponent },
     { path: 'registro',           component: SignupComponent },

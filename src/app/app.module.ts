@@ -54,6 +54,7 @@ import { AtencionComponent } from './componentes/profesional/atencion/atencion.c
 import { ListaTurnosComponent } from './componentes/paciente/lista-turnos/lista-turnos.component';
 import { EncuestaComponent } from './componentes/encuesta/encuesta.component';
 import { ReseniasComponent } from './componentes/paciente/resenias/resenias.component';
+import { ReseniasPrComponent } from './componentes/profesional/resenias-pr/resenias-pr.component';
 
 
 
@@ -77,7 +78,8 @@ import { ReseniasComponent } from './componentes/paciente/resenias/resenias.comp
     AtencionComponent,
     ListaTurnosComponent,
     EncuestaComponent,
-    ReseniasComponent
+    ReseniasComponent,
+    ReseniasPrComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,47 @@
+<app-navbar [user]="user"></app-navbar>
+<main>
+
+    <section class="section section-shaped section-lg">
+      <div class="shape shape-style-1 bg-gradient-default">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+       
+      </div>
+      <div class="container pt-lg-md">
+        
+        <div class="row justify-content-center">
+          
+          <div class="col-lg-6">
+            <div class="card bg-secondary shadow border-0">
+              <!--div class="card-header bg-white pb-5">
+              </div-->
+              <div class="container" *ngFor="let encu of encuestas">
+                <h2>Tu Reseña de {{encu.paciente}}</h2>
+                <p>Id: {{encu.id}}</p>
+                <p>Puntuación: {{encu.puntuacion}}</p>
+                <p>Comentario: {{encu.comentario}}</p>
+            </div>
+              &nbsp;
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card bg-secondary shadow border-0">
+              <!--div class="card-header bg-white pb-5">
+              </div-->
+              <div class="container" *ngFor="let encu of encuestasPA">
+                <h2>Reseña de {{encu.paciente}}</h2>
+                <p>Id: {{encu.id}}</p>
+                <p>Puntuación: {{encu.puntuacion}}</p>
+                <p>Comentario: {{encu.comentario}}</p>
+            </div>
+              &nbsp;
+            </div>
+          </div>
+        </div>
+      </div>

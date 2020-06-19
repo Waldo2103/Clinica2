@@ -156,6 +156,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/profesional/resenias-pr/resenias-pr.component.html":
+/*!**********************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/profesional/resenias-pr/resenias-pr.component.html ***!
+  \**********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<app-navbar [user]=\"user\"></app-navbar>\n<main>\n\n    <section class=\"section section-shaped section-lg\">\n      <div class=\"shape shape-style-1 bg-gradient-default\">\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n       \n      </div>\n      <div class=\"container pt-lg-md\">\n        \n        <div class=\"row justify-content-center\">\n          \n          <div class=\"col-lg-6\">\n            <div class=\"card bg-secondary shadow border-0\">\n              <!--div class=\"card-header bg-white pb-5\">\n              </div-->\n              <div class=\"container\" *ngFor=\"let encu of encuestas\">\n                <h2>Tu Reseña de {{encu.paciente}}</h2>\n                <p>Id: {{encu.id}}</p>\n                <p>Puntuación: {{encu.puntuacion}}</p>\n                <p>Comentario: {{encu.comentario}}</p>\n            </div>\n              &nbsp;\n            </div>\n          </div>\n          <div class=\"col-lg-6\">\n            <div class=\"card bg-secondary shadow border-0\">\n              <!--div class=\"card-header bg-white pb-5\">\n              </div-->\n              <div class=\"container\" *ngFor=\"let encu of encuestasPA\">\n                <h2>Reseña de {{encu.paciente}}</h2>\n                <p>Id: {{encu.id}}</p>\n                <p>Puntuación: {{encu.puntuacion}}</p>\n                <p>Comentario: {{encu.comentario}}</p>\n            </div>\n              &nbsp;\n            </div>\n          </div>\n        </div>\n      </div>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/profesional/turnos/turnos.component.html":
 /*!************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/profesional/turnos/turnos.component.html ***!
@@ -243,7 +256,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <nav id=\"navbar-main\" class=\"navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned\">\n    <div class=\"container\">\n      <a class=\"navbar-brand mr-lg-5\" routerLink=\"/home\">\n        <img src=\"./assets/img/brand/argon-white.png\">\n      </a>\n      <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\"\n            [attr.aria-expanded]=\"!isCollapsed\" aria-controls=\"navbar_global\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n      <div class=\"navbar-collapse collapse\" id=\"navbar_global\" [ngbCollapse]=\"isCollapsed\">\n        <div class=\"navbar-collapse-header\">\n          <div class=\"row\">\n            <div class=\"col-6 collapse-brand\">\n              <a routerLink=\"/home\">\n                <img src=\"./assets/img/brand/blue.png\">\n              </a>\n            </div>\n            <div class=\"col-6 collapse-close\">\n              <button type=\"button\" class=\"navbar-toggler\" (click)=\"isCollapsed = !isCollapsed\"\n                    [attr.aria-expanded]=\"!isCollapsed\" aria-controls=\"navbar_global\">\n                <span></span>\n                <span></span>\n              </button>\n            </div>\n          </div>\n        </div>\n        <ul class=\"navbar-nav navbar-nav-hover align-items-lg-center\">\n          <li *ngIf=\"user==='paciente'\" class=\"nav-item dropdown\">\n            <a class=\"nav-link no-caret\" data-toggle=\"dropdown\" role=\"button\">\n              <i class=\"ni ni-ui-04 d-lg-none\"></i>\n              <span class=\"nav-link-inner--text\">Paciente</span>\n            </a>\n            <div class=\"dropdown-menu-xl dropdown-menu\" >\n              <div class=\"dropdown-menu-inner\">\n                <a routerLinkActive=\"active\" routerLink=\"/paciente/sacarTurno\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-primary rounded-circle text-white\">\n                    <i class=\"ni ni-spaceship\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h6 class=\"heading text-primary mb-md-1\">SACAR TURNOS</h6>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El paciente podra sacar un turno seleccionando profesional o especialidad.</p>\n                  </div>\n                </a>\n                <a routerLinkActive=\"active\" routerLink=\"/paciente/listaTurnos\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-success rounded-circle text-white\">\n                    <i class=\"ni ni-palette\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h6 class=\"heading text-primary mb-md-1\">LISTA DE TURNOS</h6>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El paciente puede ver el listado de sus turnos.</p>\n                  </div>\n                </a>\n                <a routerLinkActive=\"active\" routerLink=\"/paciente/resenias\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-warning rounded-circle text-white\">\n                    <i class=\"ni ni-ui-04\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h5 class=\"heading text-warning mb-md-1\">RESEÑAS</h5>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El Paciente puede ver la reseña del Profesional y devolver un comentario completando una\n                      breve encuesta\n                      .</p>\n                  </div>\n                </a>\n              </div>\n            </div>\n          </li>\n          <li *ngIf=\"user==='profesional'\" class=\"nav-item dropdown\">\n            <a class=\"nav-link no-caret\" data-toggle=\"dropdown\" role=\"button\">\n              <i class=\"ni ni-ui-04 d-lg-none\"></i>\n              <span class=\"nav-link-inner--text\">Profesional</span>\n            </a>\n            <div class=\"dropdown-menu-xl dropdown-menu\" >\n              <div class=\"dropdown-menu-inner\">\n                <a routerLinkActive=\"active\" routerLink=\"/profesional/turnos\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-primary rounded-circle text-white\">\n                    <i class=\"ni ni-spaceship\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h6 class=\"heading text-primary mb-md-1\">LISTA DE TURNOS</h6>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El profesional podrá gestionar los turnos de sus pacientes.</p>\n                  </div>\n                </a>\n                <a routerLinkActive=\"active\" routerLink=\"/profesional/atencion\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-success rounded-circle text-white\">\n                    <i class=\"ni ni-palette\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h6 class=\"heading text-primary mb-md-1\">ATENDER PACIENTES</h6>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El profesional atenderá a sus pacientes y podrá guardar información importante de estos.</p>\n                  </div>\n                </a>\n                <a routerLinkActive=\"active\" routerLink=\"/profesional/atencion\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-warning rounded-circle text-white\">\n                    <i class=\"ni ni-ui-04\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h5 class=\"heading text-warning mb-md-1\">RESEÑA DE PACIENTES</h5>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El profesional puede ver el comentario del Paciente sobre la atención recibida.</p>\n                  </div>\n                </a>\n              </div>\n            </div>\n          </li>\n        </ul>\n        <ul class=\"navbar-nav align-items-lg-center ml-lg-auto\">\n          \n          <li class=\"nav-item d-none d-lg-block ml-lg-4\">\n            <a href=\"\" class=\"btn btn-neutral btn-icon\">\n              <span class=\"btn-inner--icon\">\n                <i class=\"fa fa-sign-out mr-2\"></i>\n              </span>\n              <span class=\"nav-link-inner--text\" (click)=\"desconectar()\">Desconectar</span>\n            </a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  \n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <nav id=\"navbar-main\" class=\"navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned\">\n    <div class=\"container\">\n      <a class=\"navbar-brand mr-lg-5\" routerLink=\"/home\">\n        <img src=\"./assets/img/brand/argon-white.png\">\n      </a>\n      <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\"\n            [attr.aria-expanded]=\"!isCollapsed\" aria-controls=\"navbar_global\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n      <div class=\"navbar-collapse collapse\" id=\"navbar_global\" [ngbCollapse]=\"isCollapsed\">\n        <div class=\"navbar-collapse-header\">\n          <div class=\"row\">\n            <div class=\"col-6 collapse-brand\">\n              <a routerLink=\"/home\">\n                <img src=\"./assets/img/brand/blue.png\">\n              </a>\n            </div>\n            <div class=\"col-6 collapse-close\">\n              <button type=\"button\" class=\"navbar-toggler\" (click)=\"isCollapsed = !isCollapsed\"\n                    [attr.aria-expanded]=\"!isCollapsed\" aria-controls=\"navbar_global\">\n                <span></span>\n                <span></span>\n              </button>\n            </div>\n          </div>\n        </div>\n        <ul class=\"navbar-nav navbar-nav-hover align-items-lg-center\">\n          <li *ngIf=\"user==='paciente'\" class=\"nav-item dropdown\">\n            <a class=\"nav-link no-caret\" data-toggle=\"dropdown\" role=\"button\">\n              <i class=\"ni ni-ui-04 d-lg-none\"></i>\n              <span class=\"nav-link-inner--text\">Paciente</span>\n            </a>\n            <div class=\"dropdown-menu-xl dropdown-menu\" >\n              <div class=\"dropdown-menu-inner\">\n                <a routerLinkActive=\"active\" routerLink=\"/paciente/sacarTurno\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-primary rounded-circle text-white\">\n                    <i class=\"ni ni-spaceship\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h6 class=\"heading text-primary mb-md-1\">SACAR TURNOS</h6>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El paciente podra sacar un turno seleccionando profesional o especialidad.</p>\n                  </div>\n                </a>\n                <a routerLinkActive=\"active\" routerLink=\"/paciente/listaTurnos\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-success rounded-circle text-white\">\n                    <i class=\"ni ni-palette\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h6 class=\"heading text-primary mb-md-1\">LISTA DE TURNOS</h6>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El paciente puede ver el listado de sus turnos.</p>\n                  </div>\n                </a>\n                <a routerLinkActive=\"active\" routerLink=\"/paciente/resenias\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-warning rounded-circle text-white\">\n                    <i class=\"ni ni-ui-04\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h5 class=\"heading text-warning mb-md-1\">RESEÑAS</h5>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El Paciente puede ver la reseña del Profesional y devolver un comentario completando una\n                      breve encuesta\n                      .</p>\n                  </div>\n                </a>\n              </div>\n            </div>\n          </li>\n          <li *ngIf=\"user==='profesional'\" class=\"nav-item dropdown\">\n            <a class=\"nav-link no-caret\" data-toggle=\"dropdown\" role=\"button\">\n              <i class=\"ni ni-ui-04 d-lg-none\"></i>\n              <span class=\"nav-link-inner--text\">Profesional</span>\n            </a>\n            <div class=\"dropdown-menu-xl dropdown-menu\" >\n              <div class=\"dropdown-menu-inner\">\n                <a routerLinkActive=\"active\" routerLink=\"/profesional/turnos\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-primary rounded-circle text-white\">\n                    <i class=\"ni ni-spaceship\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h6 class=\"heading text-primary mb-md-1\">LISTA DE TURNOS</h6>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El profesional podrá gestionar los turnos de sus pacientes.</p>\n                  </div>\n                </a>\n                <a routerLinkActive=\"active\" routerLink=\"/profesional/atencion\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-success rounded-circle text-white\">\n                    <i class=\"ni ni-palette\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h6 class=\"heading text-primary mb-md-1\">ATENDER PACIENTES</h6>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El profesional atenderá a sus pacientes y podrá guardar información importante de estos.</p>\n                  </div>\n                </a>\n                <a routerLinkActive=\"active\" routerLink=\"/profesional/resenias\" class=\"media d-flex align-items-center\">\n                  <div class=\"icon icon-shape bg-gradient-warning rounded-circle text-white\">\n                    <i class=\"ni ni-ui-04\"></i>\n                  </div>\n                  <div class=\"media-body ml-3\">\n                    <h5 class=\"heading text-warning mb-md-1\">RESEÑA DE PACIENTES</h5>\n                    <p class=\"description d-none d-md-inline-block mb-0\">El profesional puede ver el comentario del Paciente sobre la atención recibida.</p>\n                  </div>\n                </a>\n              </div>\n            </div>\n          </li>\n        </ul>\n        <ul class=\"navbar-nav align-items-lg-center ml-lg-auto\">\n          \n          <li class=\"nav-item d-none d-lg-block ml-lg-4\">\n            <a href=\"\" class=\"btn btn-neutral btn-icon\">\n              <span class=\"btn-inner--icon\">\n                <i class=\"fa fa-sign-out mr-2\"></i>\n              </span>\n              <span class=\"nav-link-inner--text\" (click)=\"desconectar()\">Desconectar</span>\n            </a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  \n</div>\n");
 
 /***/ }),
 
@@ -464,6 +477,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componentes_paciente_lista_turnos_lista_turnos_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./componentes/paciente/lista-turnos/lista-turnos.component */ "./src/app/componentes/paciente/lista-turnos/lista-turnos.component.ts");
 /* harmony import */ var _componentes_encuesta_encuesta_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./componentes/encuesta/encuesta.component */ "./src/app/componentes/encuesta/encuesta.component.ts");
 /* harmony import */ var _componentes_paciente_resenias_resenias_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./componentes/paciente/resenias/resenias.component */ "./src/app/componentes/paciente/resenias/resenias.component.ts");
+/* harmony import */ var _componentes_profesional_resenias_pr_resenias_pr_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./componentes/profesional/resenias-pr/resenias-pr.component */ "./src/app/componentes/profesional/resenias-pr/resenias-pr.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -518,6 +532,7 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 
+
 //, , , 
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -542,7 +557,8 @@ var AppModule = /** @class */ (function () {
                 _componentes_profesional_atencion_atencion_component__WEBPACK_IMPORTED_MODULE_38__["AtencionComponent"],
                 _componentes_paciente_lista_turnos_lista_turnos_component__WEBPACK_IMPORTED_MODULE_39__["ListaTurnosComponent"],
                 _componentes_encuesta_encuesta_component__WEBPACK_IMPORTED_MODULE_40__["EncuestaComponent"],
-                _componentes_paciente_resenias_resenias_component__WEBPACK_IMPORTED_MODULE_41__["ReseniasComponent"]
+                _componentes_paciente_resenias_resenias_component__WEBPACK_IMPORTED_MODULE_41__["ReseniasComponent"],
+                _componentes_profesional_resenias_pr_resenias_pr_component__WEBPACK_IMPORTED_MODULE_42__["ReseniasPrComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -620,6 +636,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componentes_profesional_atencion_atencion_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./componentes/profesional/atencion/atencion.component */ "./src/app/componentes/profesional/atencion/atencion.component.ts");
 /* harmony import */ var _componentes_paciente_lista_turnos_lista_turnos_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./componentes/paciente/lista-turnos/lista-turnos.component */ "./src/app/componentes/paciente/lista-turnos/lista-turnos.component.ts");
 /* harmony import */ var _componentes_paciente_resenias_resenias_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./componentes/paciente/resenias/resenias.component */ "./src/app/componentes/paciente/resenias/resenias.component.ts");
+/* harmony import */ var _componentes_profesional_resenias_pr_resenias_pr_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./componentes/profesional/resenias-pr/resenias-pr.component */ "./src/app/componentes/profesional/resenias-pr/resenias-pr.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -629,6 +646,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
   return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+
 
 
 
@@ -663,6 +681,7 @@ var routes = [
     { path: 'profesional/home', component: _componentes_profesional_home_pr_home_pr_component__WEBPACK_IMPORTED_MODULE_14__["HomePrComponent"] },
     { path: 'profesional/atencion', component: _componentes_profesional_atencion_atencion_component__WEBPACK_IMPORTED_MODULE_17__["AtencionComponent"] },
     { path: 'profesional/turnos', component: _componentes_profesional_turnos_turnos_component__WEBPACK_IMPORTED_MODULE_16__["TurnosComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]] },
+    { path: 'profesional/resenias', component: _componentes_profesional_resenias_pr_resenias_pr_component__WEBPACK_IMPORTED_MODULE_20__["ReseniasPrComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]] },
     { path: 'navbar', component: _shared_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_10__["NavbarComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]] },
     { path: 'login', component: _componentes_login_login_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"], canActivate: [_guards_nologin_guard__WEBPACK_IMPORTED_MODULE_8__["NologinGuard"]], data: { animation: 'LoginPage' } },
     { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -1615,7 +1634,7 @@ var ListaTurnosComponent = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudGVzL3BhY2llbnRlL3Jlc2VuaWFzL3Jlc2VuaWFzLmNvbXBvbmVudC5jc3MifQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\nh1{\r\n    text-align: center;\r\n    \r\n    font-size: 90px;\r\n    \r\n}\r\n\r\n.rowLogin{\r\n    background-position: center; /* Center the image */\r\n    background-repeat: no-repeat; /* Do not repeat the image */\r\n    background-size: cover; /* Resize the background image to cover the entire container */\r\n   \r\n}\r\n\r\n.buttonDefault{\r\n    margin: 5px;\r\n    margin-bottom: 15px;\r\n}\r\n\r\n.ar{\r\n    margin: 0 10px;\r\n}\r\n\r\n/* .form-control.login-user {\r\n    border: 0px solid #fff !important;\r\n  }\r\n  .form-control.login-user {\r\n    border: 0 solid #fff !important;\r\n  } */\r\n\r\n.star {\r\n    font-size: 1.5rem;\r\n    color: #b0c4de;\r\n  }\r\n\r\n.filled {\r\n    color: #1e90ff;\r\n  }\r\n\r\n.filled.bad {\r\n    color: #ff1e1e;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvcGFjaWVudGUvcmVzZW5pYXMvcmVzZW5pYXMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0E7SUFDSSxrQkFBa0I7O0lBRWxCLGVBQWU7O0FBRW5COztBQUVBO0lBQ0ksMkJBQTJCLEVBQUUscUJBQXFCO0lBQ2xELDRCQUE0QixFQUFFLDRCQUE0QjtJQUMxRCxzQkFBc0IsRUFBRSw4REFBOEQ7O0FBRTFGOztBQUlBO0lBQ0ksV0FBVztJQUNYLG1CQUFtQjtBQUN2Qjs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUE7Ozs7O0tBS0s7O0FBR0Y7SUFDQyxpQkFBaUI7SUFDakIsY0FBYztFQUNoQjs7QUFDQTtJQUNFLGNBQWM7RUFDaEI7O0FBRUE7SUFDRSxjQUFjO0VBQ2hCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50ZXMvcGFjaWVudGUvcmVzZW5pYXMvcmVzZW5pYXMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5oMXtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIFxyXG4gICAgZm9udC1zaXplOiA5MHB4O1xyXG4gICAgXHJcbn1cclxuXHJcbi5yb3dMb2dpbntcclxuICAgIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjsgLyogQ2VudGVyIHRoZSBpbWFnZSAqL1xyXG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDsgLyogRG8gbm90IHJlcGVhdCB0aGUgaW1hZ2UgKi9cclxuICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7IC8qIFJlc2l6ZSB0aGUgYmFja2dyb3VuZCBpbWFnZSB0byBjb3ZlciB0aGUgZW50aXJlIGNvbnRhaW5lciAqL1xyXG4gICBcclxufVxyXG5cclxuXHJcblxyXG4uYnV0dG9uRGVmYXVsdHtcclxuICAgIG1hcmdpbjogNXB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMTVweDtcclxufVxyXG5cclxuLmFye1xyXG4gICAgbWFyZ2luOiAwIDEwcHg7XHJcbn1cclxuXHJcbi8qIC5mb3JtLWNvbnRyb2wubG9naW4tdXNlciB7XHJcbiAgICBib3JkZXI6IDBweCBzb2xpZCAjZmZmICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIC5mb3JtLWNvbnRyb2wubG9naW4tdXNlciB7XHJcbiAgICBib3JkZXI6IDAgc29saWQgI2ZmZiAhaW1wb3J0YW50O1xyXG4gIH0gKi9cclxuXHJcbiAgXHJcbiAgIC5zdGFyIHtcclxuICAgIGZvbnQtc2l6ZTogMS41cmVtO1xyXG4gICAgY29sb3I6ICNiMGM0ZGU7XHJcbiAgfVxyXG4gIC5maWxsZWQge1xyXG4gICAgY29sb3I6ICMxZTkwZmY7XHJcbiAgfVxyXG4gIFxyXG4gIC5maWxsZWQuYmFkIHtcclxuICAgIGNvbG9yOiAjZmYxZTFlO1xyXG4gIH0iXX0= */");
 
 /***/ }),
 
@@ -3062,6 +3081,137 @@ var RegistroProfComponent = /** @class */ (function () {
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]])
     ], RegistroProfComponent);
     return RegistroProfComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/componentes/profesional/resenias-pr/resenias-pr.component.css":
+/*!*******************************************************************************!*\
+  !*** ./src/app/componentes/profesional/resenias-pr/resenias-pr.component.css ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\r\nh1{\r\n    text-align: center;\r\n    \r\n    font-size: 90px;\r\n    \r\n}\r\n\r\n.rowLogin{\r\n    background-position: center; /* Center the image */\r\n    background-repeat: no-repeat; /* Do not repeat the image */\r\n    background-size: cover; /* Resize the background image to cover the entire container */\r\n   \r\n}\r\n\r\n.buttonDefault{\r\n    margin: 5px;\r\n    margin-bottom: 15px;\r\n}\r\n\r\n.ar{\r\n    margin: 0 10px;\r\n}\r\n\r\n/* .form-control.login-user {\r\n    border: 0px solid #fff !important;\r\n  }\r\n  .form-control.login-user {\r\n    border: 0 solid #fff !important;\r\n  } */\r\n\r\n.star {\r\n    font-size: 1.5rem;\r\n    color: #b0c4de;\r\n  }\r\n\r\n.filled {\r\n    color: #1e90ff;\r\n  }\r\n\r\n.filled.bad {\r\n    color: #ff1e1e;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvcHJvZmVzaW9uYWwvcmVzZW5pYXMtcHIvcmVzZW5pYXMtcHIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0E7SUFDSSxrQkFBa0I7O0lBRWxCLGVBQWU7O0FBRW5COztBQUVBO0lBQ0ksMkJBQTJCLEVBQUUscUJBQXFCO0lBQ2xELDRCQUE0QixFQUFFLDRCQUE0QjtJQUMxRCxzQkFBc0IsRUFBRSw4REFBOEQ7O0FBRTFGOztBQUlBO0lBQ0ksV0FBVztJQUNYLG1CQUFtQjtBQUN2Qjs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUE7Ozs7O0tBS0s7O0FBR0Y7SUFDQyxpQkFBaUI7SUFDakIsY0FBYztFQUNoQjs7QUFDQTtJQUNFLGNBQWM7RUFDaEI7O0FBRUE7SUFDRSxjQUFjO0VBQ2hCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50ZXMvcHJvZmVzaW9uYWwvcmVzZW5pYXMtcHIvcmVzZW5pYXMtcHIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5oMXtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIFxyXG4gICAgZm9udC1zaXplOiA5MHB4O1xyXG4gICAgXHJcbn1cclxuXHJcbi5yb3dMb2dpbntcclxuICAgIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjsgLyogQ2VudGVyIHRoZSBpbWFnZSAqL1xyXG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDsgLyogRG8gbm90IHJlcGVhdCB0aGUgaW1hZ2UgKi9cclxuICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7IC8qIFJlc2l6ZSB0aGUgYmFja2dyb3VuZCBpbWFnZSB0byBjb3ZlciB0aGUgZW50aXJlIGNvbnRhaW5lciAqL1xyXG4gICBcclxufVxyXG5cclxuXHJcblxyXG4uYnV0dG9uRGVmYXVsdHtcclxuICAgIG1hcmdpbjogNXB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMTVweDtcclxufVxyXG5cclxuLmFye1xyXG4gICAgbWFyZ2luOiAwIDEwcHg7XHJcbn1cclxuXHJcbi8qIC5mb3JtLWNvbnRyb2wubG9naW4tdXNlciB7XHJcbiAgICBib3JkZXI6IDBweCBzb2xpZCAjZmZmICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIC5mb3JtLWNvbnRyb2wubG9naW4tdXNlciB7XHJcbiAgICBib3JkZXI6IDAgc29saWQgI2ZmZiAhaW1wb3J0YW50O1xyXG4gIH0gKi9cclxuXHJcbiAgXHJcbiAgIC5zdGFyIHtcclxuICAgIGZvbnQtc2l6ZTogMS41cmVtO1xyXG4gICAgY29sb3I6ICNiMGM0ZGU7XHJcbiAgfVxyXG4gIC5maWxsZWQge1xyXG4gICAgY29sb3I6ICMxZTkwZmY7XHJcbiAgfVxyXG4gIFxyXG4gIC5maWxsZWQuYmFkIHtcclxuICAgIGNvbG9yOiAjZmYxZTFlO1xyXG4gIH0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/componentes/profesional/resenias-pr/resenias-pr.component.ts":
+/*!******************************************************************************!*\
+  !*** ./src/app/componentes/profesional/resenias-pr/resenias-pr.component.ts ***!
+  \******************************************************************************/
+/*! exports provided: ReseniasPrComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReseniasPrComponent", function() { return ReseniasPrComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var src_app_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/servicios/firebase.service */ "./src/app/servicios/firebase.service.ts");
+/* harmony import */ var src_app_servicios_encuesta_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/servicios/encuesta.service */ "./src/app/servicios/encuesta.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/__ivy_ngcc__/auth/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+
+
+
+
+var ReseniasPrComponent = /** @class */ (function () {
+    function ReseniasPrComponent(fire, encuestaService, fb, router, afAuth) {
+        this.fire = fire;
+        this.encuestaService = encuestaService;
+        this.fb = fb;
+        this.router = router;
+        this.afAuth = afAuth;
+        this.user = "profesional";
+        //ENCUESTA
+        this.selectedProfesional = 4;
+        this.encuesta = {
+            id: "",
+            profesional: "",
+            paciente: "",
+            puntuacion: 0,
+            comentario: ""
+        };
+        this.clienteData = {};
+        this.encuestas = [];
+        this.encuestasPA = [];
+    }
+    ReseniasPrComponent.prototype.ngOnInit = function () {
+        this.traerUser();
+        this.traerResenias();
+        this.traerReseniasPA();
+    };
+    ReseniasPrComponent.prototype.traerUser = function () {
+        this.profe = this.afAuth.auth.currentUser.email.valueOf();
+    };
+    ReseniasPrComponent.prototype.traerResenias = function () {
+        var _this = this;
+        this.encuestaService.getEncuestas().subscribe(function (resul) {
+            resul.forEach(function (data) {
+                _this.encuestas.push({
+                    id: data.payload.doc.data().id,
+                    profesional: data.payload.doc.data().profesional,
+                    paciente: data.payload.doc.data().paciente,
+                    puntuacion: data.payload.doc.data().puntuacion,
+                    comentario: data.payload.doc.data().comentario
+                });
+                //console.log();
+            });
+        });
+    };
+    ReseniasPrComponent.prototype.traerReseniasPA = function () {
+        var _this = this;
+        this.encuestaService.getEncuestasPaci().subscribe(function (resul) {
+            resul.forEach(function (data) {
+                _this.encuestasPA.push({
+                    id: data.payload.doc.data().id,
+                    paciente: data.payload.doc.data().paciente,
+                    puntuacion: data.payload.doc.data().puntuacion,
+                    comentario: data.payload.doc.data().comentario
+                });
+                //console.log();
+            });
+        });
+    };
+    ReseniasPrComponent.ctorParameters = function () { return [
+        { type: src_app_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_1__["FirebaseService"] },
+        { type: src_app_servicios_encuesta_service__WEBPACK_IMPORTED_MODULE_2__["EncuestaService"] },
+        { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
+        { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_5__["AngularFireAuth"] }
+    ]; };
+    ReseniasPrComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-resenias-pr',
+            template: __importDefault(__webpack_require__(/*! raw-loader!./resenias-pr.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/profesional/resenias-pr/resenias-pr.component.html")).default,
+            styles: [__importDefault(__webpack_require__(/*! ./resenias-pr.component.css */ "./src/app/componentes/profesional/resenias-pr/resenias-pr.component.css")).default]
+        }),
+        __metadata("design:paramtypes", [src_app_servicios_firebase_service__WEBPACK_IMPORTED_MODULE_1__["FirebaseService"],
+            src_app_servicios_encuesta_service__WEBPACK_IMPORTED_MODULE_2__["EncuestaService"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],
+            _angular_fire_auth__WEBPACK_IMPORTED_MODULE_5__["AngularFireAuth"]])
+    ], ReseniasPrComponent);
+    return ReseniasPrComponent;
 }());
 
 

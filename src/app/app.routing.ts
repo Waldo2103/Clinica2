@@ -20,6 +20,7 @@ import { TurnosComponent } from './componentes/profesional/turnos/turnos.compone
 import { AtencionComponent } from './componentes/profesional/atencion/atencion.component';
 import { ListaTurnosComponent } from './componentes/paciente/lista-turnos/lista-turnos.component';
 import { ReseniasComponent } from './componentes/paciente/resenias/resenias.component';
+import { ReseniasPrComponent } from './componentes/profesional/resenias-pr/resenias-pr.component';
 //import { ProfGuard } from './guards/prof.guard';
 
 const routes: Routes =[
@@ -35,6 +36,7 @@ const routes: Routes =[
     { path: 'profesional/home', component: HomePrComponent },
     { path: 'profesional/atencion', component: AtencionComponent },
     { path: 'profesional/turnos', component: TurnosComponent, canActivate:[AuthGuard] },
+    { path: 'profesional/resenias', component: ReseniasPrComponent, canActivate:[AuthGuard] },
     { path: 'navbar',          component: NavbarComponent, canActivate:[AuthGuard] },
     { path: 'login', component: LoginComponent,canActivate:[NologinGuard] ,data: {animation: 'LoginPage'}},
     { path: '', redirectTo: '/login', pathMatch: 'full' },

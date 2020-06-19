@@ -30,7 +30,7 @@ export class EncuestaService {
   }
   //Trae todas
   public getEncuestasPaci() {
-    return this.db.collection('encuestaPaci').snapshotChanges();
+    return this.db.collection<Encuesta>('encuestaPaci').snapshotChanges();
   }
   //Trae 1
   public getEncuestaPaci(documentId: string) {

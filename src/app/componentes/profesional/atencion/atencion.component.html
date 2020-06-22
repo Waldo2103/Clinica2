@@ -67,24 +67,31 @@
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
               </table>
               &nbsp;
-              <div *ngIf="atendiendo">
-                <form [formGroup]="hClinicaForm" (ngSubmit)="mostrarEncuesta()" novalidate>
+              <div class="container" align="center" *ngIf="atendiendo">
+                <form class="container2" align="center" [formGroup]="hClinicaForm" (ngSubmit)="mostrarEncuesta()" novalidate>
                     <label>Historia Clínica de {{turno.paciente}}</label>
                     <!-- Form elements goes here -->
-                    <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                    <div class="form-group " [ngClass]="{'focused':focus1===true}">
                         <div class="input-group input-group-alternative mb-3">
                             <div class="input-group-prepend">
                             <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                             </div>
-                            <input class="form-control" formControlName="id" type="text" (focus)="focus1=true" (blur)="focus1=false" disabled [value]="turno.id">
+                            <!--input class="form-control" formControlName="id" type="text" (focus)="focus1=true" (blur)="focus1=false"  placeholder="{{turno.id}}" disabled-->
+                            <mat-form-field>
+                              <input matInput formControlName="id" type="text" (focus)="focus1=true" (blur)="focus1=false"  placeholder="{{turno.id}}" disabled>
+                            </mat-form-field>
                         </div>
                     </div>
-                    <div class="form-group" [ngClass]="{'focused':focus2===true}">
+                    <div class="form-group " [ngClass]="{'focused':focus2===true}">
                     <div class="input-group input-group-alternative mb-3">
                         <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                         </div>
-                        <input class="form-control" formControlName="edad" placeholder="Edad" type="number" (focus)="focus2=true" (blur)="focus2=false">
+                        <!--input class="form-control" formControlName="edad" placeholder="Edad" type="number" (focus)="focus2=true" (blur)="focus2=false"-->
+                        <mat-form-field>
+                          <mat-label>Edad</mat-label>
+                          <input matInput formControlName="edad" placeholder="Edad" type="number" (focus)="focus2=true" (blur)="focus2=false">
+                        </mat-form-field>
                     </div>
                     </div>
                     <div class="form-group" [ngClass]="{'focused':focus3===true}">
@@ -92,7 +99,11 @@
                             <div class="input-group-prepend">
                             <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                             </div>
-                            <input class="form-control" formControlName="temperatura" placeholder="Temperatura" type="number" (focus)="focus3=true" (blur)="focus3=false">
+                            <!--input class="form-control" formControlName="temperatura" placeholder="Temperatura" type="number" (focus)="focus3=true" (blur)="focus3=false"-->
+                            <mat-form-field>
+                              <mat-label>Temperatura</mat-label>
+                              <input matInput formControlName="temperatura" placeholder="Temperatura" type="number" (focus)="focus3=true" (blur)="focus3=false">
+                            </mat-form-field>
                         </div>
                     </div>
                     <div class="form-group" [ngClass]="{'focused':focus4===true}">
@@ -100,7 +111,11 @@
                         <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                         </div>
-                        <input class="form-control" formControlName="presion" placeholder="Presión" type="text" (focus)="focus4=true" (blur)="focus4=false">
+                        <!--input class="form-control" formControlName="presion" placeholder="Presión" type="text" (focus)="focus4=true" (blur)="focus4=false"-->
+                        <mat-form-field>
+                          <mat-label>Presión</mat-label>
+                          <input matInput formControlName="presion" placeholder="Presión" type="text" (focus)="focus4=true" (blur)="focus4=false">
+                        </mat-form-field>
                     </div>
                     </div>
                     <div class="form-group" [ngClass]="{'focused':focus5===true}">
@@ -108,8 +123,12 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                       </div>
-                      <input class="form-control" formControlName="addC" placeholder="Ingrese nombre de campo" type="text" (focus)="focus5=true" (blur)="focus5=false">
-                      <button class="form-control btn btn-primary" type="button" (click)="addCampo()">Agregar campo</button>
+                      <!--input class="form-control" formControlName="addC" placeholder="Ingrese nombre de campo" type="text" (focus)="focus5=true" (blur)="focus5=false"-->
+                      <mat-form-field>
+                        <mat-label>Ingrese nombre de campo</mat-label>
+                        <input matInput formControlName="addC" placeholder="Ingrese nombre de campo" type="text" (focus)="focus5=true" (blur)="focus5=false">
+                      </mat-form-field>
+                      <button class=" btn btn-primary" type="button" (click)="addCampo()">Agregar campo</button>
                     </div>
                     
                   </div>
@@ -119,7 +138,11 @@
                         <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                         </div>
-                        <input class="form-control" formControlName="dina1" placeholder="{{din1}}" type="text" (focus)="focus6=true" (blur)="focus6=false">
+                        <!--input class="form-control" formControlName="dina1" placeholder="{{din1}}" type="text" (focus)="focus6=true" (blur)="focus6=false"-->
+                        <mat-form-field>
+                          <mat-label>{{din1}}</mat-label>
+                          <input matInput formControlName="dina1" placeholder="{{din1}}" type="text" (focus)="focus6=true" (blur)="focus6=false">
+                        </mat-form-field>
                     </div>
                     </div>
                     <div *ngIf="din2!==''" class="form-group" [ngClass]="{'focused':focus7===true}">
@@ -127,7 +150,11 @@
                             <div class="input-group-prepend">
                             <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                             </div>
-                            <input class="form-control" formControlName="dina2" placeholder="{{din2}}" type="text" (focus)="focus7=true" (blur)="focus7=false">
+                            <!--input class="form-control" formControlName="dina2" placeholder="{{din2}}" type="text" (focus)="focus7=true" (blur)="focus7=false"-->
+                          <mat-form-field>
+                            <mat-label>{{din2}}</mat-label>
+                          <input matInput formControlName="dina2" placeholder="{{din2}}" type="text" (focus)="focus7=true" (blur)="focus7=false">
+                        </mat-form-field>
                         </div>
                     </div>
                     <div *ngIf="din3!==''" class="form-group" [ngClass]="{'focused':focus8===true}">
@@ -135,7 +162,11 @@
                         <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                         </div>
-                        <input class="form-control" formControlName="dina3" placeholder="{{din3}}" type="text" (focus)="focus8=true" (blur)="focus8=false">
+                        <!--input class="form-control" formControlName="dina3" placeholder="{{din3}}" type="text" (focus)="focus8=true" (blur)="focus8=false"-->
+                        <mat-form-field>
+                        <mat-label>{{din3}}</mat-label>
+                          <input matInput formControlName="dina3" placeholder="{{din3}}" type="text" (focus)="focus8=true" (blur)="focus8=false">
+                        </mat-form-field>
                     </div>
                     </div>
                     <div class="text-center">

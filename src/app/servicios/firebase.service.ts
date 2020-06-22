@@ -79,8 +79,7 @@ export class FirebaseService {
   }
   //Trae Todos
   public getProfesionales() {
-    console.log("entre a servicio", this.db.collection('profesionales').snapshotChanges())
-    return this.db.collection('profesionales').snapshotChanges();
+    return this.db.collection<Profesional>('profesionales').snapshotChanges();
   }
 
   //Actualiza 1
@@ -102,7 +101,7 @@ export class FirebaseService {
               .pipe( delay(2000) );
   }
   //Alta
-  public createTurno(id:string, data: {id: string, fecha: string, hora:string, especialidad: string, paciente: string, profesional: string, atendido:boolean, estado:string, observaciones:string}) {
+  public createTurno(id:string, data: {id: string, fecha: string, hora:string, especialidad: string, paciente: string, profesional: string, atendido:boolean, estado:string, hclinica:string}) {
     return this.db.collection(`turnos/${data.paciente}/turnos`).doc(id).set(data);
   }
   //Trae 1
@@ -122,7 +121,7 @@ export class FirebaseService {
               .pipe( delay(2000) );
   }
   //Alta
-  public createTurnoXProf(id:string, data: {id: string, fecha: string, hora:string, especialidad: string, paciente: string, profesional: string, atendido:boolean, estado:string, observaciones:string}) {
+  public createTurnoXProf(id:string, data: {id: string, fecha: string, hora:string, especialidad: string, paciente: string, profesional: string, atendido:boolean, estado:string, hclinica:string}) {
     return this.db.collection(`turnosXProf/${data.profesional}/turnos`).doc(id).set(data);
   }
   //Trae 1
@@ -136,11 +135,11 @@ export class FirebaseService {
   /***************************************************************************** */
   /***********************************HClinica************************************ */
   //Actualiza 1 VER COMO MODIFICAR UN SOLO VALOR
-  public agregaHClinciaXProf(documentId: string, data: any) {
+  public agregaHCliniciaXProf(documentId: string, data: any) {
     return this.db.collection(`turnosXProf/${data.profesional}/turnos`).doc(documentId).set(data);
   }
   //Actualiza 1 VER COMO MODIFICAR UN SOLO VALOR
-  public agregaHClincia(documentId: string, data: any) {
+  public agregaHClinicia(documentId: string, data: any) {
     return this.db.collection(`turnos/${data.paciente}/turnos`).doc(documentId).set(data);
   }
   //Actualiza 1 VER COMO MODIFICAR UN SOLO VALOR

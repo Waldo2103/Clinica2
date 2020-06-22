@@ -20,7 +20,7 @@ export class AtencionComponent implements OnInit {
   atendiendo= false;
   //form
   hClinicaForm: FormGroup;
-  focus1;focus2;focus3;focus4;focus5;focus6;focus7;focus8;
+  focus1=true;focus2;focus3;focus4;focus5;focus6;focus7;focus8;
 
   //ENCUESTA
   selectedPaciente = 4;
@@ -44,7 +44,7 @@ export class AtencionComponent implements OnInit {
               private encuestaService: EncuestaService,
     ) {
       this.hClinicaForm = fb.group({
-        id: new FormControl(''),
+        id: [{value: '', disabled:true}],
         edad: new FormControl(''),
         temperatura: new FormControl(''),
         presion: new FormControl(''),
@@ -57,7 +57,7 @@ export class AtencionComponent implements OnInit {
   user;
   ngOnInit(): void {
     this.user = "profesional";
-    //this.traerUser();s
+    //this.traerUser();
     this.traerTurnos();
 
     //ENCUESTA
@@ -73,14 +73,21 @@ export class AtencionComponent implements OnInit {
 
   profe
   traerUser(){
+    
     this.profe = this.afAuth.auth.currentUser.email.valueOf();
+    //console.log(this.profe)
+    
   }
 
   turnosTodos = [];
   traerTurnos(){
-    this.firebase.getTurnosXProf(/*this.profe*/'prof@c.com').subscribe(resul => {
+    
+    this.firebase.getTurnosXProf(/*this.profe*/'prof@a.com').subscribe(resul => {
+      //console.log(this.profe)
       resul.forEach(data =>{
+        //console.log(data.payload.doc.data() )
         if(data.payload.doc.data().atendido === false && data.payload.doc.data().estado === 'confirmado'){
+          
           this.turnosTodos.push(
             {
               id: data.payload.doc.data().id,
@@ -137,12 +144,12 @@ disab(){
         estado: this.turno.estado,
         paciente: this.turno.paciente,
         profesional: this.turno.profesional,
-        hclinica: `{edad: ${this.hClinicaForm.get('edad').value},
+        hclinica: `edad: ${this.hClinicaForm.get('edad').value},
             temperatura: ${this.hClinicaForm.get('temperatura').value},
             presion: ${this.hClinicaForm.get('presion').value},
             ${this.din1}:${this.hClinicaForm.get('dina1').value},
             ${this.din2}:${this.hClinicaForm.get('dina2').value},
-            ${this.din3}:${this.hClinicaForm.get('dina3').value}}`
+            ${this.din3}:${this.hClinicaForm.get('dina3').value}`
       }
     } else if (this.din2 !== '') {
       this.hclinica = {
@@ -154,11 +161,11 @@ disab(){
         estado: this.turno.estado,
         paciente: this.turno.paciente,
         profesional: this.turno.profesional,
-        hclinica: `{edad: ${this.hClinicaForm.get('edad').value},
+        hclinica: `edad: ${this.hClinicaForm.get('edad').value},
             temperatura: ${this.hClinicaForm.get('temperatura').value},
             presion: ${this.hClinicaForm.get('presion').value},
             ${this.din1}:${this.hClinicaForm.get('dina1').value},
-            ${this.din2}:${this.hClinicaForm.get('dina2').value}}`
+            ${this.din2}:${this.hClinicaForm.get('dina2').value}`
       }
     } else if (this.din1 !== '') {
       //agrear cambio de estado atendido a true
@@ -171,10 +178,10 @@ disab(){
         estado: this.turno.estado, 
         paciente: this.turno.paciente,
         profesional: this.turno.profesional,
-        hclinica: `{edad: ${this.hClinicaForm.get('edad').value},
+        hclinica: `edad: ${this.hClinicaForm.get('edad').value},
             temperatura: ${this.hClinicaForm.get('temperatura').value},
             presion: ${this.hClinicaForm.get('presion').value},
-            ${this.din1}:${this.hClinicaForm.get('dina1').value}}`
+            ${this.din1}:${this.hClinicaForm.get('dina1').value}`
       }
     }else{
       this.hclinica = {
@@ -186,16 +193,16 @@ disab(){
         estado: this.turno.estado,
         paciente: this.turno.paciente,
         profesional: this.turno.profesional,
-        hclinica: `{edad: ${this.hClinicaForm.get('edad').value},
+        hclinica: `edad: ${this.hClinicaForm.get('edad').value},
             temperatura: ${this.hClinicaForm.get('temperatura').value},
-            presion: ${this.hClinicaForm.get('presion').value}}`
+            presion: ${this.hClinicaForm.get('presion').value}`
       }
     }
     
     console.log(this.hclinica);
-    this.firebase.agregaHClincia(this.turno.id,this.hclinica).then(resul =>{
+    this.firebase.agregaHClinicia(this.turno.id,this.hclinica).then(resul =>{
       console.log("OK");
-      this.firebase.agregaHClinciaXProf(this.turno.id,this.hclinica).then(resul =>{
+      this.firebase.agregaHCliniciaXProf(this.turno.id,this.hclinica).then(resul =>{
         console.log("OK");
         this.router.navigate(['/profesional/atencion']);
       }).catch()

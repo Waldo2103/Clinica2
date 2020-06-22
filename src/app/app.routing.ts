@@ -21,22 +21,31 @@ import { AtencionComponent } from './componentes/profesional/atencion/atencion.c
 import { ListaTurnosComponent } from './componentes/paciente/lista-turnos/lista-turnos.component';
 import { ReseniasComponent } from './componentes/paciente/resenias/resenias.component';
 import { ReseniasPrComponent } from './componentes/profesional/resenias-pr/resenias-pr.component';
+import { RegistroAdmComponent } from './componentes/admin/registro-adm/registro-adm.component';
+import { HomeAdmComponent } from './componentes/admin/home-adm/home-adm.component';
+import { HabilitaComponent } from './componentes/admin/habilita/habilita.component';
+import { LogueoComponent } from './componentes/admin/estadisticas/logueo/logueo.component';
 //import { ProfGuard } from './guards/prof.guard';
 
 const routes: Routes =[
-    { path: 'home',             component: HomeComponent, canActivate:[AuthGuard] },
-    { path: 'paciente/sacarTurno',component: SacarTurnoComponent, canActivate:[AuthGuard] },
+    { path: 'home',             component: HomeComponent, canActivate:[AuthGuard], data: { animation: 'PrincipalPage'} },
+    { path: 'admin/registro',component: RegistroAdmComponent, canActivate:[AuthGuard] },
+    { path: 'admin/home',component: HomeAdmComponent, canActivate:[AuthGuard] },
+    { path: 'admin/habilita',component: HabilitaComponent, canActivate:[AuthGuard] },
+    { path: 'admin/estadisticas/logueo',component: LogueoComponent, canActivate:[AuthGuard] },
+    { path: 'paciente/registro',           component: SignupComponent },
+    { path: 'paciente/sacarTurno',component: SacarTurnoComponent,data: {animation: 'One'} },
     { path: 'paciente/home',component: HomePacComponent, canActivate:[AuthGuard] },
-    { path: 'paciente/listaTurnos',component: ListaTurnosComponent, canActivate:[AuthGuard] },
-    { path: 'paciente/resenias',component: ReseniasComponent, canActivate:[AuthGuard] },
+    { path: 'paciente/listaTurnos',component: ListaTurnosComponent,data: {animation: 'Two'} },
+    { path: 'paciente/resenias',component: ReseniasComponent, canActivate:[AuthGuard],data: {animation: 'Three'} },
     { path: 'noHab',component: NoHabComponent },
     { path: 'perfil',     component: ProfileComponent },
-    { path: 'registro',           component: SignupComponent },
+    
     { path: 'profesional/registro', component: RegistroProfComponent },
     { path: 'profesional/home', component: HomePrComponent },
-    { path: 'profesional/atencion', component: AtencionComponent },
-    { path: 'profesional/turnos', component: TurnosComponent, canActivate:[AuthGuard] },
-    { path: 'profesional/resenias', component: ReseniasPrComponent, canActivate:[AuthGuard] },
+    { path: 'profesional/atencion', component: AtencionComponent,data: {animation: 'Two'} },
+    { path: 'profesional/turnos', component: TurnosComponent, canActivate:[AuthGuard],data: {animation: 'One'} },
+    { path: 'profesional/resenias', component: ReseniasPrComponent, canActivate:[AuthGuard],data: {animation: 'Three'} },
     { path: 'navbar',          component: NavbarComponent, canActivate:[AuthGuard] },
     { path: 'login', component: LoginComponent,canActivate:[NologinGuard] ,data: {animation: 'LoginPage'}},
     { path: '', redirectTo: '/login', pathMatch: 'full' },

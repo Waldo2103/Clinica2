@@ -5,6 +5,10 @@ h1{
     font-size: 90px;
     
 }
+.container2{
+  width: fit-content;
+  align-content: center;
+}
 
 .rowLogin{
     background-position: center; /* Center the image */

@@ -55,10 +55,15 @@ import { ListaTurnosComponent } from './componentes/paciente/lista-turnos/lista-
 import { EncuestaComponent } from './componentes/encuesta/encuesta.component';
 import { ReseniasComponent } from './componentes/paciente/resenias/resenias.component';
 import { ReseniasPrComponent } from './componentes/profesional/resenias-pr/resenias-pr.component';
+import { RegistroAdmComponent } from './componentes/admin/registro-adm/registro-adm.component';
+import { HabilitaComponent } from './componentes/admin/habilita/habilita.component';
+import { HomeAdmComponent } from './componentes/admin/home-adm/home-adm.component';
+import { EspecialidadesPipe } from './pipes/especialidades.pipe';
+import { HorariosPipe } from './pipes/horarios.pipe';
+import { HclinicaPipe } from './pipes/hclinica.pipe';
+import { LogueoComponent } from './componentes/admin/estadisticas/logueo/logueo.component';
+import { ChartsModule } from 'ng2-charts';
 
-
-
-//, , , 
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +84,14 @@ import { ReseniasPrComponent } from './componentes/profesional/resenias-pr/resen
     ListaTurnosComponent,
     EncuestaComponent,
     ReseniasComponent,
-    ReseniasPrComponent
+    ReseniasPrComponent,
+    RegistroAdmComponent,
+    HabilitaComponent,
+    HomeAdmComponent,
+    EspecialidadesPipe,
+    HorariosPipe,
+    HclinicaPipe,
+    LogueoComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +109,6 @@ import { ReseniasPrComponent } from './componentes/profesional/resenias-pr/resen
     AngularFirestoreModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireStorageModule,
-    BrowserAnimationsModule,
     MatInputModule, 
     MatButtonModule,
     MatSelectModule,
@@ -106,7 +117,8 @@ import { ReseniasPrComponent } from './componentes/profesional/resenias-pr/resen
     MatIconModule,
     NgxCaptchaModule,
     Ng2SmartTableModule,
-    Ng2CompleterModule
+    Ng2CompleterModule,
+    ChartsModule
   ],
   providers: [
     AngularFireAuth,

@@ -5,6 +5,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
 import { Profesional } from 'src/app/clases/profesional';
 import { turno } from 'src/app/clases/turno';
+import { AuditService } from 'src/app/servicios/audit.service';
+import { finished } from 'stream';
 
 @Component({
   selector: 'app-sacar-turno',
@@ -71,7 +73,9 @@ export class SacarTurnoComponent implements OnInit {
   //para traer HORARIOS
     
 
-  constructor(private afAuth: AngularFireAuth, private firebase: FirebaseService, private formBuilder: FormBuilder) { 
+  constructor(private afAuth: AngularFireAuth, private firebase: FirebaseService, private formBuilder: FormBuilder,
+              private audit: AuditService
+    ) { 
     this.form = this.formBuilder.group({
       //id: new FormControl('', Validators.required),
       especialidad: new FormControl('', Validators.required),
@@ -346,7 +350,7 @@ export class SacarTurnoComponent implements OnInit {
     this.turnoOK.profesional = this.profe;
     this.turnoOK.atendido = false;
     this.turnoOK.estado = 'pendiente'; // pendiente - confirmado - cancelado - rechazado
-    this.turnoOK.observaciones = "";
+    this.turnoOK.hclinica = "";
     //console.log(this.turnoOK)
   }
 
@@ -399,11 +403,37 @@ export class SacarTurnoComponent implements OnInit {
     console.log(this.turnoOK)
     let turnoFire = {id: this.turnoOK.id, fecha: this.turnoOK.fecha, hora:this.turnoOK.hora,
        especialidad: this.turnoOK.especialidad, paciente: this.turnoOK.paciente, profesional: this.turnoOK.profesional,
-        atendido:this.turnoOK.atendido, estado:this.turnoOK.estado, observaciones:this.turnoOK.observaciones}
+        atendido:this.turnoOK.atendido, estado:this.turnoOK.estado, hclinica:this.turnoOK.hclinica}
     this.firebase.createTurnoXProf(turnoFire.id,turnoFire).then(resul=>{
-      alert("Turno Creado!")
+      alert("Turno Creado!");
       this.firebase.createTurno(turnoFire.id,turnoFire).then(resul2=>{
         console.log("turno creado en ambas tablas")
+        //auditamos turnos x espe
+        //1- traemos los datos
+        this.audit.getTurnosXEspe().subscribe(resul=>{
+          let audit
+          //recorremos las especialidades con sus turnos
+          let hayUno: boolean = false;
+          resul.forEach(data =>{
+            //si la espe del nuevo turno coincide le sumo 1
+            if (data.payload.doc.data().especialidad === turnoFire.especialidad) {
+              hayUno = true;
+              let cantTurnos = data.payload.doc.data().cantTurnos + 1;
+              let especialidad = data.payload.doc.data().especialidad;
+              audit = {especialidad, cantTurnos}
+              //this.audit.createTurnosXEspe(audit)
+              console.log("sumo audit", audit)
+            }
+          });
+          if (!hayUno) {
+            console.log("creo audit", turnoFire.especialidad)
+            this.audit.createTurnosXEspe({especialidad:turnoFire.especialidad,cantTurnos:1})
+          }else {
+            this.audit.createTurnosXEspe(audit)
+            console.log("sumo audit afuera", audit)
+          }
+        });
+        //
       }).catch(error=>{
         console.log(error)
       })

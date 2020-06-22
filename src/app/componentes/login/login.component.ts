@@ -1,14 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { Router, ActivatedRoute,  } from '@angular/router';
 import {Subscription} from "rxjs";
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../../servicios/auth/auth.service';
-//import { Roles } from '../../clases/roles.enum';
-//import { ResultadosService } from '../../servicios/resultados/resultados.service';
+import { AuditService } from 'src/app/servicios/audit.service';
+import { logProf } from 'src/app/clases/log-prof';
+import { FirebaseService } from 'src/app/servicios/firebase.service';
+import { Profesional } from 'src/app/clases/profesional';
+import { error } from 'protractor';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  animations: [
+    // animation triggers go he
+  ]
 })
 export class LoginComponent implements OnInit {
   focus;
@@ -47,8 +54,10 @@ export class LoginComponent implements OnInit {
 
 
   constructor(private authService: AuthService,
-    private route: ActivatedRoute,
-    private router: Router, private formBuilder: FormBuilder//, private resulService: ResultadosService
+    private fire: FirebaseService,
+    private router: Router, 
+    private formBuilder: FormBuilder,
+    private audit: AuditService
     ) {
     
       this.form = this.formBuilder.group({
@@ -67,8 +76,19 @@ export class LoginComponent implements OnInit {
   ocultarNavBar(){
   }
 
-  loguear(user: any){
-   // this.resulService.createLog(user);
+  loguear(user){
+    this.fire.getProfesionales().subscribe(resul =>{
+      resul.forEach(data=>{
+        console.log(data.payload.doc.data().correo,"dsas",user.usuario)
+        if (data.payload.doc.data().correo === user.usuario) {
+          this.audit.createLogProf(user).then(resul =>{
+            console.log(resul)
+          }).catch(error => console.log(error));
+        }
+      });
+    });
+    
+   
   }
   
   onSubmitLogin() {
@@ -79,10 +99,14 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.userbtn, this.passbtn)
       .then(res => {
         let f = new Date;
-        var fec: string = f.getDate()+"/"+f.getMonth()+"/"+f.getUTCFullYear()+" - "+f.getUTCHours()+":"+f.getUTCMinutes()+":"+f.getUTCSeconds();
-        let data = { email: this.userbtn,fec}
+        var fec: string = f.getDate()+"/"+f.getMonth()+"/"+f.getUTCFullYear();
+        var hor: string = f.getUTCHours()+":"+f.getUTCMinutes()+":"+f.getUTCSeconds();
+        let data = {usuario :"", fecha : "", hora : ""};
+        data.usuario = this.userbtn;
+        data.fecha = fec;
+        data.hora = hor;
         this.loguear(data);
-        localStorage.setItem("email", this.userbtn);
+        //localStorage.setItem("email", this.userbtn);
         this.router.navigate(['/home']);
       })
       .catch(error => {

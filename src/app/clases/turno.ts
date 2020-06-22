@@ -11,7 +11,7 @@ export class turno {
     profesional: string;
     atendido:boolean;
     estado:string;
-    observaciones:string; 
+    hclinica:string; 
     constructor() {
         
     }

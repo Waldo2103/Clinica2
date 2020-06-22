@@ -8,6 +8,7 @@ import { Profesional, ProfesionalAConfirmar } from '../../clases/profesional';
 import {map}from "rxjs/operators";
 import {isNullOrUndefined} from "util";
 import { Router } from '@angular/router';
+import { Admin, AdminAConfirmar } from '../../clases/admin';
 
 //import 'rxjs/add/operator/map';
 
@@ -77,6 +78,18 @@ export class AuthService {
       especialidades: d.especialidades,
       horarios: d.horarios,
       habilitado: false
+    });
+  }
+
+  //ADMIN
+  RegistrarAdminDatos(usuario: Admin) {//, clave: string) {
+    const e: AdminAConfirmar = usuario as AdminAConfirmar;
+    //d.clave = clave;
+    return this.db.collection('admin').add({
+      //foto: d.foto,
+      correo: e.correo,
+      perfil: 'admin',
+      //foto: d.foto,
     });
   }
 

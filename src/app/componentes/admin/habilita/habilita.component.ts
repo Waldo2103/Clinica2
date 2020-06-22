@@ -5,19 +5,14 @@ import { FirebaseService } from 'src/app/servicios/firebase.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 
-
-/**
- * @title Table with filtering
- */
-
 @Component({
-  selector: 'app-turnos',
-  templateUrl: './turnos.component.html',
-  styleUrls: ['./turnos.component.css']
+  selector: 'app-habilita',
+  templateUrl: './habilita.component.html',
+  styleUrls: ['./habilita.component.css']
 })
-export class TurnosComponent implements OnInit {
+export class HabilitaComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'paciente', 'especialidad', 'fecha','hora', 'atendido', 'estado', 'hclinica', 'aceptar', 'rechazar'];
+  displayedColumns: string[] = ['dni', 'apellido', 'nombre', 'correo','especialidades', 'horarios', 'habilitar'];
   dataSource: MatTableDataSource <Element[]>;//(ELEMENT_DATA);
 
   constructor(private exporter: ExporterService,
@@ -28,7 +23,7 @@ export class TurnosComponent implements OnInit {
   ngOnInit(): void {
     this.user = "profesional";
     this.traerUser();
-    this.traerTurnos();
+    this.traerProfesionales();
   }
 
   profe
@@ -36,40 +31,42 @@ export class TurnosComponent implements OnInit {
     this.profe = this.afAuth.auth.currentUser.email.valueOf();
   }
 
-  turnosTodos = [];
-  traerTurnos(){
-    this.firebase.getTurnosXProf(this.profe).subscribe(resul => {
-      resul.forEach(data =>{
-        this.turnosTodos.push(
-          {
-            id: data.payload.doc.data().id,
-            fecha: data.payload.doc.data().fecha,
-            hora: data.payload.doc.data().hora,
-            paciente: data.payload.doc.data().paciente,
-            especialidad: data.payload.doc.data().especialidad,
-            atendido: data.payload.doc.data().atendido,
-            estado: data.payload.doc.data().estado,
-            hclinica: data.payload.doc.data().hclinica,
-            profesional: data.payload.doc.data().profesional
-          }
-        );
-      });
-      this.dataSource = new MatTableDataSource(this.turnosTodos);
+  profesT = [];
+  traerProfesionales(){
+    this.firebase.getProfesionales().subscribe(resul =>{
+      this.profesT = [];
+      resul.forEach((data: any) => {
+        
+        
+        if (!data.payload.doc.data().habilitado) {
+          this.profesT.push(
+            {
+              id: data.payload.doc.id,
+              dni: data.payload.doc.data().dni,
+              nombre:  data.payload.doc.data().nombre,
+              apellido: data.payload.doc.data().apellido,
+              especialidades: data.payload.doc.data().especialidades,//resul,
+              habilitado: data.payload.doc.data().habilitado,
+              horarios: data.payload.doc.data().horarios,//resul2,
+              correo: data.payload.doc.data().correo
+          });
+        }
+      })
+      this.dataSource = new MatTableDataSource(this.profesT);
     });
+      
   }
 
   aceptar(e){
-    if(e.estado == "pendiente"){
-      e.estado = "confirmado";
-      this.firebase.updateTurno(e.id, e).then(resul =>{
+    console.log(e)
+    if(e.habilitado == false){
+      e.habilitado = true;
+      this.firebase.updateProfesional(e.id, e).then(resul =>{
         console.log("OK")
-        this.firebase.updateTurnoXProf(e.id, e).then(resul=>{
-          console.log("OK2");
-        }).catch(error =>{console.log(error)});
       }).catch(error=>{console.log(error)});
       //this.actualizarTurno(e);
     }else{
-      console.log(`El turno está ${e.estado}`)
+      console.log(`El profesional está habilitado`)
     }
     
   }
@@ -83,21 +80,13 @@ export class TurnosComponent implements OnInit {
           console.log("OK2");
         }).catch(error =>{console.log(error)});
       }).catch(error=>{console.log(error)});
-      //this.actualizarTurno(e);
     }else{
       console.log(`El turno ya está ${e.estado}`)
     }
     
   }
 
-  actualizarTurno(turno: any){
-    
-    for(let t of this.turnosTodos){
-      if (t.id === turno.id) {
-        t.estado = turno.estado;
-      }
-    }
-  }
+ 
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

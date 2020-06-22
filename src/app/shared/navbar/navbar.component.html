@@ -102,6 +102,43 @@
               </div>
             </div>
           </li>
+          <li *ngIf="user==='admin'" class="nav-item dropdown">
+            <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+              <i class="ni ni-ui-04 d-lg-none"></i>
+              <span class="nav-link-inner--text">Administrador</span>
+            </a>
+            <div class="dropdown-menu-xl dropdown-menu" >
+              <div class="dropdown-menu-inner">
+                <a routerLinkActive="active" routerLink="/admin/registro" class="media d-flex align-items-center">
+                  <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                    <i class="ni ni-spaceship"></i>
+                  </div>
+                  <div class="media-body ml-3">
+                    <h6 class="heading text-primary mb-md-1">REGISTRAR UN NUEVO ADMINISTRADOR</h6>
+                    <p class="description d-none d-md-inline-block mb-0">El ADMIN podrá dar de alta nuevos administradores.</p>
+                  </div>
+                </a>
+                <a routerLinkActive="active" routerLink="/admin/habilita" class="media d-flex align-items-center">
+                  <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                    <i class="ni ni-palette"></i>
+                  </div>
+                  <div class="media-body ml-3">
+                    <h6 class="heading text-primary mb-md-1">HABILITAR PROFESIONALES</h6>
+                    <p class="description d-none d-md-inline-block mb-0">El ADMIN podrá habilitar a los profesionales que se hayan registrado.</p>
+                  </div>
+                </a>
+                <a routerLinkActive="active" routerLink="/admin/estadisticas/logueo" class="media d-flex align-items-center">
+                  <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                    <i class="ni ni-ui-04"></i>
+                  </div>
+                  <div class="media-body ml-3">
+                    <h5 class="heading text-warning mb-md-1">estadisticas logueo</h5>
+                    <p class="description d-none d-md-inline-block mb-0">El profesional puede ver el comentario del Paciente sobre la atención recibida.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
         </ul>
         <ul class="navbar-nav align-items-lg-center ml-lg-auto">
           

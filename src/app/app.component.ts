@@ -1,9 +1,18 @@
-import { Component, OnInit, Inject, Renderer2, ElementRef, ViewChild, HostListener } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Component, HostBinding, OnInit, Inject, Renderer2, ElementRef, ViewChild, HostListener } from '@angular/core';
+import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/filter';
 import { DOCUMENT } from '@angular/common';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
+import { fader, slider, transformer, stepper, slideInAnimation, routeTransitionAnimations } from "./route-animations";
 
 var didScroll;
 var lastScrollTop = 0;
@@ -13,9 +22,22 @@ var navbarHeight = 0;
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+    styleUrls: ['./app.component.scss'],
+    animations: [ // <-- add your animations here
+        routeTransitionAnimations
+         //fader,
+         //slideInAnimation,
+         //slider,
+         //transformer,
+         //stepper
+      ]
 })
+
 export class AppComponent implements OnInit {
+    prepareRoute(outlet: RouterOutlet) {
+        return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+      }
+
     private _router: Subscription;
 
     constructor( private renderer : Renderer2, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {}
@@ -52,6 +74,7 @@ export class AppComponent implements OnInit {
 
         lastScrollTop = st;
     };
+    
     ngOnInit() {
       var navbar : HTMLElement = this.element.nativeElement.children[0].children[0];
       this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
@@ -73,4 +96,6 @@ export class AppComponent implements OnInit {
       });
       this.hasScrolled();
     }
+
+    
 }

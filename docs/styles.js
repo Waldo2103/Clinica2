@@ -445,7 +445,7 @@ if (content.locals) {
 
 /***/ }),
 
-/***/ 6:
+/***/ 9:
 /*!*************************************************************************************************************************************************************************!*\
   !*** multi ./node_modules/bootstrap/dist/css/bootstrap.min.css ./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css ./src/styles.css ./src/assets/scss/argon.scss ***!
   \*************************************************************************************************************************************************************************/
@@ -460,5 +460,5 @@ module.exports = __webpack_require__(/*! C:\Users\Waldo\LABO4-ANG\Clinica2\src\a
 
 /***/ })
 
-},[[6,"runtime"]]]);
+},[[9,"runtime"]]]);
 //# sourceMappingURL=styles.js.map

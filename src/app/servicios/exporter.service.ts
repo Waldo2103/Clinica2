@@ -24,7 +24,18 @@ export class ExporterService {
 
   private saveAsExcel(buffer: any, fileName: string):void{
     const data: Blob = new Blob([buffer], {type: EXCEL_TYPE});
-    FileSaver.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXT)
+    FileSaver.saveAs(data, fileName + '_' + new Date().getTime() + EXCEL_EXT)
+  }
+
+  //INVENTE ROMAN INVENTE
+  exportToExcel2(dataBlob):void{
+    //let dataBlob = '...kAAAAFAAIcmtzaGVldHMvc2hlZXQxLnhtbFBLBQYAAAAACQAJAD8CAADdGAAAAAA='; // If have ; You should be split get blob data only
+    FileSaver.downloadFile(dataBlob);
+  }
+
+  private saveAsExcel2(buffer: any, fileName: string):void{
+    const data: Blob = new Blob([buffer], {type: EXCEL_TYPE});
+    FileSaver.saveAs(data, fileName + '_' + new Date().getTime() + EXCEL_EXT)
   }
 
 }

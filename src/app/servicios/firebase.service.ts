@@ -5,6 +5,7 @@ import { especialidad } from '../clases/especialidad';
 import { delay } from 'rxjs/operators';
 import { Profesional } from '../clases/profesional';
 import { turno } from '../clases/turno';
+import { AuditService } from './audit.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class FirebaseService {
 
   constructor(
     private db: AngularFirestore,
-    private storage: AngularFireStorage
+    private audit: AuditService
   ) { }
   /**********ESPECIALIDADES****** */
   //Trae Todos
@@ -102,6 +103,44 @@ export class FirebaseService {
   }
   //Alta
   public createTurno(id:string, data: {id: string, fecha: string, hora:string, especialidad: string, paciente: string, profesional: string, atendido:boolean, estado:string, hclinica:string}) {
+    //auditamos turnos x espe
+        //1- traemos los datos
+        let hayUno: boolean = false;
+        let listo: boolean = false;
+        let idXT;
+        let espeXT = {especialidad:"",cantTurnos: 0}
+        this.audit.getTurnosXEspe().subscribe(resul=>{
+          //let audit
+          //recorremos las especialidades con sus turnos
+          
+          resul.forEach(datos =>{
+            //si la espe del nuevo turno coincide le sumo 1
+            if (datos.payload.doc.data().especialidad == data.especialidad) {
+              hayUno = true;
+              idXT = datos.payload.doc.id;
+              espeXT = {
+                especialidad: datos.payload.doc.data().especialidad,
+                cantTurnos: (datos.payload.doc.data().cantTurnos + 1)
+              }
+              
+            }
+          });
+          
+           //
+        if(hayUno && !listo) {
+          listo = true;
+          this.audit.addTurnosXEspe(idXT,espeXT)
+          console.log("sumo audit afuera")
+          //hayUno = false;
+        }
+        if (!hayUno) {
+          listo = true;
+          console.log("creo audit", data.especialidad)
+          this.audit.createTurnosXEspe({especialidad:data.especialidad,cantTurnos:1})
+        }
+        });
+       
+
     return this.db.collection(`turnos/${data.paciente}/turnos`).doc(id).set(data);
   }
   //Trae 1

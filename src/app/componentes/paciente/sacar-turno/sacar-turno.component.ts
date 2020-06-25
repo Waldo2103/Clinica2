@@ -7,6 +7,7 @@ import { Profesional } from 'src/app/clases/profesional';
 import { turno } from 'src/app/clases/turno';
 import { AuditService } from 'src/app/servicios/audit.service';
 import { finished } from 'stream';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sacar-turno',
@@ -74,7 +75,7 @@ export class SacarTurnoComponent implements OnInit {
     
 
   constructor(private afAuth: AngularFireAuth, private firebase: FirebaseService, private formBuilder: FormBuilder,
-              private audit: AuditService
+              private audit: AuditService, private router: Router
     ) { 
     this.form = this.formBuilder.group({
       //id: new FormControl('', Validators.required),
@@ -144,6 +145,7 @@ export class SacarTurnoComponent implements OnInit {
     var weekday = Xmas95.getDay();
     this.diaSeleccionada = weekday.toString();
     //console.log(weekday, "weekday"); // 1
+    this.diaS = weekday;
     this.horariosDisp(weekday);
   }
  
@@ -199,7 +201,6 @@ export class SacarTurnoComponent implements OnInit {
   profe
   //asigno los dias disponibles
   horariosDisp(weekday){
-    //console.log(weekday, "weekday"); 
     //recorro todos los prof y lo matcheo con el que se selecciono en el combo
     for(let prof of this.profesT){
       //si son iguales extraigo datos
@@ -398,7 +399,25 @@ export class SacarTurnoComponent implements OnInit {
     }
     return tMoT;
   }
+  //TURNOS X DIA VARIABLES
+  espeXD = {dia:"",cantTurnos: 0}
+  idXD;
+  hayUno: boolean = false;
+  listo: boolean = false;
+  diaS;
+  //CANT TURNOS X PROF VARIABLES
+  turXP = {profesional:"",cantTurnos: 0}
+  idTXP;
+  hayUnoTXP: boolean = false;
+  listoTXP: boolean = false;
   
+  //profe X DIA VARIABLES
+  diaXP = {dia:"",cantProfe: 0, profesionales: []}
+  idDXP;
+  hayUnoDXP: boolean = false;
+  listoDXP: boolean = false;
+  arrayProf: Array<any>;
+  existeEnArray: boolean = false;
   sacarTurno(){
     console.log(this.turnoOK)
     let turnoFire = {id: this.turnoOK.id, fecha: this.turnoOK.fecha, hora:this.turnoOK.hora,
@@ -408,32 +427,123 @@ export class SacarTurnoComponent implements OnInit {
       alert("Turno Creado!");
       this.firebase.createTurno(turnoFire.id,turnoFire).then(resul2=>{
         console.log("turno creado en ambas tablas")
-        //auditamos turnos x espe
+        //auditamos turnos x dia
         //1- traemos los datos
-        this.audit.getTurnosXEspe().subscribe(resul=>{
-          let audit
+        
+        this.audit.getTurnosXDia().subscribe(resul=>{
+          //let audit
           //recorremos las especialidades con sus turnos
-          let hayUno: boolean = false;
+          
           resul.forEach(data =>{
             //si la espe del nuevo turno coincide le sumo 1
-            if (data.payload.doc.data().especialidad === turnoFire.especialidad) {
-              hayUno = true;
-              let cantTurnos = data.payload.doc.data().cantTurnos + 1;
-              let especialidad = data.payload.doc.data().especialidad;
-              audit = {especialidad, cantTurnos}
-              //this.audit.createTurnosXEspe(audit)
-              console.log("sumo audit", audit)
+            if (data.payload.doc.data().dia == this.diaS) {
+              this.hayUno = true;
+              this.idXD = data.payload.doc.id;
+              this.espeXD = {
+                dia: data.payload.doc.data().dia,
+                cantTurnos: (data.payload.doc.data().cantTurnos + 1)
+              }
+              
             }
           });
-          if (!hayUno) {
-            console.log("creo audit", turnoFire.especialidad)
-            this.audit.createTurnosXEspe({especialidad:turnoFire.especialidad,cantTurnos:1})
-          }else {
-            this.audit.createTurnosXEspe(audit)
-            console.log("sumo audit afuera", audit)
+          if(this.hayUno&& !this.listo) {
+            this.listo = true;
+            this.audit.addTurnosXDia(this.idXD,this.espeXD)
+            console.log("sumo audit afuera")
+            //hayUno = false;
           }
-        });
-        //
+          if (!this.hayUno) {
+            this.listo = true;
+            console.log("creo audit", this.diaS)
+            this.audit.createTurnosXDia({dia:this.diaS,cantTurnos:1})
+          }
+          
+        });// FIN auditamos turnos x dia
+        //auditamos turnos x prof
+        //1- traemos los datos
+        
+        this.audit.getTurnosXProfe().subscribe(resul=>{
+          //let audit
+          //recorremos las especialidades con sus turnos
+          
+          resul.forEach(data =>{
+            //si la espe del nuevo turno coincide le sumo 1
+            if (data.payload.doc.data().profesional == this.profe) {
+              this.hayUnoTXP = true;
+              this.idTXP = data.payload.doc.id;
+              this.turXP = {
+                profesional: data.payload.doc.data().profesional,
+                cantTurnos: (data.payload.doc.data().cantTurnos + 1)
+              }
+              
+            }
+          });
+          if(this.hayUnoTXP && !this.listoTXP) {
+            this.listoTXP = true;
+            this.audit.addTurnosXProfe(this.idTXP,this.turXP)
+            console.log("sumo audit afuera turxp")
+            //hayUno = false;
+          }
+          if (!this.hayUnoTXP) {
+            this.listoTXP = true;
+            console.log("creo audit turxp", this.profe)
+            this.audit.createTurnosXProfe({profesional:this.profe,cantTurnos:1})
+          }
+          
+        });// FIN auditamos turnos x prof
+        //auditamos dias x prof
+        //1- traemos los datos
+        
+        this.audit.getDiasXProfe().subscribe(resul=>{
+          //let audit
+          //recorremos las especialidades con sus turnos
+          
+          resul.forEach(data =>{
+            //si la espe del nuevo turno coincide le sumo 1
+            if (data.payload.doc.data().dia == this.diaS) {
+              if (data.payload.doc.data().profesionales !==  []) {
+                for(let prof of data.payload.doc.data().profesionales){
+                  if (prof === this.profe) {
+                    this.existeEnArray = true;
+                    
+                  }
+                }
+              }
+              this.arrayProf = data.payload.doc.data().profesionales;
+              if (!this.existeEnArray) {
+                this.arrayProf.push(this.profe);
+              }
+                    
+                    this.hayUnoDXP = true;
+                    this.idDXP = data.payload.doc.id;
+                    this.diaXP = {
+                      dia: data.payload.doc.data().dia,
+                      cantProfe: (data.payload.doc.data().cantProfe + 1),
+                      profesionales: this.arrayProf
+                    }
+              
+              
+            }
+          });
+          if(this.hayUnoDXP && !this.listoDXP) {
+            if (this.arrayProf == []) {
+              this.arrayProf = [this.profe];
+            }
+            this.listoDXP = true;
+            this.audit.addDiasXProfe(this.idDXP,this.diaXP)
+            console.log("sumo audit afuera turxp", this.diaXP)
+            //hayUno = false;
+          }
+          if (!this.hayUnoDXP && !this.listoDXP) {
+            this.listoDXP = true;
+              this.arrayProf = [this.profe];
+            console.log("creo audit diaxp", this.arrayProf)
+            this.audit.createDiasXProfe({dia:this.diaS,cantProfe:1, profesionales:this.arrayProf})
+          }
+          
+        });// FIN auditamos dias x prof
+
+        this.router.navigate['/paciente/listaTurnos']
       }).catch(error=>{
         console.log(error)
       })
@@ -441,6 +551,7 @@ export class SacarTurnoComponent implements OnInit {
     }).catch(error=>{
       console.log("TURNOS POR PROF",error)
     })
+        
   }
 
 }

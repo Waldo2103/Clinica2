@@ -63,6 +63,7 @@ import { HorariosPipe } from './pipes/horarios.pipe';
 import { HclinicaPipe } from './pipes/hclinica.pipe';
 import { LogueoComponent } from './componentes/admin/estadisticas/logueo/logueo.component';
 import { ChartsModule } from 'ng2-charts';
+import { ExportAsModule } from 'ngx-export-as';
 
 @NgModule({
   declarations: [
@@ -118,7 +119,8 @@ import { ChartsModule } from 'ng2-charts';
     NgxCaptchaModule,
     Ng2SmartTableModule,
     Ng2CompleterModule,
-    ChartsModule
+    ChartsModule,
+    ExportAsModule
   ],
   providers: [
     AngularFireAuth,

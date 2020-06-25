@@ -83,6 +83,7 @@ export class ListaTurnosComponent implements OnInit {
   }
 
   exportarAsXlsx():void{
+    console.log(this.dataSource.data)
     this.exporter.exportToExcel(this.dataSource.data, 'turnos');
   }
 
